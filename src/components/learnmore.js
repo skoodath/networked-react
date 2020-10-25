@@ -18,10 +18,10 @@ const Button = styled.div`
       height: 28%;
       top: 37%;
       left: 32%;
-      border-top: 6px solid #fff;
-      border-right: 6px solid #fff;
-      border-left: 6px solid transparent;
-      border-bottom: 6px solid transparent;
+      border-top: 5px solid #fff;
+      border-right: 5px solid #fff;
+      border-left: 7px solid transparent;
+      border-bottom: 7px solid transparent;
       transform: rotate(45deg);
       background: #ffd54d;
     }

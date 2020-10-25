@@ -8,10 +8,10 @@ const SubTextPara = styled.p`
   margin: 5rem auto 2rem;
   border-top: 1px solid #ffde70;
   border-bottom: 1px solid #ffde70;
-  padding: 2rem 1rem;
+  padding: 2rem 0;
   font-size: 1.3rem;
   font-weight: 700;
-  text-align: center;
+
 `;
 
 const SubText = ( {text} ) => {

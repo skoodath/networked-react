@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Subtitle from './subtitle';
 import { Link } from 'react-router-dom';
+import { device } from './../../styles/device';
 
 const MoreLinks = styled.article`
   color: #fff;
@@ -9,6 +10,9 @@ const MoreLinks = styled.article`
   margin: 0 auto;
   width: 80%;
   border-top: 1px solid #4e4e4e;
+  @media ${device.laptop}{
+    border-top: 1px solid transparent;
+  }
 `;
 const MoreListItems = styled.ul`
     display: flex;

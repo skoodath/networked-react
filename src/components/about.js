@@ -2,11 +2,10 @@ import React from 'react'
 import styled, { ThemeProvider } from 'styled-components';
 import SubHeader from './subheaders';
 import SubText from './subtext';
-import LearnMore from './learnmore';
 import AboutPara from './About/aboutpara';
 import WhoCan from './About/whocan';
-import JoinUs from './About/joinform';
 import Benefit from './About/benefits';
+import JoinUs from './About/joinform';
 
 const Styledabout = styled.section`
   display: flex;
@@ -34,7 +33,6 @@ const About = () => {
           <SubText
             text={`NetworkED is an initiative that introduces this new way of thinking to children, using real-world networks`}
           />
-          <LearnMore />
         </Styledabout>
         <Styledabout>
           <AboutPara />
@@ -50,6 +48,7 @@ const About = () => {
         <Styledabout>
           <JoinUs />
         </Styledabout>
+
       </>
     );
 }

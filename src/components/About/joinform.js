@@ -93,7 +93,6 @@ const JoinUs = () => {
                 >
                     {props => (
                         <JoinForm>
-                            <h1>Let's Connect</h1>
                             <Form>
                             <MyInputField
                                 label="First Name"

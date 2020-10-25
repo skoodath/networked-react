@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Particles from 'react-particles-js';
+import Particles from 'react-particles-js'; 
 
 
 const Styledlanding = styled.section`
@@ -18,10 +18,11 @@ const Styledlanding = styled.section`
 const Styledheader = styled.span`
   text-align: center;
   text-transform: uppercase;
-  font-weight: ${({ boldness }) => boldness};;
+  font-weight: ${({ boldness }) => boldness};
   font-size: ${({ mysize }) => mysize};
   text-transform: ${({ textt }) => textt};
   display: block;
+
 `;
 
 

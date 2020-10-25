@@ -11,6 +11,7 @@ import 'swiper/swiper.scss';
 import 'swiper/components/navigation/navigation.scss';
 import 'swiper/components/pagination/pagination.scss';
 import 'swiper/components/scrollbar/scrollbar.scss';
+import SeasonOne from './Seasons/seasonone';
 
 const AboutSeasons = styled.section`
     position: relative;
@@ -19,7 +20,7 @@ const AboutSeasons = styled.section`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
+    height: 100vh;
 `;
 
 const AboutSeasonItems = styled.div`
@@ -32,6 +33,9 @@ const AboutSeasonItems = styled.div`
     margin : 0 auto;
     height: 320px;
     overflow: hidden;
+    .swiper-button-prev{
+        color: red;
+    }
 `;
 
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
@@ -60,6 +64,9 @@ const Seasons = () => {
                         
                     </Swiper>
                 </AboutSeasonItems>
+            </AboutSeasons>
+            <AboutSeasons>
+                <SeasonOne />
             </AboutSeasons>
         </>
     )

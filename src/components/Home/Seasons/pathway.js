@@ -24,11 +24,11 @@ const PathwayImg = styled.img`
     display: block;
     width: 100px;
     height: 100%;
-    padding: 2rem;
+    padding: 1rem;
 `;
 
 const PathwayText = styled.p`
-    padding: 0;
+    padding: 1rem;
     height: 100%;
     display: flex;
     justify-content: center;

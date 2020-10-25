@@ -4,7 +4,6 @@ import SubHeader from '../subheaders';
 import FellowshipDesc from './Fellowship/fellowshippara';
 import SectionHeader from '../../components/sectionheader';
 import SubText from '../../components/subtext';
-import LearnMore from '../../components/learnmore';
 
 
 const StyledFellowship = styled.section`
@@ -25,7 +24,6 @@ const Fellowship = () => {
                 <SubText
                     text={`An immersive program for children to  investigate wicked problems in a highly interconnected world.`}
                 />    
-                <LearnMore />
             </StyledFellowship>
             <StyledFellowship>
                 <SectionHeader 

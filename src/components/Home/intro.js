@@ -3,17 +3,17 @@ import styled from 'styled-components';
 import IntroVideo from './Intro/video';
 import IntroText from './Intro/introtext';
 import SubText from '../subtext';
-import LearnMore from '../learnmore';
+
 
 const Styledintro = styled.section`
   display: flex;
   flex-direction: column;
   padding: 0;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   height: 100vh;
 `;
-const StyledintroMore = styled.section`
+/* const StyledintroMore = styled.section`
   display: flex;
   flex-direction: column;
   padding: 0;
@@ -21,7 +21,7 @@ const StyledintroMore = styled.section`
   align-items: center;
   height: 100vh;
 `;
-
+ */
 
 const Intro = () => {
 
@@ -32,12 +32,13 @@ const Intro = () => {
           <SubText
             text={`A new way of thinking to understand the world around us`}
           />
-          <IntroVideo />
-          <LearnMore />
         </Styledintro>
-        <StyledintroMore>
+        <Styledintro>
+          <IntroVideo />
+        </Styledintro>
+        <Styledintro>
           <IntroText />
-        </StyledintroMore>
+        </Styledintro>
       </>
     );
 }

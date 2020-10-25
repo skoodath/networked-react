@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Subtitle from './subtitle';
 import { FaTwitter, FaLinkedinIn, FaInstagram, FaVimeoV } from 'react-icons/fa';
-
+import { device } from './../../styles/device';
 
 
 const SocialLinks = styled.article`
@@ -11,6 +11,9 @@ const SocialLinks = styled.article`
   margin: 0 auto;
   width: 80%;
   border-top: 1px solid #4e4e4e;
+  @media ${device.laptop}{
+    border-top: 1px solid transparent;
+  }
 `;
 
 const SocialItems = styled.ul`
