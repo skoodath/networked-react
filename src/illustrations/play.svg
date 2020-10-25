@@ -1,4 +1,17 @@
-<svg width="79" height="79" viewBox="0 0 79 79" fill="none" xmlns="http://www.w3.org/2000/svg">
-<circle cx="39.5" cy="39.5" r="39" stroke="#03243C"/>
-<path d="M65.1675 41.4218L25.1497 62.0755L27.272 17.0922L65.1675 41.4218Z" fill="#03243C"/>
+<svg width="173" height="173" viewBox="0 0 173 173">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #ffd54d;
+      }
+
+      .cls-2 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <g id="Group_1" data-name="Group 1" transform="translate(-120 -109)">
+    <circle id="Ellipse_1" data-name="Ellipse 1" class="cls-1" cx="86.5" cy="86.5" r="86.5" transform="translate(120 109)"/>
+    <path id="Polygon_1" data-name="Polygon 1" class="cls-2" d="M28.5,0,57,57H0Z" transform="translate(239.5 167.5) rotate(90)"/>
+  </g>
 </svg>

@@ -1,46 +1,65 @@
 import React from 'react';
 import styled from 'styled-components';
 import SectionHeader from '../../components/sectionheader';
-import LearnMore from '../learnmore';
+import Pathway from './Seasons/pathway';
+import pathway from './Seasons/pathwaycards';
+
+import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+import 'swiper/swiper.scss';
+import 'swiper/components/navigation/navigation.scss';
+import 'swiper/components/pagination/pagination.scss';
+import 'swiper/components/scrollbar/scrollbar.scss';
 
 const AboutSeasons = styled.section`
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: repeat(12, 1fr);
-    height: 100vh;
+    position: relative;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+
 `;
 
 const AboutSeasonItems = styled.div`
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: row;
     justify-self: center;
-    grid-column-start: ${({ colStart }) => colStart};
-    grid-column-end: ${({ colEnd }) => colEnd};
-    grid-row-start: ${({ rowStart }) => rowStart};
-    grid-row-end: ${({ rowEnd }) => rowEnd};
-    background-color: #fff;
-    border-radius: 5px;
-    cursor: pointer;
     position: relative;
+    margin: 0 auto;
+    width: 80%;
+    margin : 0 auto;
+    height: 320px;
     overflow: hidden;
 `;
 
+SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
+
 const Seasons = () => {
+
     return (
         <>
             <AboutSeasons>
-                <AboutSeasonItems colStart="1" colEnd="-1" rowStart="2" rowEnd="3">
-                        <SectionHeader
-                        text={`Fellowship Pathway`} 
-                        />
+                <SectionHeader
+                    text={`Fellowship Pathway`} 
+                />
+                <AboutSeasonItems>
+                    <Swiper
+                        spaceBetween={30}
+                        slidesPerView={1}
+                        navigation
+                        pagination={{ clickable: true }}
+                        progressbar="true"
+                    >
+                            {pathway.map(paths => <SwiperSlide key={paths.id}>
+                                <Pathway 
+                                pathwayStep={paths}
+                                />
+                                </SwiperSlide>)}   
+                        
+                    </Swiper>
                 </AboutSeasonItems>
-                <AboutSeasonItems colStart="3" colEnd="5" rowStart="4" rowEnd="5">
-                        <LearnMore />
-                </AboutSeasonItems>
-            
             </AboutSeasons>
         </>
     )

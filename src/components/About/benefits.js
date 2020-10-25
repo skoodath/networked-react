@@ -1,47 +1,34 @@
-import React, {useRef, useEffect} from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import cardone from '../../illustrations/inf7.png';
 import cardtwo from '../../illustrations/inf1.png';
 import cardthree from '../../illustrations/inf2.png';
 import cardfour from '../../illustrations/inf6.png';
 import cardfive from '../../illustrations/inf5.png';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import SectionHeader from '../sectionheader';
 
 
 const BenefitContainer = styled.section`
-    display: grid;
     width: 80%;
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: repeat(12, 1fr);
-    height: 100%;
     margin: 0 auto;
     gap: 10px;
+    padding: 4rem 0;
 `;
 
-const CommunityBenefits = styled.h2`
-    font-size: 2em;
-    grid-column: 1 / -1;
-    grid-row: 2 / 3;
-    margin: 4rem 0 0 0;
-`;
 
 const GridItem = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
-  justify-self: center;
-  grid-column-start: ${({ gcstart }) => gcstart};
-  grid-column-end: ${({ gcend }) => gcend};
-  grid-row-start: ${({ grstart }) => grstart};
-  grid-row-end: ${({ grend }) => grend};
   background-color: #fff;
   border-radius: 5px;
   cursor: pointer;
   position: relative;
   overflow: hidden;
-  width: 146px;
+  margin: 0 0 0.4rem 0;
   &:hover div {
     opacity: 1;
   }
@@ -59,7 +46,6 @@ const CardImage = styled.img`
     width: 120px;
     height: 120px;
     display: block;
-
 `;
 const Overlay = styled.div`
   width: 100%;
@@ -83,45 +69,24 @@ const Overlay = styled.div`
 `;
 
 const Benefits = () => {
-    gsap.registerPlugin(ScrollTrigger);
-    useEffect(() => {
-      
-      gsap.from(".actionable-item",{ 
-        scrollTrigger: {
-          trigger: ".actionable-item",
-          toggleActions: "restart pause restart pause"
-        },
-        y: "100",
-        start: "10% 80%",
-        opacity: 0,
-        duration: 2,
-        ease: "Power4.easeOut" });
-    }, []);
-
-    const actionable = useRef(null);
 
     return (
       <BenefitContainer>
-        <CommunityBenefits>Community Benefits</CommunityBenefits>
-        <GridItem className="actionable-item"
-          gcstart="1"
-          gcend="4"
-          grstart="3"
-          grend="6"
-          onClick={() => {
-            return (actionable.current.style.opacity? "" : "1");
-          }}
-        >
+        <SectionHeader text="
+          Community Benefits
+        "
+        />
+        <GridItem className="actionable-item">
           <CardImage src={cardone} alt="Actionable Solutions" />
           <CardHeader>Actionable Solutions</CardHeader>
-          <Overlay ref={actionable}>
+          <Overlay>
             <p>
               A library of educational resources (curriculum, tools and methods)
               that can be immediately put to practice
             </p>
           </Overlay>
         </GridItem>
-        <GridItem gcstart="4" gcend="-1" grstart="3" grend="6">
+        <GridItem>
           <CardImage src={cardtwo} alt="Actionable Solutions" />
           <CardHeader>Domain Expertise</CardHeader>
           <Overlay>
@@ -132,7 +97,7 @@ const Benefits = () => {
             </p>
           </Overlay>
         </GridItem>
-        <GridItem gcstart="1" gcend="4" grstart="6" grend="9">
+        <GridItem>
           <CardImage src={cardthree} alt="Actionable Solutions" />
           <CardHeader>Peer Networks</CardHeader>
           <Overlay>
@@ -142,7 +107,7 @@ const Benefits = () => {
             </p>
           </Overlay>
         </GridItem>
-        <GridItem gcstart="4" gcend="-1" grstart="6" grend="9">
+        <GridItem>
           <CardImage src={cardfour} alt="Actionable Solutions" />
           <CardHeader>Latest Events</CardHeader>
           <Overlay>
@@ -152,7 +117,7 @@ const Benefits = () => {
             </p>
           </Overlay>
         </GridItem>
-        <GridItem gcstart="2" gcend="6" grstart="9" grend="12">
+        <GridItem>
           <CardImage src={cardfive} alt="Actionable Solutions" />
           <CardHeader>Small Wins</CardHeader>
           <Overlay>

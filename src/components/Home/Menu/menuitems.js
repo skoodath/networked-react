@@ -27,9 +27,9 @@ const Menuitems = styled.ul`
       display: block;
       background: #ffd54d;
       transition: width 0.5s;
+      transition-timing-function: cubic-bezier(0.1, 0.5, 0.0065, 0.71);
       position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
+      left: 0;
       }
       &:hover {
       &::after {

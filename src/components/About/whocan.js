@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import SectionHeader from '../../components/sectionheader';
 
 const WhoCanJoin = styled.p`
   width: 80%;
@@ -10,16 +11,16 @@ const WhoCanJoin = styled.p`
   line-height: 2;
   font-size: 1.1em;
 `;
-const WhoCanHeader = styled.h2`
-  width: 80%;
-  font-size: 2em;
-  margin: 1rem auto 0;
-`;
+
 
 const WhoCan = () => {
     return (
       <>
-        <WhoCanHeader>Who Can Join</WhoCanHeader>
+        
+        <SectionHeader 
+        text="Who Can Join" 
+        />
+
         <WhoCanJoin>
           Anyone interested in how to enhance cognitive functions of children
           using network representations from real world experiences.

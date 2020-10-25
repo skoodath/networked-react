@@ -39,8 +39,8 @@ const Fellowship = () => {
                 <FellowshipDesc 
                 text={
                     `
-                    Every year, NetworkED hosts a short fellowship program which brings together children from diverse economic and cultural backgrounds to investigate real-world social problems. 
-The fellowship acts as a launchpad for children to explore real world complexity through different pathways. The fellowship is immersive and challenging, as children investigate real world biological, physical and social networks through a range of digital and physical experiences.
+                    NetworkED hosts a fellowship program bringing children from diverse backgrounds together to investigate real-world social problems. 
+This acts as a launchpad for children to explore real world complexity through different pathways. Through a range of challenging and immersive virtual and physical experiences, children investigate networks in the world around them, be it biological, physical or social. 
 
                     `
                 }/>
@@ -57,7 +57,7 @@ The fellowship acts as a launchpad for children to explore real world complexity
                 <FellowshipDesc 
                 text={
                     `
-                    The design of the fellowship is done well in advance in collaboration with domain experts, researchers and educators to craft a meaningful and explorative experience grounded in impact. Data and observations from the fellowship program feed into long term research and pedagogy development centered around understanding the science of network thinking in children.
+                    The fellowship is designed in collaboration with domain experts, researchers and educators to craft a meaningful and explorative experience focused on impact. Data and observations from the program forms the basis for research and development of a pedagogy centered around understanding the science of network thinking in children.
                     `
                 }/>
             </StyledFellowship>

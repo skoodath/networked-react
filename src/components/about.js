@@ -39,14 +39,14 @@ const About = () => {
         <Styledabout>
           <AboutPara />
         </Styledabout>
-        <Styledabout>
-          <WhoCan />
-        </Styledabout>
         <ThemeProvider theme={theme}>
           <Styledabout >
             <Benefit />
           </Styledabout>
         </ThemeProvider>
+        <Styledabout>
+          <WhoCan />
+        </Styledabout>
         <Styledabout>
           <JoinUs />
         </Styledabout>

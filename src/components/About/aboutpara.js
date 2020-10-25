@@ -14,11 +14,9 @@ const Aboutus = styled.p`
 const AboutPara = () => {
     return (
       <Aboutus>
-        We’re an open community of passionate researchers, educators and
-        industry mentors with a common interest to introduce this new way of
-        thinking to kids across different countries. The goal of the community
-        is to create a thriving thought-pool of methods and tools to help
-        children master the art of insight generation using real-world networks.
+        We’re a community of researchers, educators and mentors passionate about introducing this new way of
+        thinking to children. The goal is to create a thriving thought-pool of methods and tools to help
+        children master the art of generating insights using networks in real world.
       </Aboutus>
     );
 }

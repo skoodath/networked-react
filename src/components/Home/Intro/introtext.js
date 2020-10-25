@@ -23,13 +23,13 @@ const IntroText = () => {
     return (
       <Styledintro>
         <Styledintropara>
-          Our minds make connections naturally all the time, trying to make
+          Our minds make connections all the time, trying to make
           sense of the patterns we see and the information we absorb. These
           interconnections when taught to be viewed holistically, as against
-          singularly, can open up young minds to immense possibilities, fuel
-          curiosity and enhance their learning appetites significantly.
-          NetworkED is an initiative that introduces this new way of thinking to
-          children, using real-world networks.
+          in isolation, can open up young minds to immense possibilities, fuel
+          curiosity and enhance their learning appetite significantly.
+          NetworkED introduces this new way of thinking to
+          children, using networks interconnecting the real world.
         </Styledintropara>
       </Styledintro>
     );
