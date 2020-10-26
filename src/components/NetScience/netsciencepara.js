@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 
 const AboutNetWorkScience = styled.p`
-  width: 80%;
   border-bottom: 2px solid #ffd54d;
   margin: 2rem auto 2rem;
   padding: 0 0 2rem 0;

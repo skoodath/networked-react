@@ -21,6 +21,8 @@ const AboutSeasons = styled.section`
     justify-content: center;
     align-items: center;
     height: 100vh;
+    width: 80%;
+    margin: 0 auto;
 `;
 
 const AboutSeasonItems = styled.div`
@@ -28,13 +30,20 @@ const AboutSeasonItems = styled.div`
     flex-direction: row;
     justify-self: center;
     position: relative;
-    margin: 0 auto;
-    width: 80%;
-    margin : 0 auto;
+    width: 100%;
+    max-width: 1280px;
     height: 320px;
+    margin: 0 auto;
     overflow: hidden;
     .swiper-button-prev{
-        color: red;
+        left: 0;
+        height: 2rem;
+        color: #03243C;
+    }
+    .swiper-button-next{
+        right: 0;
+        height: 2rem;
+        color: #03243C;
     }
 `;
 

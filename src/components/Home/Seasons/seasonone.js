@@ -6,7 +6,6 @@ const SeasonOneContainer = styled.div`
     display: flex;
     flex-direction: column;
     padding: 2rem 0;
-    width: 80%;
     img{
         width: 100px;
     }

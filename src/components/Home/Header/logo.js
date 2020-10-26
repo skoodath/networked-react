@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import networked from '../../../illustrations/NetworkEd.png';
-import { device } from '../../../styles/device';
 
 const Title = styled.div`
     position: absolute;
@@ -16,12 +15,7 @@ const Title = styled.div`
     left: 50%;
     transform: translate(-50%, -5%);
     border-radius: 50%;
-    @media ${device.laptop}{
-        width: 13rem;
-        height: 13rem;
-    }
-
-    > img {
+    img {
         display: block;
         width: 7rem;
         max-width: auto;
@@ -29,10 +23,7 @@ const Title = styled.div`
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        @media ${device.laptop}{
-            width: 10rem;
-            height: auto;
-        }
+
     }
 `;
 

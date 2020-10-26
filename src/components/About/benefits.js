@@ -61,8 +61,8 @@ const Overlay = styled.div`
   align-items: center;
   padding: 1rem;
   transition-property: opacity;
-  transition-timer-function: ease-in-out;
   transition-duration: 0.7s;
+  transition-timing-function: cubic-bezier(0.75, 0.82, 0.165, 1);
   &:hover {
     opacity: 1;
   }

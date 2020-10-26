@@ -12,8 +12,9 @@ const StyledFellowship = styled.section`
     padding: 0;
     height: 100vh;
     justify-content: center;
-    align-items: center;
-    margin: 3rem 0 0 0;
+    margin: 3rem auto 0;
+    width: 80%;
+    max-width: 1280px;
 `;
 
 const Fellowship = () => {

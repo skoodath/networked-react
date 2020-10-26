@@ -5,7 +5,6 @@ import SubText from './subtext';
 import AboutPara from './About/aboutpara';
 import WhoCan from './About/whocan';
 import Benefit from './About/benefits';
-import JoinUs from './About/joinform';
 
 const Styledabout = styled.section`
   display: flex;
@@ -13,6 +12,9 @@ const Styledabout = styled.section`
   height: 100vh;
   justify-content: center;
   background-color: ${ props => props.theme.main };
+  margin: 0 auto;
+  width: 80%;
+  max-width: 1280px;
 `;
 
 Styledabout.defaultProps = {
@@ -44,9 +46,6 @@ const About = () => {
         </ThemeProvider>
         <Styledabout>
           <WhoCan />
-        </Styledabout>
-        <Styledabout>
-          <JoinUs />
         </Styledabout>
 
       </>

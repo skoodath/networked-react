@@ -1,30 +1,10 @@
 import React from 'react';
-import styled from 'styled-components';
 import IntroVideo from './Intro/video';
 import IntroText from './Intro/introtext';
 import SubText from '../subtext';
-
-
-const Styledintro = styled.section`
-  display: flex;
-  flex-direction: column;
-  padding: 0;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-`;
-/* const StyledintroMore = styled.section`
-  display: flex;
-  flex-direction: column;
-  padding: 0;
-  justify-content: space-around;
-  align-items: center;
-  height: 100vh;
-`;
- */
+import { Styledintro } from '../../styles/intro/introstyle';
 
 const Intro = () => {
-
 
     return (
       <>

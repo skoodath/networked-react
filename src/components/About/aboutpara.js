@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Aboutus = styled.p`
-  width: 80%;
   margin: 2rem auto;
   border-bottom: 2px solid #ffd54d;
   padding: 0 0 2rem 0;
