@@ -2,9 +2,10 @@ import React from 'react';
 import {
     PathwayWrap,
     PathwayContentWrap,
+    PathwayImgWrap,
     PathwayImg,
     PathwayText
-} from '../../../styles/Seasons/pathwaystyle';
+} from '../../../styles/pathwaystyle';
 
 
 const Pathway = ({pathwayStep}) => {
@@ -13,7 +14,10 @@ const Pathway = ({pathwayStep}) => {
     return (
             <PathwayWrap>
                     <PathwayContentWrap>
+                    <PathwayImgWrap>
                         <PathwayImg src={image} alt={alt} />
+                    </PathwayImgWrap>
+                        
                         <PathwayText >
                             {text}
                         </PathwayText>

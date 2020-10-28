@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyledGetInvolved, StyledGetInvolvedWrapper, StyledInnerWrapper } from './../../styles/About/getinvolvedstyle';
+import { StyledGetInvolved, StyledGetInvolvedWrapper, StyledInnerWrapper } from '../../styles/aboutstyle';
 import SectionHeader from '../../components/sectionheader';
 import JoinUs from './joinform';
 

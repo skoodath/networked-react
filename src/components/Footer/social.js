@@ -1,7 +1,7 @@
 import React from 'react';
 import Subtitle from './subtitle';
 import { FaTwitter, FaLinkedinIn, FaInstagram, FaVimeoV } from 'react-icons/fa';
-import { SocialLinks, SocialItems } from './../../styles/footer/socialstyle';
+import { SocialLinks, SocialItems } from '../../styles/footerstyle';
 
 
 const SocialMedia = () => {

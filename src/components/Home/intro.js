@@ -2,7 +2,7 @@ import React from 'react';
 import IntroVideo from './Intro/video';
 import IntroText from './Intro/introtext';
 import SubText from '../subtext';
-import { Styledintro } from '../../styles/intro/introstyle';
+import { Styledintro } from '../../styles/introstyle';
 
 const Intro = () => {
 

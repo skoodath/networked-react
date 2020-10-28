@@ -1,5 +1,5 @@
 import React from "react";
-import { FellowshipPara } from '../../../styles/Fellowship/fellowshiparastyle';
+import { FellowshipPara } from '../../../styles/fellowshipstyle';
 
 const FellowshipDesc = ({text}) => {
   return (

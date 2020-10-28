@@ -23,5 +23,6 @@ export const Header = styled.h2`
   }
   span{
     font-weight: normal;
+    display: block;
   }
 `;

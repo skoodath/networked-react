@@ -6,7 +6,7 @@ export const PathwayWrap = styled.div`
     width: 100%;
     min-width: 100%;
     height: 100%;
-    border-top: 2px solid #ffd54d;
+    border: none;
     padding: 0;
     margin: 0;
     position: relative;
@@ -20,9 +20,21 @@ export const PathwayContentWrap = styled.div`
     width: 100%;
     margin: 1rem;
 `;
+
+export const PathwayImgWrap = styled.div`
+    display: block;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: #ffd54d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+`;
 export const PathwayImg = styled.img`
     display: block;
-    height: 150px;
+    height: 130px;
     padding: 1rem;
 `;
 

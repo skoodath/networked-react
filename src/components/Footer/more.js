@@ -1,29 +1,8 @@
 import React from 'react';
-import styled from 'styled-components';
 import Subtitle from './subtitle';
 import { Link } from 'react-router-dom';
-import { device } from './../../styles/device';
+import { MoreLinks, MoreListItems } from '../../styles/footerstyle';
 
-const MoreLinks = styled.article`
-  color: #fff;
-  padding: 1em 0;
-  margin: 0 auto;
-  width: 80%;
-  border-top: 1px solid #4e4e4e;
-  @media ${device.laptop}{
-    border-top: 1px solid transparent;
-  }
-`;
-const MoreListItems = styled.ul`
-    display: flex;
-    li{
-        margin: 0 0.7rem 0 0;
-        a{
-            color: #fff;
-            text-decoration: underline;
-        }
-    }
-`;
 
 const MoreIcons = () => {
     return (

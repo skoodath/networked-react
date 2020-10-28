@@ -1,72 +1,18 @@
 import React from 'react';
-import styled from 'styled-components';
 import cardone from '../../illustrations/inf7.png';
 import cardtwo from '../../illustrations/inf1.png';
 import cardthree from '../../illustrations/inf2.png';
 import cardfour from '../../illustrations/inf6.png';
 import cardfive from '../../illustrations/inf5.png';
 import SectionHeader from '../sectionheader';
+import { 
+      BenefitContainer,
+      GridItem,
+      CardHeader,
+      CardImage,
+      Overlay
+      } from '../../styles/aboutstyle';
 
-
-const BenefitContainer = styled.section`
-    width: 80%;
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: repeat(12, 1fr);
-    margin: 0 auto;
-    gap: 10px;
-    padding: 4rem 0;
-`;
-
-
-const GridItem = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  background-color: #fff;
-  border-radius: 5px;
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
-  margin: 0 0 0.4rem 0;
-  &:hover div {
-    opacity: 1;
-  }
-  &:focus div {
-    opacity: 1;
-  }
-`;
-
-
-const CardHeader = styled.h3`
-    font-weight: bold;
-`;
-
-const CardImage = styled.img`
-    width: 120px;
-    height: 120px;
-    display: block;
-`;
-const Overlay = styled.div`
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  background: #fff;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  opacity: 0;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding: 1rem;
-  transition-property: opacity;
-  transition-duration: 0.7s;
-  transition-timing-function: cubic-bezier(0.75, 0.82, 0.165, 1);
-  &:hover {
-    opacity: 1;
-  }
-`;
 
 const Benefits = () => {
 

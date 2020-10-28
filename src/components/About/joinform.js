@@ -8,12 +8,11 @@ import {
     FormMsgBox,
     SubmitForm,
     FormErrorMsg
-} from './../../styles/About/joinformstyle';
+} from '../../styles/aboutstyle';
 
 
 const MyInputField = ({ label, ...props }) => {
     const [field, meta] = useField(props);
-    console.log(meta, field);
     return (
         <>
             <FormLabel htmlFor={props.id || props.name}>{label}</FormLabel>
@@ -52,7 +51,8 @@ const JoinUs = () => {
                 })}
                 onSubmit={(values, {setSubmitting, resetForm}) => {
                     setTimeout(() => {
-                        alert(JSON.stringify(values, null, 2));
+                        console.log(values);
+                        alert(JSON.stringify(values));
                         resetForm();
                         setSubmitting(false);
                     }, 400);

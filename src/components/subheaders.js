@@ -7,7 +7,6 @@ const SubHeader = ({text, smalltext}) => {
       <span>
         {smalltext}
       </span>
-        <br />
       {text}
     </Header>
     )

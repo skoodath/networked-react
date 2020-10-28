@@ -1,6 +1,6 @@
 import React from 'react'
 import introvideo from '../../../videos/networkedexplainer.mp4';
-import { Styledvideo } from '../../../styles/intro/videostyle';
+import { Styledvideo } from '../../../styles/introstyle';
 
 
 const IntroVideo = () => (
