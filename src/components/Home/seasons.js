@@ -1,8 +1,11 @@
 import React from 'react';
-import styled from 'styled-components';
 import SectionHeader from '../../components/sectionheader';
 import Pathway from './Seasons/pathway';
 import pathway from './Seasons/pathwaycards';
+import socialsleuth from '../../illustrations/ss8.png';
+import { BsArrowDown } from 'react-icons/bs';
+import { AboutSeasons, AboutSeasonItems, StyledSluethPara, SeasonOneHeader } from '../../styles/seasonstyle';
+import { PathwayIntro, ArrowWrap } from '../../styles/Reusable/Arrowstyle';
 
 import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -12,39 +15,7 @@ import 'swiper/components/navigation/navigation.scss';
 import 'swiper/components/pagination/pagination.scss';
 import 'swiper/components/scrollbar/scrollbar.scss';
 import SeasonOne from './Seasons/seasonone';
-
-const AboutSeasons = styled.section`
-    position: relative;
-    color: #fff;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 100vh;
-    width: 80%;
-    margin: 0 auto;
-`;
-
-const AboutSeasonItems = styled.div`
-    display: flex;
-    flex-direction: row;
-    justify-self: center;
-    position: relative;
-    width: 100%;
-    max-width: 1280px;
-    height: 320px;
-    margin: 0 auto;
-    overflow: hidden;
-    .swiper-button-prev{
-        left: 0;
-        height: 2rem;
-        color: #03243C;
-    }
-    .swiper-button-next{
-        right: 0;
-        height: 2rem;
-        color: #03243C;
-    }
-`;
+import UpcomingSeasons from './Seasons/upcomingseasons';
 
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 
@@ -52,11 +23,21 @@ const Seasons = () => {
 
     return (
         <>
+            <AboutSeasons hgt="100vh" >
+                <PathwayIntro>
+                    <span>Explore</span>
+                    <ArrowWrap>
+                        <BsArrowDown />
+                    </ArrowWrap>
+                    
+                </PathwayIntro>
+            </AboutSeasons>
             <AboutSeasons>
                 <SectionHeader
                     text={`Fellowship Pathway`} 
                 />
                 <AboutSeasonItems>
+                   
                     <Swiper
                         spaceBetween={30}
                         slidesPerView={1}
@@ -73,8 +54,29 @@ const Seasons = () => {
                     </Swiper>
                 </AboutSeasonItems>
             </AboutSeasons>
-            <AboutSeasons>
+            <AboutSeasons hgt="100vh">
                 <SeasonOne />
+                
+                <PathwayIntro>
+                    <span spanSize="3rem">Know More</span>
+                    <ArrowWrap>
+                        <BsArrowDown />
+                    </ArrowWrap>
+                    
+                </PathwayIntro>
+            </AboutSeasons>
+            <AboutSeasons hgt="100vh">
+                <img src={socialsleuth} alt="Social Sleuths" />
+                <SeasonOneHeader>Social Sleuths</SeasonOneHeader>
+                <StyledSluethPara>
+                    In Season #1, kids explore the world of communities, about how relationships between people, artifacts, and ideas can be analyzed and interpreted through social network mapping. Kids will investigate and generate data maps of these relationships to help understand how people communicate and exchange information in any given setting, and even track down some critical power hubs that can bring massive social change through real world digital networks. Stay tuned for updates on the Social Sleuths!
+                </StyledSluethPara>
+            </AboutSeasons>
+            <AboutSeasons>
+                <SectionHeader
+                        text={`Upcoming Seasons`} 
+                    />
+                <UpcomingSeasons />
             </AboutSeasons>
         </>
     )

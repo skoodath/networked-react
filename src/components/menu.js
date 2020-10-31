@@ -1,5 +1,5 @@
 import React, {useContext} from 'react';
-import { Menu } from './../styles/menu/menustyle';
+import { Menu } from './../styles/menustyle';
 import MenuList from './Home/Menu/menuitems';
 import { MyMenucontext } from '../context/context';
 

@@ -1,6 +1,26 @@
 import styled from 'styled-components';
 import { device } from './device';
 
+
+export const Styledabout = styled.section`
+  display: flex;
+  flex-direction: column;
+  height: ${({hgt}) => hgt};
+  justify-content: center;
+  background-color: ${ props => props.theme.main };
+  margin: 0 auto;
+  width: 80%;
+  max-width: 1280px;
+`;
+
+Styledabout.defaultProps = {
+  theme: {
+    main: "#fff"
+  }
+}
+
+
+
 /* About paragraph styling */
 
 export const Aboutus = styled.p`
@@ -100,18 +120,29 @@ export const FormErrorMsg = styled.p`
 
 
 export const BenefitContainer = styled.section`
-    width: 80%;
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: repeat(12, 1fr);
+    width: 100%;
     margin: 0 auto;
-    gap: 10px;
-    padding: 4rem 0;
+    padding: 4rem 1rem;
+    display: flex;
+    flex-direction: column;
 `;
 
-
-export const GridItem = styled.div`
+export const CardWrapper = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  justify-content: space-around;
+  align-items: center;
+  @media ${device.laptop}{
+    flex-direction: row;
+  }
+`;
+
+export const CardItem = styled.div`
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: #fff;
@@ -119,7 +150,15 @@ export const GridItem = styled.div`
   cursor: pointer;
   position: relative;
   overflow: hidden;
-  margin: 0 0 0.4rem 0;
+  margin: 0.2rem 0;
+  padding: 1rem 0;
+  width: 100%;
+  height: 200px;
+  @media ${device.laptop}{
+    margin: 0.1rem;
+    width: 300px;
+    height: 300px;
+  }
   &:hover div {
     opacity: 1;
   }
@@ -131,6 +170,10 @@ export const GridItem = styled.div`
 
 export const CardHeader = styled.h3`
     font-weight: bold;
+    font-size: 1.2rem;
+    @media ${device.laptop}{
+      font-size: 1rem;
+    }
 `;
 
 export const CardImage = styled.img`
@@ -142,7 +185,7 @@ export const Overlay = styled.div`
   width: 100%;
   height: 100%;
   position: absolute;
-  background: #fff;
+  background: #00155A;
   top: 0;
   left: 0;
   z-index: 1;
@@ -154,6 +197,13 @@ export const Overlay = styled.div`
   transition-property: opacity;
   transition-duration: 0.7s;
   transition-timing-function: cubic-bezier(0.75, 0.82, 0.165, 1);
+  p{
+    color: #fff;
+    font-size: 1.2rem;
+    @media ${device.laptop} {
+      font-size: 0.9rem;
+    }
+  }
   &:hover {
     opacity: 1;
   }

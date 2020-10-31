@@ -20,19 +20,28 @@ export const StyledFooterWrapper = styled.div`
     grid-row-end: ${({ rowEnd })  => rowEnd };
 `;
 
+/* Footer Title styling */
+
+export const TitleName = styled.h5`
+    color: #ffffffbd;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin: 0 0 0.5rem 0;
+`;
+
 /* Footer contact styling */
 
 export const ContactLinks = styled.article`
-    color: #fff;
+    color: #ffffffbd;
     padding: 1em 0;
     margin: 0 auto;
     width: 80%;
 `;
 
 export const MyEmail = styled.span`
-    color: #fff;
+    color: #ffffffbd;
     svg{
-        fill: #fff;
+        fill: #ffffffbd;
         height: 1.5rem;
         width: 1.5rem;
         vertical-align: middle;
@@ -42,15 +51,15 @@ export const MyEmail = styled.span`
 /* Footer logo styling */
 
 export const FooterLogo = styled.article`
-  color: #fff;
+  color: #ffffffbd;
   padding: 1em 0;
   margin: 0 auto;
   width: 80%;
   a {
-    color: #fff;
+    color: #ffffffbd;
     font-size: 2rem;
     &:visited {
-      color: #fff;
+      color: #ffffffbd;
     }
   }
 `;
@@ -58,31 +67,32 @@ export const FooterLogo = styled.article`
 /* Copywrite styling */
 
 export const Copy = styled.article`
-  color: #fff;
+  color: #ffffffbd;
   padding: 1em 0;
   margin: 0 auto;
   width: 80%;
-  border-top: 1px solid #4e4e4e;
+  border-top: 1px solid #ffffffbd;
 `;
 
 /* More link styles */
 
 export const MoreLinks = styled.article`
-  color: #fff;
+  color: #ffffffbd;
   padding: 1em 0;
   margin: 0 auto;
   width: 80%;
-  border-top: 1px solid #4e4e4e;
+  border-top: 1px solid #ffffffbd;
   @media ${device.laptop}{
     border-top: 1px solid transparent;
   }
 `;
 export const MoreListItems = styled.ul`
     display: flex;
+    flex-direction: column;
     li{
         margin: 0 0.7rem 0 0;
         a{
-            color: #fff;
+            color: #ffffffbd;
             text-decoration: underline;
         }
     }
@@ -91,11 +101,11 @@ export const MoreListItems = styled.ul`
 /* Social media icon style */
 
 export const SocialLinks = styled.article`
-  color: #fff;
+  color: #ffffffbd;
   padding: 1em 0;
   margin: 0 auto;
   width: 80%;
-  border-top: 1px solid #4e4e4e;
+  border-top: 1px solid #ffffffbd;
   @media ${device.laptop}{
     border-top: 1px solid transparent;
   }
@@ -108,15 +118,15 @@ export const SocialItems = styled.ul`
     width: 2.1rem;
     height: 2.1rem;
     border-radius: 50%;
-    border: 1px solid #fff;
+    border: 1px solid #ffffffbd;
     display: flex;
     align-items: center;
     justify-content: center;
     a {
-      color: #fff;
+      color: #ffffffbd;
       text-decoration: underline;
       svg{
-        fill: #fff;
+        fill: #ffffffbd;
         height: 1.5rem;
         width: 1.5rem;
         vertical-align: middle;

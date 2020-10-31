@@ -1,19 +1,8 @@
 import React from 'react';
-import styled from 'styled-components';
 import SubHeader from '../components/subheaders';
 import NetSciPara from './NetScience/netsciencepara';
 import SubText from './subtext';
-
-const NetWorkScience = styled.section`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    position: relative;
-    height: 100vh;
-    width: 80%;
-    max-width: 1280px;
-    margin:0 auto;
-`;
+import { NetWorkScience } from '../styles/netsciencestyle';
 
 const NetScience = () => {
     return (

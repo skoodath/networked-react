@@ -7,7 +7,8 @@ import cardfive from '../../illustrations/inf5.png';
 import SectionHeader from '../sectionheader';
 import { 
       BenefitContainer,
-      GridItem,
+      CardWrapper,
+      CardItem,
       CardHeader,
       CardImage,
       Overlay
@@ -22,7 +23,8 @@ const Benefits = () => {
           Community Benefits
         "
         />
-        <GridItem className="actionable-item">
+        <CardWrapper>
+        <CardItem className="actionable-item">
           <CardImage src={cardone} alt="Actionable Solutions" />
           <CardHeader>Actionable Solutions</CardHeader>
           <Overlay>
@@ -31,8 +33,8 @@ const Benefits = () => {
               that can be immediately put to practice
             </p>
           </Overlay>
-        </GridItem>
-        <GridItem>
+        </CardItem>
+        <CardItem>
           <CardImage src={cardtwo} alt="Actionable Solutions" />
           <CardHeader>Domain Expertise</CardHeader>
           <Overlay>
@@ -42,8 +44,8 @@ const Benefits = () => {
               Science
             </p>
           </Overlay>
-        </GridItem>
-        <GridItem>
+        </CardItem>
+        <CardItem>
           <CardImage src={cardthree} alt="Actionable Solutions" />
           <CardHeader>Peer Networks</CardHeader>
           <Overlay>
@@ -52,8 +54,8 @@ const Benefits = () => {
               learning process
             </p>
           </Overlay>
-        </GridItem>
-        <GridItem>
+        </CardItem>
+        <CardItem>
           <CardImage src={cardfour} alt="Actionable Solutions" />
           <CardHeader>Latest Events</CardHeader>
           <Overlay>
@@ -62,8 +64,8 @@ const Benefits = () => {
               across the globe
             </p>
           </Overlay>
-        </GridItem>
-        <GridItem>
+        </CardItem>
+        <CardItem>
           <CardImage src={cardfive} alt="Actionable Solutions" />
           <CardHeader>Small Wins</CardHeader>
           <Overlay>
@@ -72,7 +74,8 @@ const Benefits = () => {
               nailing project milestones
             </p>
           </Overlay>
-        </GridItem>
+        </CardItem>
+        </CardWrapper>
       </BenefitContainer>
     );
 }

@@ -10,7 +10,8 @@ const Intro = () => {
       <>
         <Styledintro>
           <SubText
-            text={`A new way of thinking to understand the world around us`}
+            text={`NetworkED is an initiative for children to discover how everything is connected in the world around them. 
+            The method integrates the core principles of Network Theory, complex adaptive systems and Relational Thinking, enablinkg children to explore complexity with ease`}
           />
         </Styledintro>
         <Styledintro>

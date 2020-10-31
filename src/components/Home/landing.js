@@ -1,6 +1,6 @@
 import React from 'react';
 import Particles from 'react-particles-js';
-import { Styledlanding, Styledheader } from '../../styles/landing/landingstyle';
+import { Styledlanding, Styledheader } from '../../styles/landingstyle';
 
 const Landing = () => {
     return (

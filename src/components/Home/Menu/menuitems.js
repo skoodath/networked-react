@@ -1,7 +1,7 @@
 import React, {useContext} from 'react';
 import { Link } from "react-router-dom";
 import { MyMenucontext } from '../../../context/context';
-import { Menuitems } from './../../../styles/menu/menuitemstyle';
+import { Menuitems } from './../../../styles/menustyle';
 
 const MenuList = () => {
 
@@ -29,9 +29,9 @@ const MenuList = () => {
         </Link>
       </li>
       <li>
-        <Link to="http://blog.networked.in" onClick={handleMenu}>
+        <a href="http://blog.networked.in" onClick={handleMenu}>
           Blog
-        </Link>
+        </a>
       </li>
     </Menuitems>
   );
