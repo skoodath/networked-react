@@ -7,12 +7,18 @@ export const Styledfooter = styled.footer`
     background: #00155A;
     padding: 2rem 0 0;
     display: flex;
+    justify-content: center;
+    `;
+export const StyledFooterInner = styled.div`
+    width: 80%;
+    max-width: 1280px;
+    display: flex;
     flex-direction: column;
     @media ${device.laptop}{
         display: grid;
         grid-template-columns: repeat(12, 1fr);
     }
-    `;
+`;
 export const StyledFooterWrapper = styled.div`
     grid-column-start: ${({ colStart }) => colStart };
     grid-column-end: ${({ colEnd })  => colEnd };
@@ -34,7 +40,7 @@ export const TitleName = styled.h5`
 export const ContactLinks = styled.article`
     color: #ffffffbd;
     padding: 1em 0;
-    margin: 0 auto;
+    margin: 0;
     width: 80%;
 `;
 
@@ -53,7 +59,7 @@ export const MyEmail = styled.span`
 export const FooterLogo = styled.article`
   color: #ffffffbd;
   padding: 1em 0;
-  margin: 0 auto;
+  margin: 0;
   width: 80%;
   a {
     color: #ffffffbd;
@@ -69,9 +75,8 @@ export const FooterLogo = styled.article`
 export const Copy = styled.article`
   color: #ffffffbd;
   padding: 1em 0;
-  margin: 0 auto;
+  margin: 0;
   width: 80%;
-  border-top: 1px solid #ffffffbd;
 `;
 
 /* More link styles */
@@ -79,16 +84,15 @@ export const Copy = styled.article`
 export const MoreLinks = styled.article`
   color: #ffffffbd;
   padding: 1em 0;
-  margin: 0 auto;
+  margin: 0;
   width: 80%;
-  border-top: 1px solid #ffffffbd;
+  border-top: 1px solid transparent;
   @media ${device.laptop}{
     border-top: 1px solid transparent;
   }
 `;
 export const MoreListItems = styled.ul`
     display: flex;
-    flex-direction: column;
     li{
         margin: 0 0.7rem 0 0;
         a{
@@ -103,9 +107,9 @@ export const MoreListItems = styled.ul`
 export const SocialLinks = styled.article`
   color: #ffffffbd;
   padding: 1em 0;
-  margin: 0 auto;
+  margin: 0;
   width: 80%;
-  border-top: 1px solid #ffffffbd;
+  border-top: 1px solid transparent;
   @media ${device.laptop}{
     border-top: 1px solid transparent;
   }
@@ -118,7 +122,7 @@ export const SocialItems = styled.ul`
     width: 2.1rem;
     height: 2.1rem;
     border-radius: 50%;
-    border: 1px solid #ffffffbd;
+    border: 1px solid transparent;
     display: flex;
     align-items: center;
     justify-content: center;

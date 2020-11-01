@@ -7,13 +7,13 @@ const pathway = [
     },
     {
         id: 2,
-        text: "Virtual Selection round",
+        text: "Virtual Selection Round",
         alt: "Virtual Selection round",
         image: `${require("../../../illustrations/ss2.png")}`
     },
     {
         id: 3,
-        text: "Fellows announced",
+        text: "Fellows Announced",
         alt: "Fellows announced",
         image: `${require("../../../illustrations/ss3.png")}`
     },
@@ -37,7 +37,7 @@ const pathway = [
     },
     {
         id: 7,
-        text: "Work with a mentor",
+        text: "Work With a Mentor",
         alt: "Work with a mentor",
         image: `${require("../../../illustrations/ss7.png")}`
     },
@@ -49,7 +49,7 @@ const pathway = [
     },
     {
         id: 9,
-        text: "Stay connected with peers",
+        text: "Stay Connected with Peers",
         alt: "Stay connected with peers",
         image: `${require("../../../illustrations/ss9.png")}`
     },

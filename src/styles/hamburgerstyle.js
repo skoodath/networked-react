@@ -13,10 +13,10 @@ export const Hamburger = styled.div`
   &::before {
     position: absolute;
     content: "";
-    top: ${({ open }) => (open ? "35px" : "20px")};
+    top: ${({ open }) => (open ? "30px" : "20px")};
     right: 0;
-    width: ${({ open }) => (open ? "2.7rem" : "2rem")};
-    height: 0.2rem;
+    width: ${({ open }) => (open ? "40px" : "30px")};
+    height: 3px;
     border-radius: 10px;
     background: #03243C;
     transform-origin: center;
@@ -27,10 +27,10 @@ export const Hamburger = styled.div`
   &::after {
     position: absolute;
     content: "";
-    top: 35px;
+    top: 30px;
     right: 0;
-    width: 2.7rem;
-    height: 0.2rem;
+    width: 40px;
+    height: 3px;
     background: #03243C;
     border-radius: 10px;
     transform-origin: center;
@@ -40,10 +40,10 @@ export const Hamburger = styled.div`
   }
   &:hover{
     &::before{
-      width: 2.7rem;
+      width: 40px;
     }
     &::after{
-      width: ${({ open }) => (open ? "2.7rem" : "2rem")};
+      width: 40px;
     }
   }
 `;

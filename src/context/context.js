@@ -11,4 +11,16 @@ export const MyMenuAction = props => {
             {props.children}
         </MyMenucontext.Provider>
     )
+};
+
+export const MyNetAppContext = createContext();
+
+export const MyNetApplication = props => {
+    const [app, showApp] = useState(false);
+
+    return (
+        <MyNetAppContext.Provider value={[app, showApp]}>
+            {props.children}
+        </MyNetAppContext.Provider>
+    )
 }

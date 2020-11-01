@@ -2,7 +2,6 @@ import { createGlobalStyle } from 'styled-components';
 import { device } from '../styles/device';
 
 const GlobalStyle = createGlobalStyle`
-    @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&display=swap");
 * {
     
   padding: 0;

@@ -54,11 +54,11 @@ const Seasons = () => {
                     </Swiper>
                 </AboutSeasonItems>
             </AboutSeasons>
-            <AboutSeasons hgt="100vh">
+            <AboutSeasons>
                 <SeasonOne />
                 
                 <PathwayIntro>
-                    <span spanSize="3rem">Know More</span>
+                    <span spansize="3rem">Know More</span>
                     <ArrowWrap>
                         <BsArrowDown />
                     </ArrowWrap>

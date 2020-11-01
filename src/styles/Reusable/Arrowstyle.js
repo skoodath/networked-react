@@ -10,8 +10,9 @@ justify-content: center;
 align-items: center;
 
 span{
-  font-size: ${({ spanSize }) => spanSize};
+  font-size: ${({ spansize }) => spansize? spansize : '1rem'};
   cursor: pointer;
+  display: block;
 }
 `;
 

@@ -8,8 +8,9 @@ export const AboutSeasons = styled.section`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: ${({ hgt }) => hgt};
+    height: ${({ hgt }) => hgt? hgt: '100vh'};
     width: 80%;
+    max-width: 1280px;
     margin: 0 auto;
     @media ${device.laptop}{
       height: 100vh;
@@ -88,6 +89,7 @@ export const UpcomingSeasonWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: 0 0 2rem 0;
   @media ${device.laptop}{
     flex-direction: row;
   }
@@ -95,23 +97,36 @@ export const UpcomingSeasonWrapper = styled.div`
 
 export const UpcomingSeasonsCard = styled.div`
   display: flex;
-  flex-direction: column;
-  box-shadow: 0 0 3px #eee;
-  border-radius: 5px;
-  width: 250px;
-  height: 300px;
-  margin: 2rem;
+  margin: 1rem;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  &::before{
+    position: absolute;
+    content: '';
+    background: #ffd54e;
+    height: 100%;
+    width: 5px;
+    border-radius: 20px;
+    left: 0;
+  }
 `;
 export const UpcomingImageWrapper = styled.div`
   display: flex;
+  position: relative;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100%;
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+  margin: 0 1rem;
+  img{
+    width: 95%;
+  }
 `;
 export const UpcomingSeasonHeader = styled.h3`
   height: 100%;
-  background: #ffd54d;
   display: flex;
   justify-content: center;
   align-items: center;
