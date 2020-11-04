@@ -9,6 +9,7 @@ import {
     SubmitForm,
     FormErrorMsg
 } from '../../styles/aboutstyle';
+import axios from  'axios';
 
 
 const MyInputField = ({ label, ...props }) => {
@@ -50,11 +51,21 @@ const JoinUs = () => {
                     .max(150, "Should not be more than 150 Characters")
                 })}
                 onSubmit={(values, {setSubmitting, resetForm}) => {
-                    setTimeout(() => {
-                        console.log(values);
-                        alert(JSON.stringify(values));
-                        resetForm();
-                        setSubmitting(false);
+                        let userInfo = {
+                            firstname: values.firstName,
+                            lastname: values.lastName,
+                            email: values.email,
+                            note: values.message
+                        }
+
+                        axios.post("/send",userInfo)
+                        .then((response) => {
+                            console.log(response)
+                        });
+                        setTimeout(() => {
+                            alert(`Thank you ${userInfo.firstname}! You email was sent`);
+                            resetForm();
+                            setSubmitting(false);
                     }, 400);
                  }}
                 >

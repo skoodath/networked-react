@@ -2,9 +2,10 @@ import React from 'react';
 import { StyledintroWrapper, Styledintropara } from '../../../styles/introstyle';
 
 const IntroText = () => {
+
     return (
       <StyledintroWrapper>
-        <Styledintropara>
+        <Styledintropara >
           Our minds make connections all the time, trying to make
           sense of the patterns we see and the information we absorb. These
           interconnections when taught to be viewed holistically, as against
