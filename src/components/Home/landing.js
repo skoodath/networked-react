@@ -1,20 +1,54 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import Particles from 'react-particles-js';
 import { Styledlanding, Styledheader } from '../../styles/landingstyle';
+import gsap from 'gsap';
 
 const Landing = () => {
+
+   let theRef = useRef(null);
+   let languageRef = useRef(null);
+   let ofRef = useRef(null);
+   let thoughtRef = useRef(null);
+
+   useEffect(() => {
+      gsap.fromTo([theRef.current, languageRef.current, ofRef.current, thoughtRef.current],{
+          opacity: 0,
+          duration: 0.8,
+          y: -10,
+          
+        },
+        {
+          opacity: 1,
+          duration: 1,
+          y: 0,
+          stagger: {
+            amount: 0.8
+          }
+        }
+      )
+   });
+
     return (
       <Styledlanding>
-        <Styledheader boldness="300" mysize="2rem" textt="lowercase">
+        <Styledheader boldness="300" mysize="2rem" textt="lowercase"
+          ref={theRef}
+        >
             The
         </Styledheader>
-        <Styledheader boldness="300" mysize="4rem" textt="uppercase">
+        <Styledheader boldness="300" mysize="4rem" textt="uppercase"
+          ref={languageRef}
+        >
             Language
         </Styledheader>
-        <Styledheader boldness="300" mysize="2rem" textt="lowercase">
+        <Styledheader boldness="300" mysize="2rem" textt="lowercase"
+          ref={ofRef}
+        >
             Of
         </Styledheader>
-        <Styledheader boldness="300" mysize="5.5rem" textt="Proper">
+        <Styledheader boldness="300" mysize="5.5rem" textt="Proper"
+          ref={thoughtRef}
+    
+        >
             Thought
         </Styledheader>
 
@@ -29,7 +63,7 @@ const Landing = () => {
           params={{
             particles: {
               number: {
-                value: 60,
+                value: 20,
                 density: {
                   enable: true,
                   value_area: 1200,
@@ -39,7 +73,7 @@ const Landing = () => {
                 value: "#977e2b",
               },
               shape: {
-                type: "polygon",
+                type: "circle",
                 stroke: {
                   width: 0,
                   color: "#000000",
@@ -75,9 +109,9 @@ const Landing = () => {
               },
               line_linked: {
                 enable: true,
-                distance: 200,
+                distance: 300,
                 color: "#977e2b",
-                opacity: 0.4,
+                opacity: 0.6,
                 width: 0.6,
               },
               move: {

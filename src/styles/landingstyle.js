@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-
+import { device } from './device';
 
 export const Styledlanding = styled.section`
   height: 100vh;
@@ -9,8 +9,11 @@ export const Styledlanding = styled.section`
   justify-content: center;
   align-items: center;
   margin: 0;
+  padding: 2rem 0 0 0;
   position: relative;
-
+  @media ${device.laptop} {
+    padding: 4rem 0 0 0;
+  }
 `;
 
 export const Styledheader = styled.span`

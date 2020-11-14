@@ -1,6 +1,6 @@
 import React, {useContext} from 'react';
 import { MyMenucontext } from '../context/context';
-import { Hamburger } from '../styles/hamburgerstyle';
+import { HamburgerNew, HamburgerNewItemsTwo, HamburgerNewItemsOne } from '../styles/hamburgerstyle';
 
 
 const Navbar = () => {
@@ -12,7 +12,12 @@ const Navbar = () => {
     }
 
     return (
-          <Hamburger open={open} onClick={handleNavbar} />
+      <>
+          <HamburgerNew open={open} onClick={handleNavbar}>
+            <HamburgerNewItemsOne  open={open} />
+            <HamburgerNewItemsTwo  open={open} />
+          </HamburgerNew>
+      </>
     )
 }
 

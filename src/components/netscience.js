@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import SubHeader from '../components/subheaders';
 import NetSciPara from './NetScience/netsciencepara';
 import SubText from './subtext';
@@ -8,9 +8,20 @@ import NetCards from '../components/NetScience/netcarddata';
 import SectionHeader from './sectionheader';
 
 const NetScience = () => {
+
+    const netRef = useRef(null);
+
+    useEffect(() => {
+        netRef.current.scrollIntoView({
+        alignToTop: true
+        });
+  }, [])
+
     return (
         <>
-        <NetWorkScience>
+        <NetWorkScience
+            ref={netRef}
+        >
             <SubHeader text={`Network Science`} smalltext={`What is`} />
             <SubText text={`Network Science is the study of patterns of connections in the real world`} />
         </NetWorkScience>

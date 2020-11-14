@@ -15,9 +15,6 @@ export const AboutSeasons = styled.section`
     @media ${device.laptop}{
       height: 100vh;
     }
-    img{
-    width: 100px;
-  }
 `;
 
 export const AboutSeasonItems = styled.div`

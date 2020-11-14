@@ -66,7 +66,7 @@ const Seasons = () => {
                 </PathwayIntro>
             </AboutSeasons>
             <AboutSeasons hgt="100vh">
-                <img src={socialsleuth} alt="Social Sleuths" />
+                <img src={socialsleuth} alt="Social Sleuths" style={{width: '100px'}} />
                 <SeasonOneHeader>Social Sleuths</SeasonOneHeader>
                 <StyledSluethPara>
                     In Season #1, kids explore the world of communities, about how relationships between people, artifacts, and ideas can be analyzed and interpreted through social network mapping. Kids will investigate and generate data maps of these relationships to help understand how people communicate and exchange information in any given setting, and even track down some critical power hubs that can bring massive social change through real world digital networks. Stay tuned for updates on the Social Sleuths!

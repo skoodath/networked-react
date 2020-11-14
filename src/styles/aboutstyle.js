@@ -153,6 +153,7 @@ export const CardItem = styled.div`
   margin: 0.2rem 0;
   padding: 1rem 0;
   width: 100%;
+  max-width: 400px;
   height: 200px;
   @media ${device.laptop}{
     margin: 0.1rem;

@@ -20,7 +20,9 @@ const App = () => {
       </MyMenuAction>
       <Route path="/" component={Home} exact />
       <Switch>
-        <Route path="/about" component={About} />
+        <Route path="/about">
+          <About />
+        </Route>
         <Route path="/what-is-network-science" component={NetScience} />
         <Route path="/blog" component={()=>window.location('http://blog.networked.in')} />
       </Switch>
