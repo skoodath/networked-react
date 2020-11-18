@@ -1,7 +1,8 @@
 import React, { useEffect, useRef } from 'react';
 import Particles from 'react-particles-js';
 import { Styledlanding, Styledheader } from '../../styles/landingstyle';
-import gsap from 'gsap';
+import { gsap, Power2} from 'gsap';
+import Scroll from './Landing/scrolldown';
 
 const Landing = () => {
 
@@ -13,23 +14,26 @@ const Landing = () => {
    useEffect(() => {
       gsap.fromTo([theRef.current, languageRef.current, ofRef.current, thoughtRef.current],{
           opacity: 0,
-          duration: 0.8,
-          y: -10,
+          y: -20,
           
         },
         {
           opacity: 1,
-          duration: 1,
+          duration: 0.5,
+          delay: 0.5,
           y: 0,
+          ease: Power2.easeOut,
           stagger: {
-            amount: 0.8
+            amount: 0.5
           }
         }
       )
+
    });
 
     return (
       <Styledlanding>
+        <Scroll />
         <Styledheader boldness="300" mysize="2rem" textt="lowercase"
           ref={theRef}
         >

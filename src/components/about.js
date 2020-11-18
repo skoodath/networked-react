@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react'
+import React from 'react'
 import { ThemeProvider } from 'styled-components';
 import SubHeader from './subheaders';
 import SubText from './subtext';
@@ -13,18 +13,9 @@ const theme = {
 
 const About = () => {
 
-   const aboutRef = useRef(null);
-
-   useEffect(() => {
-    aboutRef.current.scrollIntoView({
-      alignToTop: true
-    });
-  }, [])
     return (
       <>
-        <Styledabout hgt="100vh"
-          ref={aboutRef}
-          >
+        <Styledabout hgt="100vh" >
           <SubHeader text={`networked`} smalltext={`About`} />
           <SubText
             text={`NetworkED is an initiative that introduces this new way of thinking to children, using real-world networks`}

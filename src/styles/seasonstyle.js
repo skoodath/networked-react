@@ -37,6 +37,7 @@ export const AboutSeasonItems = styled.div`
         height: 2rem;
         color: #03243C;
     }
+
 `;
 
 /* Season One styled */

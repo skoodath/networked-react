@@ -1,25 +1,13 @@
 import React from 'react';
-import styled from 'styled-components';
 import SubHeader from '../subheaders';
 import FellowshipDesc from './Fellowship/fellowshippara';
 import SectionHeader from '../../components/sectionheader';
 import SubText from '../../components/subtext';
+import { StyledFellowship } from '../../styles/fellowshipstyle';
 
-
-const StyledFellowship = styled.section`
-    display: flex;
-    flex-direction: column;
-    padding: 0;
-    height: 100vh;
-    justify-content: center;
-    margin: 3rem auto 0;
-    width: 80%;
-    max-width: 1280px;
-`;
-
-const Fellowship = () => {
+const Fellowship = React.forwardRef((props, ref) => {
     return (
-        <>
+        <div ref={ref} props={props.children}>
             <StyledFellowship>
                 <SubHeader smalltext={`the`} text={`Fellowship`}></SubHeader>
                 <SubText
@@ -61,8 +49,8 @@ This acts as a launchpad for children to explore real world complexity through d
                 }/>
             </StyledFellowship>
             
-        </>
+        </div>
     )
-}
+});
 
 export default Fellowship;

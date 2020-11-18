@@ -2,7 +2,7 @@ import React, {useContext, useRef, useEffect } from 'react';
 import { Menu } from './../styles/menustyle';
 import MenuList from './Home/Menu/menuitems';
 import { MyMenucontext } from '../context/context';
-import { gsap, Power4, Power2 } from 'gsap';
+import { gsap, Expo } from 'gsap';
 import {CSSPlugin} from 'gsap/CSSPlugin';
 
 gsap.registerPlugin(CSSPlugin);
@@ -18,29 +18,30 @@ const MenuPage = () => {
             if(clickStatus){
                 gsap.fromTo(menuRef.current,
                     {
+                        height: 0,
+                        y: '-100%',
                         opacity: 0,
-                        x: '-100%',
-                        duration: 1,
-                        ease: Power2.easeOut,
-                        skewX: '15deg'
+                        visibility: 'hidden'
                     },
                     {
+                        height: '100vh',
+                        y: 0,
                         opacity: 1,
-                        x: '0%',
-                        duration: 1,
-                        ease: Power2.easeOut,
-                        skewX: '0deg'
+                        duration: 0.5,
+                        ease: Expo.easeOut,
+                        visibility: 'visible'
                     }
                 )
             } else if (!clickStatus) {
-                gsap.to(menuRef.current,
+                gsap.to(menuRef.current, 
                     {
+                        height: 0,
+                        y: '-100%',
                         opacity: 0,
-                        x: '-100%',
-                        duration: 1,
-                        ease: Power4.easeOut,
-                        skewX: '15deg',
-                        delay: 0.9
+                        duration: 0.5,
+                        delay: 0.9,
+                        visibility: 'hidden',
+                        ease: Expo.easeOut,
                     },
             
                 )

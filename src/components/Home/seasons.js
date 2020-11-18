@@ -7,7 +7,7 @@ import { BsArrowDown } from 'react-icons/bs';
 import { AboutSeasons, AboutSeasonItems, StyledSluethPara, SeasonOneHeader } from '../../styles/seasonstyle';
 import { PathwayIntro, ArrowWrap } from '../../styles/Reusable/Arrowstyle';
 
-import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
+import SwiperCore, { Navigation, Pagination, Scrollbar, A11y, EffectCoverflow } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import 'swiper/swiper.scss';
@@ -17,7 +17,7 @@ import 'swiper/components/scrollbar/scrollbar.scss';
 import SeasonOne from './Seasons/seasonone';
 import UpcomingSeasons from './Seasons/upcomingseasons';
 
-SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
+SwiperCore.use([Navigation, Pagination, Scrollbar, A11y, EffectCoverflow]);
 
 const Seasons = () => {
 
@@ -36,16 +36,24 @@ const Seasons = () => {
                 <SectionHeader
                     text={`Fellowship Pathway`} 
                 />
-                <AboutSeasonItems>
-                   
+                <AboutSeasonItems>               
                     <Swiper
-                        spaceBetween={30}
-                        slidesPerView={1}
-                        navigation
+                        spaceBetween={80}
+                        slidesPerView='auto'
                         pagination={{ clickable: true }}
-                        progressbar="true"
+                        wrapperTag='ul'
+                        effect='coverflow'
+                        grabCursor={true}
+                        centeredSlides={true}
+                        coverflowEffect={{
+                            rotate: 50,
+                            stretch: 0,
+                            depth: 100,
+                            modifier: 1,
+                            slideShadows: true,
+                        }}
                     >
-                            {pathway.map(paths => <SwiperSlide key={paths.id}>
+                            {pathway.map(paths => <SwiperSlide key={paths.id} tag='li'>
                                 <Pathway 
                                 pathwayStep={paths}
                                 />
@@ -80,6 +88,6 @@ const Seasons = () => {
             </AboutSeasons>
         </>
     )
-}
+};
 
 export default Seasons;

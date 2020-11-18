@@ -14,9 +14,9 @@ export const Menu = styled.section`
   z-index: 999;
   display: flex;
   flex-direction: column;
-  height: 100vh;
-  //opacity: ${({show}) => show? 1 : 0 };
-  opacity: 0;
+  height: 0;
+  opacity: ${({show}) => show? 1 : 0 };
+  //opacity: 0;
   //transform: ${({show}) => show? `scale3d(1.0,1.0,1.0)` : `scale3d(0.003,0.003,0.003)` };
   //transition-property: opacity, transform, border-radius;
   //perspective: 100px;

@@ -9,9 +9,11 @@ import {
     SubmitForm,
     FormErrorMsg
 } from '../../styles/aboutstyle';
-import axios from  'axios';
+//import axios from  'axios';
+import emailjs from 'emailjs-com';
 
 
+let userInfo;
 const MyInputField = ({ label, ...props }) => {
     const [field, meta] = useField(props);
     return (
@@ -25,7 +27,20 @@ const MyInputField = ({ label, ...props }) => {
     )
 }
 
+
+
 const JoinUs = () => {
+
+    const sendEmail = (e) => {
+        emailjs.sendForm('service_bvdhpqq', 'template_q2sehvf', e.target, 'user_VxY4OJHzwej0Cv5B4mDg9')
+        .then((result) =>    {
+            console.log(result.text);
+            alert('Thank you for your interest');
+        }, (error) => {
+            console.log(error.text);
+        });
+    }
+    
     return(
 
             <Formik
@@ -50,28 +65,34 @@ const JoinUs = () => {
                     message: Yup.string()
                     .max(150, "Should not be more than 150 Characters")
                 })}
-                onSubmit={(values, {setSubmitting, resetForm}) => {
-                        let userInfo = {
+
+                onSubmit={(values,{setSubmitting, resetForm}) => {
+                        
+
+                        /* axios.post("/send",userInfo)
+                        .then((response) => {
+                            console.log(response)
+                        }); */
+                        userInfo = {
                             firstname: values.firstName,
                             lastname: values.lastName,
                             email: values.email,
                             note: values.message
                         }
-
-                        axios.post("/send",userInfo)
-                        .then((response) => {
-                            console.log(response)
-                        });
+                        console.log(userInfo);
+                         
                         setTimeout(() => {
                             alert(`Thank you ${userInfo.firstname}! You email was sent`);
                             resetForm();
                             setSubmitting(false);
                     }, 400);
                  }}
+                
+                 
                 >
                     {props => (
                         <JoinForm>
-                            <Form>
+                            <Form onSubmit={sendEmail}>
                             <MyInputField
                                 label="First Name"
                                 name="firstName"

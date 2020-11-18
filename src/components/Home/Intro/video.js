@@ -3,12 +3,15 @@ import introvideo from '../../../videos/networkedexplainer.mp4';
 import { Styledvideo } from '../../../styles/introstyle';
 
 
-const IntroVideo = () => (
-  <Styledvideo>
-    <video muted controls>
+const IntroVideo = () => {
+  return(
+    <Styledvideo>
+    <video muted controls autoPlay>
       <source src={introvideo} type="video/mp4" />
     </video>
   </Styledvideo>
-);
+  )
+};
+
 
 export default IntroVideo;

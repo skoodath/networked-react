@@ -65,7 +65,12 @@ export const HamburgerNew = styled.div`
   height: 3.5rem;
   border-radius: 50%;
   background-color: #fff;
-  box-shadow: 0 0 2px #ddd;
+  box-shadow: 0 0 2px #aaa;
+  transition-property: box-shadow;
+  transition-duration: 0.5s;
+  &:hover{
+    box-shadow: 0 0 5px #ffd54d;
+  }
 `;
 
 export const HamburgerNewItemsOne = styled.span`
@@ -76,7 +81,7 @@ export const HamburgerNewItemsOne = styled.span`
   margin: 3px;
   width: 50%;
   border-radius: 10px;
-  transition-property: width, border-radius, height, transform, position;
+  transition-property: width, border-radius, height, transform, position, background-color;
   transition-duration: 0.5s;
   transform-origin: top left;
   transform: ${({ open }) => (open ? "translateX(0.3rem)" : "translateX(0)")};
@@ -86,6 +91,7 @@ export const HamburgerNewItemsOne = styled.span`
       border-radius: 50%;
       height: 0.43rem;
       width: 0.43rem;
+      background: #ffd54d;
     }
 
 `;
@@ -97,7 +103,7 @@ export const HamburgerNewItemsTwo = styled.span`
   margin: 3px;
   width: 50%;
   border-radius: 10px;
-  transition-property: width, border-radius, height, transform, position;
+  transition-property: width, border-radius, height, transform, position, background-color;
   transition-duration: 0.5s;
   transform-origin: top left;
   transform: ${({ open }) => (open ? "translateX(-0.3rem)" : "translateX(0)")};
@@ -107,6 +113,7 @@ export const HamburgerNewItemsTwo = styled.span`
       border-radius: 50%;
       height: 0.43rem;
       width: 0.43rem;
+      background: #ffd54d;
     }
 
 `;
