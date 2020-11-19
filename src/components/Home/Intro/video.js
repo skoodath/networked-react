@@ -1,17 +1,26 @@
 import React from 'react'
 import introvideo from '../../../videos/networkedexplainer.mp4';
-import { Styledvideo } from '../../../styles/introstyle';
+import { Styledvideo, Styledintro } from '../../../styles/introstyle';
 
 
-const IntroVideo = () => {
+const IntroVideo = React.forwardRef((props, ref) => {
   return(
-    <Styledvideo>
-    <video muted controls autoPlay>
-      <source src={introvideo} type="video/mp4" />
-    </video>
-  </Styledvideo>
+    <Styledintro
+      ref={ref}
+      topBottom='0'
+      leftRight='0'
+      hgt='auto'
+      bgColor="#999"
+    >
+      <Styledvideo>
+        <video muted controls autoPlay>
+          <source src={introvideo} type="video/mp4" />
+        </video>
+      </Styledvideo>
+    </Styledintro>
+    
   )
-};
+});
 
 
 export default IntroVideo;

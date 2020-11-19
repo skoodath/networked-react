@@ -40,7 +40,8 @@ const Seasons = () => {
                     <Swiper
                         spaceBetween={80}
                         slidesPerView='auto'
-                        pagination={{ clickable: true }}
+                        navigation
+                        pagination
                         wrapperTag='ul'
                         effect='coverflow'
                         grabCursor={true}

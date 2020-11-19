@@ -1,10 +1,14 @@
 import React from 'react';
-import { StyledintroWrapper, Styledintropara } from '../../../styles/introstyle';
+import { Styledintropara, Styledintro } from '../../../styles/introstyle';
 
-const IntroText = () => {
+const IntroText = React.forwardRef((props, ref) => {
 
     return (
-      <StyledintroWrapper>
+      <Styledintro
+        ref={ref}
+        topBottom='0'
+        leftRight='10%'
+      >
         <Styledintropara >
           Our minds make connections all the time, trying to make
           sense of the patterns we see and the information we absorb. These
@@ -14,8 +18,8 @@ const IntroText = () => {
           NetworkED introduces this new way of thinking to
           children, using networks interconnecting the real world.
         </Styledintropara>
-      </StyledintroWrapper>
+      </Styledintro>
     );
-}
+});
 
 export default IntroText;

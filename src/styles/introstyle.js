@@ -3,24 +3,17 @@ import styled from 'styled-components';
 export const Styledintro = styled.section`
   display: flex;
   flex-direction: column;
-  padding: 0;
+  background-color: ${({bgColor}) => bgColor ? bgColor : '#fff'};
+  //padding: 0 10%;
+  padding: ${({topBottom, leftRight}) => `${topBottom} ${leftRight}`};
   justify-content: center;
-  height: 100vh;
-  width: 80%;
-  max-width: 1280px;
+  height: ${({hgt}) => hgt? hgt : '100vh'};
+  width: 100%;
+  max-width: 1440px;
   margin: 0 auto;
 `;
 
 /* Intro Text Style */
-
-export const StyledintroWrapper = styled.article`
-  display: flex;
-  flex-direction: column;
-  padding: 1rem 0;
-  justify-content: center;
-  align-items: center;
-
-`;
 
 export const Styledintropara = styled.p`
     line-height: 2;
