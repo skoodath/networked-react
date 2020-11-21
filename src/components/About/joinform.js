@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Formik, Form, useField } from 'formik';
 import * as Yup from 'yup';
 import {
@@ -30,6 +30,13 @@ const MyInputField = ({ label, ...props }) => {
 
 
 const JoinUs = () => {
+
+    /* const [connect, setConnect] = useState({
+        firstName: '',
+        lastName: '',
+        email: '',
+        message: ''
+    })  */
 
     const sendEmail = (e) => {
         emailjs.sendForm('service_bvdhpqq', 'template_q2sehvf', e.target, 'user_VxY4OJHzwej0Cv5B4mDg9')

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import SectionHeader from '../../components/sectionheader';
 import Pathway from './Seasons/pathway';
 import pathway from './Seasons/pathwaycards';
@@ -16,10 +16,28 @@ import 'swiper/components/navigation/navigation.scss';
 //import 'swiper/components/scrollbar/scrollbar.scss';
 import SeasonOne from './Seasons/seasonone';
 import UpcomingSeasons from './Seasons/upcomingseasons';
+import gsap from 'gsap/gsap-core';
+import scrollTrigger from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(scrollTrigger);
 
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y, EffectCoverflow]);
 
 const Seasons = () => {
+
+    const itemRef = useRef(null);
+    
+    useEffect(()=>{
+
+        gsap.fromTo(itemRef.current, {
+        opacity: 0,
+        scale: 1.1
+        },{
+            opacity: 1,
+            scale: 1
+        }
+    )
+    },[]);
 
     return (
         <>
@@ -38,24 +56,18 @@ const Seasons = () => {
                 />
                 <AboutSeasonItems>               
                     <Swiper
-                        spaceBetween={80}
+                        spaceBetween={50}
                         slidesPerView='auto'
                         navigation
                         pagination
                         wrapperTag='ul'
-                        effect='coverflow'
                         grabCursor={true}
                         centeredSlides={true}
-                        coverflowEffect={{
-                            rotate: 50,
-                            stretch: 0,
-                            depth: 100,
-                            modifier: 1,
-                            slideShadows: true,
-                        }}
+                
                     >
                             {pathway.map(paths => <SwiperSlide key={paths.id} tag='li'>
-                                <Pathway 
+                                <Pathway
+                                ref={itemRef}
                                 pathwayStep={paths}
                                 />
                                 </SwiperSlide>)}   

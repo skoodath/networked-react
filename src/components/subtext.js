@@ -3,11 +3,11 @@ import { SubTextPara } from '../styles/Reusable/subtextstyle';
 
 
 const SubText = React.forwardRef((props, ref) => {
+    const {text} = props;
     return (
     <SubTextPara
         ref={ref}
-        {...props.children}
-    >{props.text}</SubTextPara>
+    >{text}</SubTextPara>
     )
 })
 

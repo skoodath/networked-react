@@ -8,23 +8,12 @@ import {
 } from '../../../styles/pathwaystyle';
 
 
-const Pathway = ({pathwayStep}) => {
-    const {alt, image, text} = pathwayStep;
+const Pathway = React.forwardRef((props, ref) => {
+    const {alt, image, text} = props.pathwayStep;
 
     return (
             <PathwayWrap
-             initial={{
-                 scale: 1.2,
-                 opacity: 0
-             }}
-             animate={{
-                opacity: 1,
-                scale: 1
-             }}
-             transition={{
-                 duration: 2,
-                 ease: [0.002, 1.0, -1, 0.98]
-             }}
+                ref={ref}
             >
                     <PathwayContentWrap>
                     <PathwayImgWrap>
@@ -38,6 +27,6 @@ const Pathway = ({pathwayStep}) => {
             </PathwayWrap>
 
     )
-}
+});
 
 export default Pathway;
