@@ -1,15 +1,12 @@
 import React from 'react';
-import { Styledintropara, Styledintro } from '../../../styles/introstyle';
+import { Styledintropara } from '../../../styles/introstyle';
 
 const IntroText = React.forwardRef((props, ref) => {
 
     return (
-      <Styledintro
-        ref={ref}
-        topBottom='0'
-        leftRight='10%'
-      >
-        <Styledintropara >
+        <Styledintropara
+            ref={ref}
+        >
           Our minds make connections all the time, trying to make
           sense of the patterns we see and the information we absorb. These
           interconnections when taught to be viewed holistically, as against
@@ -18,7 +15,6 @@ const IntroText = React.forwardRef((props, ref) => {
           NetworkED introduces this new way of thinking to
           children, using networks interconnecting the real world.
         </Styledintropara>
-      </Styledintro>
     );
 });
 

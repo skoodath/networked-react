@@ -28,14 +28,14 @@ export const Styledintropara = styled.p`
 /* Video Styling */
 
 export const Styledvideo = styled.div`
-    background: #272727;
+    background: #ffd54d;
     padding: 0;
     margin: 0;
+    display: flex;
+    justify-content: center;
     video{
         width: 100%;
         max-width: 1440px;
-        left: 0;
-        right: 0;
-        bottom: 0;
+        height: 100vh;
     }
 `;

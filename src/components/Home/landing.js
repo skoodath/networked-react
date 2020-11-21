@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import Particles from 'react-particles-js';
 import { Styledlanding, Styledheader } from '../../styles/landingstyle';
-import { gsap, Elastic} from 'gsap';
+import { gsap, Power4} from 'gsap';
 import {EasePack} from 'gsap/EasePack';
 import Scroll from './Landing/scrolldown';
 
@@ -17,19 +17,19 @@ const Landing = () => {
    useEffect(() => {
       gsap.fromTo([theRef.current, languageRef.current, ofRef.current, thoughtRef.current],{
           opacity: 0,
-          y: -50,
-          scale: 1.2
+          y: -20,
+          visibility: 'hidden',
+        
         },
         {
           opacity: 1,
           duration: 1,
-          delay: 1,
+          delay: 0.5,
           y: 0,
-          scale: 1,
-          ease: Elastic.easeOut,
-          stagger: {
-            amount: 0.5
-          }
+          ease: Power4.easeOut,
+          visibility: 'visible',
+          height: 'auto',
+          startAt: 'top'
         }
       )
 
