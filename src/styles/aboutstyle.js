@@ -40,7 +40,7 @@ export const StyledGetInvolvedWrapper = styled.div`
     flex-direction: column;
     margin: 0 auto;
     @media ${device.laptop}{
-        flex-direction: row;
+        flex-direction: column;
     }
 `;
 
@@ -48,7 +48,6 @@ export const StyledInnerWrapper = styled.div`
     display: flex;
     flex-direction: column;
     margin: 0 1rem 0 0;
-    justify-content: center;
     width: 100%;
 `;
 
@@ -60,9 +59,11 @@ padding: 0 0 2rem 0;
 letter-spacing: 2px;
 line-height: 2;
 font-size: 1.1em;
+justify-self: flex-start;
+align-self: flex-start;
 `;
 
-/* Join Us form */
+/* Join Us form
 
 export const JoinForm = styled.div`
     width: 100%;
@@ -114,7 +115,7 @@ export const SubmitForm = styled.button`
 `;
 export const FormErrorMsg = styled.p`
     color: #ff1e1e;
-`;
+`;*/
 
 /* Community Benefits Styling */
 
@@ -208,5 +209,64 @@ export const Overlay = styled.div`
   &:hover {
     opacity: 1;
   }
+`;
+
+/* New Form */
+
+export const ContactForm = styled.form`
+  display: flex;
+  flex-direction: column;
+  max-width: 700px;
+  width: 100%;
+  margin: 0 auto 0 0;
+  span{
+    color: #ff0000;
+  }
+`
+;
+
+export const ContactWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin: 1rem 0 0 0;
+`
+export const InputFields = styled.input`
+    padding: 0.3rem;
+    width: 100%;
+    border-radius: 5px;
+    border: 3px solid transparent;
+    background: #ddd;
+    font-size: 1.1rem;
+    font-family: 'montserrat';
+    display: block;
+    position: relative;
+    transition-timing-function: ease-in-out;
+    transition-property: border-bottom;
+    transition-duration: 0.5s;
+
+    &:focus{
+        outline: none;
+        background: #fff;
+        border-radius: 0;
+        border-bottom: 3px solid #ffd54d;
+    }
+`;
+
+export const InputLabels = styled.label`
+  letter-spacing: 0;
+  font-size: 0.9rem;
+`;
+
+export const MessageBox = InputFields.withComponent('textarea');
+
+export const SendButton = styled.button`
+    border: none;
+    background: #ffd54d;
+    padding: 0.5rem;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin: 1rem 0 0 0;
+    border-radius: 5px;
 `;
 

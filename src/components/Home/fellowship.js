@@ -21,7 +21,6 @@ const Fellowship = () => {
     const subtextRef = useRef(null);
     const rwtextRef = useRef(null);
     const designtextRef = useRef(null);
-    const containerRef = useRef(null);
 
     const animateSections = el => {
 
@@ -64,7 +63,6 @@ const Fellowship = () => {
   
     useEffect(()=>{
 
-        console.log(containerRef.current);
         animateSections(subheadRef.current);
         animateSections(sectionhead1Ref.current);
         animateSections(sectionhead2Ref.current);
@@ -75,7 +73,7 @@ const Fellowship = () => {
     });
 
     return (
-        <div>
+        <>
             <StyledFellowship
             >
                 <SubHeader 
@@ -129,7 +127,7 @@ This acts as a launchpad for children to explore real world complexity through d
                 />
             </StyledFellowship>
             
-        </div>
+        </>
     )
 };
 

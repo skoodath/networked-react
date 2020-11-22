@@ -46,7 +46,7 @@ const Intro = () => {
       <>
         <Styledintro
           topBottom='0'
-          leftRight='10%'
+          leftRight='0'
         >
           <SubText
             ref={introRef}
@@ -67,7 +67,7 @@ const Intro = () => {
         </Styledintro>
         <Styledintro
           topBottom='0'
-          leftRight='10%'
+          leftRight='0'
         >
           <IntroText
            ref={introtextRef}

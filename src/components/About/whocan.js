@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyledGetInvolved, StyledGetInvolvedWrapper, StyledInnerWrapper } from '../../styles/aboutstyle';
 import SectionHeader from '../../components/sectionheader';
-import JoinUs from './joinform';
+import Contact from './contact';
 
 
 const WhoCan = () => {
@@ -10,15 +10,15 @@ const WhoCan = () => {
         
         
         <StyledGetInvolvedWrapper>
+          <SectionHeader text="Get Involved" />
           <StyledInnerWrapper>
-            <SectionHeader text="Get Involved" />
+            
             <StyledGetInvolved>
             Anyone interested in how to enhance cognitive functions of children
             using network representations from real world experiences.
-        </StyledGetInvolved>
+            </StyledGetInvolved>
           </StyledInnerWrapper>
-          
-        <JoinUs />
+          <Contact />
         </StyledGetInvolvedWrapper>
         
       </>

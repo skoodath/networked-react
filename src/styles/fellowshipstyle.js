@@ -9,6 +9,7 @@ export const StyledFellowship = styled.section`
     margin: 3rem auto 0;
     width: 80%;
     max-width: 1280px;
+    overflow-x: hidden;
 `;
 
 
