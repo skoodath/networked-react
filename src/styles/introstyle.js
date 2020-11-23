@@ -8,7 +8,7 @@ export const Styledintro = styled.section`
   padding: ${({topBottom, leftRight}) => `${topBottom} ${leftRight}`};
   justify-content: center;
   height: ${({hgt}) => hgt? hgt : '100vh'};
-  width: 100%;
+  width: 80%;
   max-width: 1280px;
   margin: 0 auto;
 `;

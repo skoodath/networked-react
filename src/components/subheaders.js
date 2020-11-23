@@ -1,18 +1,22 @@
 import React from 'react';
-import { Header } from '../styles/Reusable/subheaderstyle';
+import { HeaderSmall, HeaderBig } from '../styles/Reusable/subheaderstyle';
 
-const SubHeader = React.forwardRef((props, ref) => {
+const SubHeader = React.forwardRef(({text, smalltext}, ref) => {
 
-    const {text, smalltext} = props;
+   //const {text, smalltext} = props
+
     return (
-    <Header
-      ref={ref}>
-      <span>
+      <>
+      <HeaderSmall
+        ref={ref}>
         {smalltext}
-      </span>
+      </HeaderSmall>
+    <HeaderBig
+      ref={ref}>
       {text}
-    </Header>
+    </HeaderBig>
+    </>
     )
-})
+});
 
 export default SubHeader;

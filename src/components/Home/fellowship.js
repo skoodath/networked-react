@@ -1,5 +1,4 @@
 import React, {useRef, useEffect} from 'react';
-import SubHeader from '../subheaders';
 import FellowshipDesc from './Fellowship/fellowshippara';
 import SectionHeader from '../../components/sectionheader';
 import SubText from '../../components/subtext';
@@ -8,6 +7,7 @@ import ScrollTrigger from 'gsap/ScrollTrigger';
 import EasePack from 'gsap/EasePack';
 import { gsap } from 'gsap/gsap-core';
 import { CSSPlugin } from 'gsap/CSSPlugin';
+import { HeaderBig, HeaderSmall } from '../../styles/Reusable/subheaderstyle';
 
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerEffect(EasePack);
@@ -16,11 +16,35 @@ gsap.registerPlugin(CSSPlugin);
 const Fellowship = () => {
 
     const subheadRef = useRef(null);
+    const smalltxt = useRef(null);
     const sectionhead1Ref = useRef(null);
     const sectionhead2Ref = useRef(null);
     const subtextRef = useRef(null);
     const rwtextRef = useRef(null);
     const designtextRef = useRef(null);
+
+    const animateTitle = (s, b) => {
+
+        gsap.from([s, b], {
+            scrollTrigger: {
+            trigger: s,
+            start: 'top 70%',
+            end: 'top 40%',
+            toggleActions: 'play pause reverse reverse',
+            scrub: 1
+        },
+        opacity: 0,
+        duration: 1,
+        x: 50,
+        scale: 1.05,
+        transformOrigin: 'top left',
+        stagger: {
+            amount: 0.5
+        }
+
+        }
+    )
+    }
 
     const animateSections = el => {
 
@@ -47,9 +71,10 @@ const Fellowship = () => {
                 scrollTrigger: {
                 trigger: el,
                 start: 'top 80%',
-                end: 'top 40%',
+                end: 'top center+=70',
                 toggleActions: 'play pause reverse reverse',
-                scrub: 1
+                scrub: 0.1,
+     
             },
             opacity: 0,
             duration: 1,
@@ -62,8 +87,8 @@ const Fellowship = () => {
 
   
     useEffect(()=>{
-
-        animateSections(subheadRef.current);
+        
+        animateTitle(smalltxt.current, subheadRef.current);
         animateSections(sectionhead1Ref.current);
         animateSections(sectionhead2Ref.current);
         animatePara(subtextRef.current);
@@ -76,11 +101,12 @@ const Fellowship = () => {
         <>
             <StyledFellowship
             >
-                <SubHeader 
-                    smalltext={`the`} 
-                    text={`Fellowship`}
+                <HeaderSmall
+                    ref={smalltxt}
+                >the</HeaderSmall>
+                <HeaderBig
                     ref={subheadRef}
-                    ></SubHeader>
+                >Fellowship</HeaderBig>
                 <SubText
                     text={`An immersive program for children to  investigate wicked problems in a highly interconnected world.`}
                     ref={subtextRef}

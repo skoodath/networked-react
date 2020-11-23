@@ -53,6 +53,7 @@ const Contact = () => {
                         name='fullname'
                         id='fullName'
                         ref={register()}
+                        
                     />
                     <span>{errors.fullname?.message}</span>
                 </ContactWrapper>
@@ -84,15 +85,14 @@ const Contact = () => {
                     />
                     <span>{errors.message?.message}</span>
                 </ContactWrapper>
-                <ContactWrapper>
                     <SendButton
                         type='submit'
                         name='submit'
                         id='submit'
+            
                     >
                         Send
                     </SendButton>
-                </ContactWrapper>
             </ContactForm>
         </>
     )

@@ -2,8 +2,8 @@ import React from 'react';
 import { SubTextPara } from '../styles/Reusable/subtextstyle';
 
 
-const SubText = React.forwardRef((props, ref) => {
-    const {text} = props;
+const SubText = React.forwardRef(({text}, ref) => {
+
     return (
     <SubTextPara
         ref={ref}

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import underline from '../../illustrations/underline.png';
 
-export const Header = styled.h2`
+export const HeaderBig = styled.h2`
   font-weight: 700;
   text-transform: uppercase;
   font-size: 3rem;
@@ -21,8 +21,8 @@ export const Header = styled.h2`
     background-position-x: left;
     background-position-y: bottom;
   }
-  span{
+`;
+export const HeaderSmall = styled.h2`
     font-weight: normal;
     display: block;
-  }
 `;

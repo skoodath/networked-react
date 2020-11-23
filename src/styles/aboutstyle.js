@@ -219,43 +219,68 @@ export const ContactForm = styled.form`
   max-width: 700px;
   width: 100%;
   margin: 0 auto 0 0;
-  span{
-    color: #ff0000;
-  }
-`
-;
+
+`;
+
 
 export const ContactWrapper = styled.div`
   display: flex;
   flex-direction: column;
   margin: 1rem 0 0 0;
-`
+  position: relative;
+  border-radius: 5px;
+  
+  span{
+    color: #ff0000;
+    display: block;
+    transition-property: color, height;
+    transition-duration: 500ms;
+    transition-timing-function: ease-in-out;
+  }
+
+`;
 export const InputFields = styled.input`
     padding: 0.3rem;
     width: 100%;
     border-radius: 5px;
-    border: 3px solid transparent;
-    background: #ddd;
+    border: 5px solid transparent;
+    background-color: #fff7df;
     font-size: 1.1rem;
     font-family: 'montserrat';
     display: block;
     position: relative;
-    transition-timing-function: ease-in-out;
-    transition-property: border-bottom;
+    transition-timing-function: ease-in;
+    transition-property: border-left;
     transition-duration: 0.5s;
-
+    transform-origin: left center;
     &:focus{
         outline: none;
         background: #fff;
-        border-radius: 0;
-        border-bottom: 3px solid #ffd54d;
+        border-left: 5px solid #ffd54d;
     }
 `;
+
+
 
 export const InputLabels = styled.label`
   letter-spacing: 0;
   font-size: 0.9rem;
+  z-index: 1;
+  margin: 0 0 0 0.2rem;
+  pointer-events: none;
+  transition-property: color;
+  transition-duration: 500ms;
+  transition-timing-function: ease-in-out;
+  ${ContactWrapper}:hover & {
+    color: #ffd54d;
+    font-weight: 700;
+  }
+  ${InputFields}:valid & {
+    color: red;
+  }
 `;
+
+
 
 export const MessageBox = InputFields.withComponent('textarea');
 

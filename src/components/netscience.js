@@ -1,18 +1,21 @@
 import React from 'react';
-import SubHeader from '../components/subheaders';
 import NetSciPara from './NetScience/netsciencepara';
 import SubText from './subtext';
 import { AppListWrap, NetWorkScience } from '../styles/netsciencestyle';
 import Application from './NetScience/netapplication';
 import NetCards from '../components/NetScience/netcarddata';
 import SectionHeader from './sectionheader';
+import { HeaderBig, HeaderSmall } from '../styles/Reusable/subheaderstyle';
 
 const NetScience = () => {
+
+    
 
     return (
         <>
         <NetWorkScience>
-            <SubHeader text={`Network Science`} smalltext={`What is`} />
+            <HeaderSmall>What is</HeaderSmall>
+            <HeaderBig>Network Science</HeaderBig>
             <SubText text={`Network Science is the study of patterns of connections in the real world`} />
         </NetWorkScience>
         <NetWorkScience>

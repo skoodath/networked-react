@@ -18,11 +18,12 @@ import {
 const Benefits = () => {
 
     return (
-      <BenefitContainer>
-        <SectionHeader text="
+      <>
+      <SectionHeader text="
           Community Benefits
         "
         />
+      <BenefitContainer>
         <CardWrapper>
         <CardItem className="actionable-item">
           <CardImage src={cardone} alt="Actionable Solutions" />
@@ -77,6 +78,7 @@ const Benefits = () => {
         </CardItem>
         </CardWrapper>
       </BenefitContainer>
+    </>
     );
 }
 

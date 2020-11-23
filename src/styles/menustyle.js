@@ -14,9 +14,8 @@ export const Menu = styled.section`
   z-index: 999;
   display: flex;
   flex-direction: column;
-  height: 0;
-  opacity: ${({show}) => show? 1 : 0 };
-  //opacity: 0;
+  //opacity: ${({show}) => show? 1 : 0 };
+  opacity: 0;
   //transform: ${({show}) => show? `scale3d(1.0,1.0,1.0)` : `scale3d(0.003,0.003,0.003)` };
   //transition-property: opacity, transform, border-radius;
   //perspective: 100px;
@@ -28,20 +27,22 @@ export const Menu = styled.section`
 
 /* Menu Item Style */
 
-export const Menuitems = styled.ul`
+export const MenuWrap = styled.ul`
   padding: 0 1rem;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  li {
+  
+`;
+
+export const Menuitems = styled.li`
     position: relative;
     margin: 0 0 3rem 0;
     cursor: pointer;
     color: #272727;
     text-transform: uppercase;
-  
     a{
       font-size: 2.5rem;
       position: relative;
@@ -60,8 +61,8 @@ export const Menuitems = styled.ul`
       &:hover {
         &::after {
             width: 100%;
-        }
+          }
         }
     }
-  }
 `;
+
