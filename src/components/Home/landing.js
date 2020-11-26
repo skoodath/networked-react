@@ -1,11 +1,12 @@
 import React, { useEffect, useRef } from 'react';
 import Particles from 'react-particles-js';
 import { Styledlanding, Styledheader } from '../../styles/landingstyle';
-import { gsap} from 'gsap';
+import { CSSPlugin, gsap} from 'gsap';
 import {EasePack} from 'gsap/EasePack';
 import Scroll from './Landing/scrolldown';
 
 gsap.registerPlugin(EasePack);
+gsap.registerPlugin(CSSPlugin);
 
 const Landing = () => {
 
@@ -13,6 +14,7 @@ const Landing = () => {
    let languageRef = useRef(null);
    let ofRef = useRef(null);
    let thoughtRef = useRef(null);
+   let particleRef = useRef(null);
 
    useEffect(() => {
 
@@ -71,6 +73,7 @@ const Landing = () => {
         </Styledheader>
 
         <Particles
+          ref={particleRef}
           style={{
             position: "absolute",
             width: "100%",
@@ -81,17 +84,17 @@ const Landing = () => {
           params={{
             particles: {
               number: {
-                value: 20,
+                value: 30,
                 density: {
                   enable: true,
-                  value_area: 1200,
+                  value_area: 1440,
                 },
               },
               color: {
-                value: "#977e2b",
+                value: "#fff",
               },
               shape: {
-                type: "circle",
+                type: "square",
                 stroke: {
                   width: 0,
                   color: "#000000",
@@ -106,34 +109,34 @@ const Landing = () => {
                 },
               },
               opacity: {
-                value: 0.6,
+                value: 0.8,
                 random: true,
                 anim: {
                   enable: true,
                   speed: 1,
-                  opacity_min: 0.1,
-                  sync: false,
+                  opacity_min: 0.2,
+                  sync: true,
                 },
               },
               size: {
-                value: 20,
+                value: 40,
                 random: true,
                 anim: {
                   enable: false,
-                  speed: 40,
-                  size_min: 0.1,
-                  sync: false,
+                  speed: 10,
+                  size_min: 0.3,
+                  sync: true,
                 },
               },
               line_linked: {
                 enable: true,
                 distance: 300,
-                color: "#977e2b",
+                color: "#fff",
                 opacity: 0.6,
-                width: 0.6,
+                width: 0.8,
               },
               move: {
-                enable: true,
+                enable: false,
                 speed: 1,
                 direction: "random",
                 random: true,

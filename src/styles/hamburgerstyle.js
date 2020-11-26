@@ -52,7 +52,7 @@ import styled from 'styled-components';
 
 export const HamburgerNew = styled.div`
   position: fixed;
-  display: flex;
+  display: none;
   flex-direction: column;
   justify-content: center;
   align-items: center;

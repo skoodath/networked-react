@@ -19,6 +19,7 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "^3.4.4",
     "react-slick": "^0.27.13",
+    "react-transition-group": "^4.4.1",
     "react-use": "^15.3.4",
     "slick-carousel": "^1.8.1",
     "styled-components": "^5.2.1",

@@ -9,5 +9,5 @@ export const SubTextPara = styled.p`
   padding: 1rem 0;
   font-size: 1.3rem;
   font-weight: 700;
-
+  visibility: hidden;
 `;

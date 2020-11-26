@@ -2,32 +2,21 @@ import styled from 'styled-components';
 
 /* Menu Style */
 
-export const Menu = styled.section`
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  background: #fff;
+export const Menu = styled.nav`
+  position: relative;
   color: #272727;
-  justify-content: space-around;
+  align-items: flex-end;
+  text-align: left;
   margin: 0;
   z-index: 999;
   display: flex;
-  flex-direction: column;
-  //opacity: ${({show}) => show? 1 : 0 };
-  opacity: 0;
-  //transform: ${({show}) => show? `scale3d(1.0,1.0,1.0)` : `scale3d(0.003,0.003,0.003)` };
-  //transition-property: opacity, transform, border-radius;
-  //perspective: 100px;
-  //transform-style: preserve-3d;
-  //transform-origin: top right;
-  //transition-duration: 2000ms;
-  //transition-timing-function: cubic-bezier(0.75, 0.0082, 0.0165, 1);
+  flex-direction: row;
+  justify-content: flex-end;
 `;
 
 /* Menu Item Style */
 
-export const MenuWrap = styled.ul`
+/* export const MenuWrap = styled.ul`
   padding: 0 1rem;
   text-align: center;
   display: flex;
@@ -35,16 +24,16 @@ export const MenuWrap = styled.ul`
   align-items: center;
   justify-content: center;
   
-`;
+`; */
 
-export const Menuitems = styled.li`
+export const Menuitems = styled.span`
     position: relative;
-    margin: 0 0 3rem 0;
+    margin: 0 1rem 0 0;
     cursor: pointer;
-    color: #272727;
+    color: #fff;
     text-transform: uppercase;
     a{
-      font-size: 2.5rem;
+      font-size: 1rem;
       position: relative;
       &::after {
       content: "";
@@ -56,7 +45,6 @@ export const Menuitems = styled.li`
       transition-timing-function: cubic-bezier(0.1, 0.5, 0.0065, 0.71);
       position: absolute;
       left: 0;
-      
       }
       &:hover {
         &::after {

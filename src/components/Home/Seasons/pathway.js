@@ -8,9 +8,8 @@ import {
 } from '../../../styles/pathwaystyle';
 
 
-const Pathway = React.forwardRef((props, ref) => {
-    const {alt, image, text} = props.pathwayStep;
-
+const Pathway = React.forwardRef(({pathwayStep}, ref) => {
+    const {alt, image, text} = pathwayStep;
     return (
             <PathwayWrap
                 ref={ref}

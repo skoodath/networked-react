@@ -13,14 +13,14 @@ export const MyMenuAction = props => {
     )
 };
 
-export const MyNetAppContext = createContext();
+export const MyBenefitContext = createContext();
 
-export const MyNetApplication = props => {
-    const [app, showApp] = useState(false);
+export const MyBenefits = props => {
+    const [showDesc, setShowDesc] = useState(false);
 
     return (
-        <MyNetAppContext.Provider value={[app, showApp]}>
+        <MyBenefitContext.Provider value={[showDesc, setShowDesc]}>
             {props.children}
-        </MyNetAppContext.Provider>
+        </MyBenefitContext.Provider>
     )
 }

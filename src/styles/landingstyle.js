@@ -12,7 +12,7 @@ export const Styledlanding = styled.section`
   padding: 2rem 0 0 0;
   position: relative;
   @media ${device.laptop} {
-    padding: 4rem 0 0 0;
+    padding: 2rem 0 0 0;
   }
 `;
 

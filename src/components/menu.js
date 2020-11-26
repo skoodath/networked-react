@@ -1,7 +1,6 @@
-import React, {useContext, useRef, useEffect } from 'react';
-import { Menu, Menuitems, MenuWrap } from './../styles/menustyle';
-import { MyMenucontext } from '../context/context';
-import { gsap, Expo, Power2 } from 'gsap';
+import React, {useRef } from 'react';
+import { Menu, Menuitems } from './../styles/menustyle';
+import { gsap } from 'gsap';
 import {CSSPlugin} from 'gsap/CSSPlugin';
 import { Link } from 'react-router-dom';
 //import { MenuList } from '../components/Home/Menu/menuitems';
@@ -11,15 +10,14 @@ gsap.registerPlugin(CSSPlugin);
 
 const MenuPage = () => {
 
-    const [open, setOpen] = useContext(MyMenucontext);
+    /* const [open, setOpen] = useContext(MyMenucontext);
     const handleMenu = () => {
         setOpen(!open);
-    }
+    } */
 
     const menuRef = useRef(null);
     const hmRef = useRef(null);
     const abtRef = useRef(null);
-    const netRef = useRef(null);
     const blogRef = useRef(null);
 
     /* const menuRefs = useRef([]);
@@ -32,14 +30,13 @@ const MenuPage = () => {
         
     }; */
 
-    useEffect(() => {
-
-            const tl = gsap.timeline();
+    /* useEffect(() => {
 
             let clickStatus = open;
-
+            
             if(clickStatus){
-                tl.to(menuRef.current,{
+                const tl1 = gsap.timeline();
+                /* tl1.to(menuRef.current,{
                     height: '100vh',
                     y: 0,
                     opacity: 1,
@@ -48,42 +45,42 @@ const MenuPage = () => {
                     ease: Expo.easeInOut
                 })
                     
-                    tl.to([hmRef.current ,abtRef.current, netRef.current, blogRef.current], {
-                        y: 0,
+                    tl1.to([hmRef.current ,abtRef.current, blogRef.current], {
+                        x: 0,
                         opacity: 1,
                         duration: 0.5,
                         stagger: {
                             amount: 0.5
                         },
-                        ease: Power2.easeInOut
-                    }, "-=0.5")
+                        ease: Expo.easeOut
+                    }, "-=0.3")
 
                     } else if (!clickStatus) {
+                        const tl2 = gsap.timeline();
 
-                    tl.to([hmRef.current ,abtRef.current, netRef.current, blogRef.current], {
-                        y: -100,
-                        opacity: 0,
+                    tl2.to([hmRef.current ,abtRef.current, blogRef.current], {
+                        x: 0,
+                        opacity: 1,
                         duration: 1,
-                        ease: Power2.easeInOut,
+                        ease: Expo.easeOut,
                         stagger: {
                             amount: 0.5
                         }
 
                     })
         
-                    tl.to(menuRef.current,{
+                    tl2.to(menuRef.current,{
                         height: 0,
                         y: '-100%',
-                        opacity: 0,
+                        opacity: 1,
                         duration: 0.8,
-                        ease: Expo.easeInOut
-                    }, "-=0.3")
+                        ease: Expo.easeOut
+                    }, "-=0.5")
                 }
-            })
+            },[open]) */
 
     return (
-        <Menu show={open} className="menuAnimation" ref={menuRef}>
-            <MenuWrap>
+        <Menu className="menuAnimation" ref={menuRef}>
                 {/* {MenuList.map( link =>
                     <Menuitems 
                         key={link.name}
@@ -102,7 +99,6 @@ const MenuPage = () => {
                 >
                     <Link
                         to="/" 
-                        onClick={handleMenu}
                         >
                           Home
                     </Link>
@@ -112,20 +108,8 @@ const MenuPage = () => {
                 >
                     <Link 
                         to="/about" 
-                        onClick={handleMenu}
                     >
                     About Us
-                    </Link>
-                </Menuitems>
-                <Menuitems
-                    ref={netRef}
-                >
-                    <Link
-                        to="/what-is-network-science" 
-                        onClick={handleMenu}
-
-                    >
-                        What is Network Science
                     </Link>
                 </Menuitems>
                 <Menuitems
@@ -139,7 +123,6 @@ const MenuPage = () => {
                         Blog
                     </Link>
                 </Menuitems>
-            </MenuWrap>
         </Menu>
     )
 };

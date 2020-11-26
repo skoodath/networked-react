@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { device } from './device';
 
 export const Styledintro = styled.section`
   display: flex;
@@ -8,9 +9,13 @@ export const Styledintro = styled.section`
   padding: ${({topBottom, leftRight}) => `${topBottom} ${leftRight}`};
   justify-content: center;
   height: ${({hgt}) => hgt? hgt : '100vh'};
-  width: 80%;
+  width: 100%;
   max-width: 1280px;
   margin: 0 auto;
+  @media ${device.laptop}{
+    padding: 0;
+    width: 80%;
+  }
 `;
 
 /* Intro Text Style */
@@ -30,12 +35,11 @@ export const Styledintropara = styled.p`
 export const Styledvideo = styled.div`
     background: #ffd54d;
     padding: 0;
-    margin: 0;
+    margin: 2rem 0;
     display: flex;
     justify-content: center;
     video{
         width: 100%;
         max-width: 1440px;
-        height: 100vh;
     }
 `;

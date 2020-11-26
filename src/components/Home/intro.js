@@ -1,7 +1,7 @@
 import React, {useRef, useEffect} from 'react';
 import SubText from '../subtext';
 import { Styledintro } from '../../styles/introstyle';
-import { gsap, Power2 } from 'gsap';
+import { gsap } from 'gsap';
 import scrollTrigger from 'gsap/ScrollTrigger';
 import IntroText from './Intro/introtext';
 import IntroVideo from './Intro/video';
@@ -16,22 +16,21 @@ const Intro = () => {
   const animateSections = el => {
 
       gsap.fromTo(el, {
-            opacity: 0,
+            autoAlpha: 0,
             y: 50
             },
             {
               scrollTrigger: {
               trigger: el,
-              start: 'top 70%',
+              start: 'top 60%',
               end: 'top 50%',
               toggleActions: 'play none reverse reverse',
-              scrub: 2,
           },
-          opacity: 1,
+          autoAlpha: 1,
           duration: 1,
-          delay: 0.3,
+          delay: 0.8,
           y: 0,
-          ease: Power2.easeOut
+          ease: 'Power4.easein'
           }
       )
   }
@@ -46,7 +45,7 @@ const Intro = () => {
       <>
         <Styledintro
           topBottom='0'
-          leftRight='0'
+          leftRight='10%'
         >
           <SubText
             ref={introRef}
@@ -67,7 +66,7 @@ const Intro = () => {
         </Styledintro>
         <Styledintro
           topBottom='0'
-          leftRight='0'
+          leftRight='10%'
         >
           <IntroText
            ref={introtextRef}

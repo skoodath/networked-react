@@ -7,7 +7,7 @@ import { BsArrowDown } from 'react-icons/bs';
 import { AboutSeasons, AboutSeasonItems, StyledSluethPara, SeasonOneHeader } from '../../styles/seasonstyle';
 import { PathwayIntro, ArrowWrap } from '../../styles/Reusable/Arrowstyle';
 
-import SwiperCore, { Navigation, Pagination, Scrollbar, A11y, EffectCoverflow } from 'swiper';
+import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import 'swiper/swiper.scss';
@@ -21,7 +21,7 @@ import scrollTrigger from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(scrollTrigger);
 
-SwiperCore.use([Navigation, Pagination, Scrollbar, A11y, EffectCoverflow]);
+SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 
 const Seasons = () => {
 

@@ -33,7 +33,7 @@ const Fellowship = () => {
             toggleActions: 'play pause reverse reverse',
             scrub: 1
         },
-        opacity: 0,
+        autoAlpha: 0,
         duration: 1,
         x: 50,
         scale: 1.05,
@@ -60,7 +60,7 @@ const Fellowship = () => {
             duration: 1,
             x: 50,
             scale: 1.05,
-
+            letterSpacing: '5px'
             }
         )
     }
@@ -76,10 +76,10 @@ const Fellowship = () => {
                 scrub: 0.1,
      
             },
-            opacity: 0,
-            duration: 1,
+            autoAlpha: 0,
+            duration: 0.5,
             delay: 1,
-            x: -50 
+            y: 50 
             }
         )
     }

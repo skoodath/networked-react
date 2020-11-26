@@ -1,5 +1,4 @@
 import React, { useEffect, useRef } from 'react'
-import { ThemeProvider } from 'styled-components';
 import SubText from './subtext';
 import AboutPara from './About/aboutpara';
 import WhoCan from './About/whocan';
@@ -7,16 +6,15 @@ import Benefit from './About/benefits';
 import { Styledabout } from '../styles/aboutstyle';
 import { gsap } from 'gsap/gsap-core';
 import scrollTrigger from 'gsap/ScrollTrigger';
-import { EasePack } from 'gsap/EasePack';
 import { HeaderBig, HeaderSmall } from '../styles/Reusable/subheaderstyle';
+import Header from './Home/header';
+import Scroll from './Home/Landing/scrolldown';
+
 
 gsap.registerPlugin(scrollTrigger);
-gsap.registerEffect(EasePack);
 
 
-const theme = {
-  main: "#ffd54d"
-};
+
 
 const About = () => {
 
@@ -25,56 +23,58 @@ const About = () => {
     const sectionhead1Ref = useRef(null);
     const subtextRef = useRef(null);
 
-    const animateLanding = (s, b) => {
+    const animateLanding = (s, b, el) => {
 
       const tl = gsap.timeline();
 
       tl.from(s, {
-        opacity: 0,
-        duration: 0.5,
-        x: 50,
+        autoAlpha: 0,
+        duration: 0.8,
+        delay: 0.5,
+        y: -10,
+        scale: 1.01,
         transformOrigin: 'top left',
-
-      }, '+=1')
-      tl.from(b, {
-        opacity: 0,
-        duration: 0.5,
-        x: 50,
-        transformOrigin: 'top left',
+        ease: 'Power4.easeOut'
       })
+      tl.from(b, {
+        autoAlpha: 0,
+        duration: 0.8,
+        x: -10,
+        scale: 1.02,
+        transformOrigin: 'top left',
+        ease: 'Power4.easeOut'
+      }, '-=0.3')
+      tl.from(el, {
+        autoAlpha: 0,
+        duration: 0.8,
+        y: 20,
+        transformOrigin: 'top left',
+        color: '#ffd54d',
+        ease: 'Power4.easeOut'
+        }, '-=0.5')
 
     };
 
-    const animateSubtext = el => {
-
-      gsap.from(el, {
-          opacity: 0,
-          duration: 0.5,
-          delay: 1.8,
-          x: -50 
-          }
-      )
-  }
 
     const animateSections = el => {
 
       gsap.fromTo(el, {
             opacity: 0,
-            y: 50
+            y: 150
             },
             {
               scrollTrigger: {
               trigger: el,
-              start: 'top 70%',
-              end: 'top 50%',
-              toggleActions: 'play none reverse reverse',
-              scrub: 2,
+              start: '5% 80%',
+              end: '5% 50%',
+              toggleActions: 'play none pause reverse',
+              scrub: 3,
               },
               opacity: 1,
-              duration: 0.7,
+              duration: 1,
               delay: 0.3,
               y: 0,
-
+              ease: 'Power2.easeInOut'
           }
       )
     }
@@ -82,8 +82,7 @@ const About = () => {
   
     useEffect(()=>{
 
-        animateLanding(smalltxt.current, subheadRef.current);
-        animateSubtext(subtextRef.current);
+        animateLanding(smalltxt.current, subheadRef.current, subtextRef.current);
         animateSections(sectionhead1Ref.current);
 
 
@@ -91,6 +90,8 @@ const About = () => {
 
     return (
       <>
+        <Header />
+        <Scroll />
         <Styledabout hgt="100vh" >
           <HeaderSmall
             ref={smalltxt}
@@ -112,11 +113,9 @@ const About = () => {
             ref={sectionhead1Ref}
           />
         </Styledabout>
-        <ThemeProvider theme={theme}>
           <Styledabout>
             <Benefit />
           </Styledabout>
-        </ThemeProvider>
         <Styledabout hgt="100vh">
           <WhoCan />
         </Styledabout>

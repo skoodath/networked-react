@@ -46,7 +46,7 @@ const Contact = () => {
                     <InputLabels
                         htmlFor='fullname'
                     >
-                        Full Name
+                        Your Name
                     </InputLabels>
                     <InputFields
                         type='text'
@@ -61,7 +61,7 @@ const Contact = () => {
                     <InputLabels
                         htmlFor='email'
                     >
-                        Email Address
+                        Your Email
                     </InputLabels>
                     <InputFields
                         type='email'
