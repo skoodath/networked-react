@@ -5,7 +5,7 @@ import pathway from './Seasons/pathwaycards';
 import socialsleuth from '../../illustrations/ss8.png';
 import { BsArrowDown } from 'react-icons/bs';
 import { AboutSeasons, AboutSeasonItems, StyledSluethPara, SeasonOneHeader } from '../../styles/seasonstyle';
-import { PathwayIntro, ArrowWrap } from '../../styles/Reusable/Arrowstyle';
+import { PathwayIntro, ArrowWrap, MySpan } from '../../styles/Reusable/Arrowstyle';
 
 import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -26,6 +26,30 @@ SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 const Seasons = () => {
 
     const itemRef = useRef(null);
+    const upcomingRef = useRef(null);
+
+    const animateTitle = (s, b) => {
+
+        gsap.from([s, b], {
+            scrollTrigger: {
+            trigger: s,
+            start: 'top 70%',
+            end: 'top 40%',
+            toggleActions: 'play pause reverse reverse',
+            scrub: 1
+        },
+        autoAlpha: 0,
+        duration: 1,
+        x: 50,
+        scale: 1.05,
+        transformOrigin: 'top left',
+        stagger: {
+            amount: 0.5
+        }
+
+        }
+    )
+    }
     
     useEffect(()=>{
 
@@ -35,15 +59,17 @@ const Seasons = () => {
         },{
             opacity: 1,
             scale: 1
-        }
-    )
+        });
+
+        animateTitle(upcomingRef.current);
+
     },[]);
 
     return (
         <>
             <AboutSeasons hgt="100vh" >
                 <PathwayIntro>
-                    <span>Explore</span>
+                    <MySpan spansize={'3rem'}>Explore</MySpan>
                     <ArrowWrap>
                         <BsArrowDown />
                     </ArrowWrap>
@@ -95,6 +121,7 @@ const Seasons = () => {
             </AboutSeasons>
             <AboutSeasons>
                 <SectionHeader
+                        ref={upcomingRef}
                         text={`Upcoming Seasons`} 
                     />
                 <UpcomingSeasons />

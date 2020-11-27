@@ -8,12 +8,11 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
-
-span{
+`;
+export const MySpan = styled.span`
   font-size: ${({ spansize }) => spansize? spansize : '1rem'};
   cursor: pointer;
   display: block;
-}
 `;
 
 export const ArrowWrap = styled.div`

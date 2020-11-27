@@ -17,10 +17,20 @@ const Benefitcards = React.forwardRef(({ benefitinfo }, ref) => {
     const {src, alt, title, para}  = benefitinfo;
 
     const showOverlay = () => {
-        setShowDesc(!showDesc);
+        if(!showDesc){
+            setShowDesc(true);
+        } else if ( showDesc){
+            setShowDesc(false);
+        }
+        
     };
+    const hideOverlay = () => {
+        if(showDesc){
+            setShowDesc(false);
+        }
+        
+    }
 
-    console.log(showDesc);
     const itemRef = useRef(null);
     const imageRef = useRef(null);
     const headerRef = useRef(null);
@@ -84,7 +94,6 @@ const Benefitcards = React.forwardRef(({ benefitinfo }, ref) => {
 
     useEffect(() => {
         let clickStatus = showDesc;
-        console.log(clickStatus);
         if (clickStatus){
             
             gsap.to(overlayRef.current,
@@ -93,7 +102,7 @@ const Benefitcards = React.forwardRef(({ benefitinfo }, ref) => {
                     x: 0,
                     duration: 0.7,
                     delay: 0.3,
-                    ease: 'Bounce.easeOut'
+                    ease: 'Expo.easeOut'
 
                 }
             )
@@ -104,7 +113,7 @@ const Benefitcards = React.forwardRef(({ benefitinfo }, ref) => {
                     x: '100%',
                     duration: 0.5,
                     delay: 0.3,
-                    ease: 'Power0.easeOut'
+                    ease: 'Expo.easeIn'
                 }
             )
         }
@@ -117,6 +126,7 @@ const Benefitcards = React.forwardRef(({ benefitinfo }, ref) => {
                 ref={itemRef}
                 //onClick={showOverlay}
                 onClick={showOverlay}
+                onMouseLeave={hideOverlay}
             >
                     <CardImage src={src} alt={alt} ref={imageRef} />
                     <CardHeader ref={headerRef}>{title}</CardHeader>

@@ -59,27 +59,28 @@ const About = () => {
     const animateSections = el => {
 
       gsap.fromTo(el, {
-            opacity: 0,
-            y: 150
+            autoAlpha: 0,
+            y: 100
             },
             {
               scrollTrigger: {
               trigger: el,
-              start: '5% 80%',
-              end: '5% 50%',
-              toggleActions: 'play none pause reverse',
-              scrub: 3,
+              start: '0% 65%',
+              end: '0% 30%',
+              toggleActions: 'play none none reverse',
               },
-              opacity: 1,
+              autoAlpha: 1,
               duration: 1,
               delay: 0.3,
               y: 0,
-              ease: 'Power2.easeInOut'
+              ease: 'Power4.easeOut'
           }
       )
     }
 
-  
+    useEffect(()=>{
+      window.scrollTo(0, 0);
+    },[]);
     useEffect(()=>{
 
         animateLanding(smalltxt.current, subheadRef.current, subtextRef.current);

@@ -5,10 +5,8 @@ export const Wrapper = styled.header`
     padding: 1rem;
     position: fixed;
     top: 0;
-    left: 15px;
-    right: 15px;
     display: flex;
-    height: 8vh;
+    height: 6.5rem;
     left: 0;
     right: 0;
     z-index: 999;

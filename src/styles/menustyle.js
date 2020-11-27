@@ -5,13 +5,13 @@ import styled from 'styled-components';
 export const Menu = styled.nav`
   position: relative;
   color: #272727;
-  align-items: flex-end;
+  align-items: center;
   text-align: left;
-  margin: 0;
+  margin: 0 0 0 auto;
   z-index: 999;
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
+  justify-content: flex-start;
 `;
 
 /* Menu Item Style */

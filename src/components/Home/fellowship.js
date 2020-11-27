@@ -36,7 +36,6 @@ const Fellowship = () => {
         autoAlpha: 0,
         duration: 1,
         x: 50,
-        scale: 1.05,
         transformOrigin: 'top left',
         stagger: {
             amount: 0.5
@@ -56,11 +55,11 @@ const Fellowship = () => {
                 toggleActions: 'play pause reverse reverse',
                 scrub: 1
             },
-            opacity: 0,
+            autoAlpha: 0,
             duration: 1,
-            x: 50,
             scale: 1.05,
-            letterSpacing: '5px'
+            transformOrigin: 'top left',
+            ease: 'Expo.easeOut'
             }
         )
     }
@@ -70,16 +69,16 @@ const Fellowship = () => {
         gsap.from(el, {
                 scrollTrigger: {
                 trigger: el,
-                start: 'top 80%',
-                end: 'top center+=70',
+                start: 'top 70%',
+                end: 'top 30%',
                 toggleActions: 'play pause reverse reverse',
-                scrub: 0.1,
+                scrub: 1,
      
             },
             autoAlpha: 0,
-            duration: 0.5,
-            delay: 1,
-            y: 50 
+            duration: 1,
+            delay: 1.5,
+            y: 150 
             }
         )
     }
