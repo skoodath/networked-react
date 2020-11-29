@@ -181,12 +181,12 @@ export const ContactWrapper = styled.div`
 
 `;
 export const InputFields = styled.input`
-    padding: 0.3rem;
+    padding: 0.2rem;
     width: 100%;
     border-radius: 5px;
     border: 5px solid transparent;
     background-color: #fff7df;
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-family: 'montserrat';
     display: block;
     position: relative;

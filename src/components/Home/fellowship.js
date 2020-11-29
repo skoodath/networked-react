@@ -8,6 +8,8 @@ import EasePack from 'gsap/EasePack';
 import { gsap } from 'gsap/gsap-core';
 import { CSSPlugin } from 'gsap/CSSPlugin';
 import { HeaderBig, HeaderSmall } from '../../styles/Reusable/subheaderstyle';
+import * as Scroll from 'react-scroll';
+import { Link, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll';
 
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerEffect(EasePack);
@@ -30,8 +32,8 @@ const Fellowship = () => {
             trigger: s,
             start: 'top 70%',
             end: 'top 40%',
-            toggleActions: 'play pause reverse reverse',
-            scrub: 1
+            toggleActions: 'play none reverse reverse',
+            scrub: 3
         },
         autoAlpha: 0,
         duration: 1,
@@ -45,19 +47,19 @@ const Fellowship = () => {
     )
     }
 
-    const animateSections = el => {
+    const animateSections = (el) => {
 
         gsap.from(el, {
                 scrollTrigger: {
                 trigger: el,
-                start: 'top 70%',
-                end: 'top 30%',
-                toggleActions: 'play pause reverse reverse',
-                scrub: 1
+                start: 'top 80%',
+                end: 'top 40%',
+                toggleActions: 'play none none none',
+                scrub: 3
             },
             autoAlpha: 0,
             duration: 1,
-            scale: 1.05,
+            scale: 1.1,
             transformOrigin: 'top left',
             ease: 'Expo.easeOut'
             }
@@ -69,16 +71,16 @@ const Fellowship = () => {
         gsap.from(el, {
                 scrollTrigger: {
                 trigger: el,
-                start: 'top 70%',
-                end: 'top 30%',
+                start: 'top 80%',
+                end: 'top 40%',
                 toggleActions: 'play pause reverse reverse',
-                scrub: 1,
-     
+                scrub: 3
+
             },
             autoAlpha: 0,
             duration: 1,
-            delay: 1.5,
-            y: 150 
+            delay: 0.5,
+            y: 50 
             }
         )
     }
@@ -90,16 +92,29 @@ const Fellowship = () => {
         animateTitle(smalltxt.current, subheadRef.current);
         animateSections(sectionhead1Ref.current);
         animateSections(sectionhead2Ref.current);
-        animatePara(subtextRef.current);
+        animateSections(subtextRef.current);
         animatePara(rwtextRef.current);
         animatePara(designtextRef.current);
 
     });
 
+    useEffect(()=>{
+        Events.scrollEvent.register('begin', (to, element)=>{
+            console.log('begin', to, element);
+        });
+        Events.scrollEvent.register('end', (to, element)=> {
+            console.log('end', to, element);
+        })
+    })
+
     return (
         <>
+            
             <StyledFellowship
-            >
+
+            topBottom='0'
+            leftRight='10%'
+            >   
                 <HeaderSmall
                     ref={smalltxt}
                 >the</HeaderSmall>
@@ -109,9 +124,13 @@ const Fellowship = () => {
                 <SubText
                     text={`An immersive program for children to  investigate wicked problems in a highly interconnected world.`}
                     ref={subtextRef}
-                />    
+                />
+                 
             </StyledFellowship>
-            <StyledFellowship>
+            <StyledFellowship
+                topBottom='0'
+                leftRight='10%'
+            >
                 <SectionHeader 
                     text=
                     {
@@ -132,7 +151,10 @@ This acts as a launchpad for children to explore real world complexity through d
                 ref={rwtextRef}
                 />
             </StyledFellowship>
-            <StyledFellowship>
+            <StyledFellowship
+                topBottom='0'
+                leftRight='10%'
+            >
                 <SectionHeader 
                     text=
                     {

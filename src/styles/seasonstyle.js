@@ -12,6 +12,7 @@ export const AboutSeasons = styled.section`
     width: 80%;
     max-width: 1280px;
     margin: 0 auto;
+    padding: 0;
     @media ${device.laptop}{
       height: 100vh;
     }
@@ -45,7 +46,7 @@ export const AboutSeasonItems = styled.div`
 export const SeasonOneContainer = styled.div`
 display: flex;
 flex-direction: column;
-padding: 2rem 0;
+padding: 0;
 `;
 
 export const StyledSluethPara = styled.p`
@@ -68,16 +69,14 @@ export const SeasonText = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  padding: 1rem 0;
+  align-items: flex-start;
+  padding: 0;
 `;
 
 export const NameYearText = styled.h2`
-    margin: 0 0 1rem;
+    margin: 0;
     font-size: 1.3rem;
-`;
-export const SeasonOneSubTitle = styled.h3`
-  font-size: 1.2rem;
+    font-weight: 500;
 `;
 
 /* Season Title styles */
@@ -87,7 +86,7 @@ export const UpcomingSeasonWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 0 0 2rem 0;
+  margin: 0;
   @media ${device.laptop}{
     flex-direction: row;
   }
@@ -95,10 +94,13 @@ export const UpcomingSeasonWrapper = styled.div`
 
 export const UpcomingSeasonsCard = styled.div`
   display: flex;
-  margin: 1rem;
+  margin: 0 0 3rem 0;
   align-items: center;
   width: 100%;
   position: relative;
+  @media ${device.laptop}{
+    margin: 0 2rem 0 0;
+  }
   &::before{
     position: absolute;
     content: '';

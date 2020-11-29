@@ -11,13 +11,13 @@ export const Wrapper = styled.header`
     right: 0;
     z-index: 999;
     background-image: #fff;
-
+    width: 100vw;
     `;
 
 export const Title = styled.div`
 position: relative;
 display: block;
-margin: 0 auto 0 0;
+margin: 0;
 background: #fff;
 justify-self: center;
 width: 7rem;

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { 
     ContactForm, 
     InputFields, 
@@ -27,23 +27,44 @@ const Contact = () => {
 
     
 
-    const {register, handleSubmit, errors} = useForm({
+    const {register, handleSubmit, errors, formState, reset} = useForm({
         resolver: yupResolver(schema)   
     });
 
-    const SubmitForm = (data,e) => {
+    const { isSubmitting, isSubmitSuccessful } = formState;
+
+    const SubmitForm = (data, e) => {
         emailjs.sendForm('gmail', 'gmail_template', e.target, 'user_VxY4OJHzwej0Cv5B4mDg9')
         .then((result) =>    {
             console.log(result.text);
+            reset({
+
+            })
             alert('Thank you! We will be in touch');
         }, (error) => {
             console.log(error.text);
         });
     };
 
+    useEffect(()=>{
+        if(isSubmitSuccessful){
+            setTimeout(()=>{
+                reset({
+                fullname: "",
+                email: "",
+                message: "",
+                isSubmitting: false
+            });
+            }, 500)
+            
+        }
+    })
+
     return (
         <>
-            <ContactForm onSubmit={handleSubmit(SubmitForm)}>
+            <ContactForm 
+                onSubmit={handleSubmit(SubmitForm)}
+                >
                 <ContactWrapper>
                     <InputLabels
                         htmlFor='fullname'
@@ -93,7 +114,7 @@ const Contact = () => {
                         id='submit'
             
                     >
-                        Send
+                        {isSubmitting ? 'Sending' : 'Send'}
                     </SendButton>
             </ContactForm>
         </>

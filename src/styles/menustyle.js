@@ -3,15 +3,13 @@ import styled from 'styled-components';
 /* Menu Style */
 
 export const Menu = styled.nav`
-  position: relative;
   color: #272727;
   align-items: center;
-  text-align: left;
   margin: 0 0 0 auto;
   z-index: 999;
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: center;
 `;
 
 /* Menu Item Style */

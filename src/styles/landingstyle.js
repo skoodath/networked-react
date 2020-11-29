@@ -1,5 +1,6 @@
 import styled, { keyframes } from 'styled-components';
 import { device } from './device';
+import { FaArrowDown } from 'react-icons/fa';
 
 export const Styledlanding = styled.section`
   height: 100vh;
@@ -52,9 +53,10 @@ export const Scrolldown = styled.div`
     display: inline-block;
     margin: 0 0 1rem 0;
   }
-  svg{
-    display: inline-block;
+`;
+
+export const ScrollArrow = styled(FaArrowDown)`
+  display: inline-block;
     font-size: 1.5rem;
-    animation: 1.5s ${bounce} cubic-bezier(0.0075, 0.52, 0.00095, 1) infinite;
-  }
+    animation: 1.5s ${bounce} cubic-bezier(0.0075, 0.52, 0.0095, 0.6) infinite;
 `;

@@ -1,17 +1,19 @@
 import React from 'react';
-import { Scrolldown } from '../../../styles/landingstyle';
-import { FaArrowDown } from 'react-icons/fa';
+import { ScrollArrow, Scrolldown } from '../../../styles/landingstyle';
 
 
-const Scroll = () => {
+
+const Scroll = React.forwardRef((props, ref) => {
     
     return (
-        <Scrolldown>
+        <Scrolldown
+            ref={ref}
+        >
         <span>Scroll Down</span>
-        <FaArrowDown />
+        <ScrollArrow />
         </Scrolldown>
     )
     
-}
+});
 
 export default Scroll;

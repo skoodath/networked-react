@@ -44,17 +44,17 @@ const Benefitcards = React.forwardRef(({ benefitinfo }, ref) => {
         tl.from(itemRef.current, {
             scrollTrigger: {
             trigger: itemRef.current,
-            start: 'top 70%',
-            end: 'top 40%',
+            start: 'top 80%',
+            end: 'top 50%',
             toggleActions: 'play pause reverse reverse',
             scrub: 1
         },
         autoAlpha: 0,
         duration: 1,
-        y: 50,
-        scale: 1.05,
-        transformOrigin: 'top left',
-
+        delay: 1,
+        scale: 0.8,
+        transformOrigin: 'center left',
+        ease: 'Expo.easeOut'
         })
         tl.from(imageRef.current, {
             scrollTrigger: {
@@ -62,13 +62,14 @@ const Benefitcards = React.forwardRef(({ benefitinfo }, ref) => {
                 start: 'top 70%',
                 end: 'top 40%',
                 toggleActions: 'play pause reverse reverse',
-                scrub: 1
+                scrub: 3
             },
             autoAlpha: 0,
             duration: 1,
             x: -50,
-            scale: 1.05,
-            transformOrigin: 'top left',
+            scale: 0.05,
+            transformOrigin: 'center center',
+            ease: 'Expo.easeOut'
         })
         tl.from(headerRef.current, {
             scrollTrigger: {
@@ -76,14 +77,13 @@ const Benefitcards = React.forwardRef(({ benefitinfo }, ref) => {
                 start: 'top 70%',
                 end: 'top 40%',
                 toggleActions: 'play pause reverse reverse',
-                scrub: 1
+                scrub: 3
             },
             autoAlpha: 0,
             duration: 1,
-            x: 50,
-            scale: 1.05,
-            transformOrigin: 'top right',
-
+            scale: 1.5,
+            transformOrigin: 'center center',
+            ease: 'Expo.easeOut'
         })
     }
 

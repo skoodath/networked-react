@@ -31,38 +31,38 @@ const UpcomingSeasons = () => {
                     stagger: {
                         amount: 1
                     },
-                    ease: 'Power4.easeOut'
+                    ease: 'Expo.easeOut'
                 })
     })
  
     return (
         <UpcomingSeasonWrapper>
                     
-                    <UpcomingSeasonsCard ref={epiRef}>
-                        <UpcomingImageWrapper>
-                            <img src={Epidemic} alt="" />
-                        </UpcomingImageWrapper>
-                        <UpcomingSeasonHeader>
-                            Epidemic Intelligence
-                        </UpcomingSeasonHeader>
-                    </UpcomingSeasonsCard>
-                    <UpcomingSeasonsCard ref={bioRef}>
-                        <UpcomingImageWrapper>
-                            <img src={BioInvest} alt="" />   
-                        </UpcomingImageWrapper>
-                        <UpcomingSeasonHeader>
-                            Bio Investigators
-                        </UpcomingSeasonHeader>
-                    </UpcomingSeasonsCard>
-                    <UpcomingSeasonsCard ref={opsRef}>
-                        <UpcomingImageWrapper>
-                            <img src={fakenews} alt="" />
-                        </UpcomingImageWrapper>
-                        <UpcomingSeasonHeader>
-                            Operation Fake News
-                        </UpcomingSeasonHeader>
-                    </UpcomingSeasonsCard>
-                </UpcomingSeasonWrapper>
+            <UpcomingSeasonsCard ref={epiRef}>
+                <UpcomingImageWrapper>
+                    <img src={Epidemic} alt="" />
+                </UpcomingImageWrapper>
+                <UpcomingSeasonHeader>
+                    Epidemic Intelligence
+                </UpcomingSeasonHeader>
+            </UpcomingSeasonsCard>
+            <UpcomingSeasonsCard ref={bioRef}>
+                <UpcomingImageWrapper>
+                    <img src={BioInvest} alt="" />   
+                </UpcomingImageWrapper>
+                <UpcomingSeasonHeader>
+                    Bio Investigators
+                </UpcomingSeasonHeader>
+            </UpcomingSeasonsCard>
+            <UpcomingSeasonsCard ref={opsRef}>
+                <UpcomingImageWrapper>
+                    <img src={fakenews} alt="" />
+                </UpcomingImageWrapper>
+                <UpcomingSeasonHeader>
+                    Operation Fake News
+                </UpcomingSeasonHeader>
+            </UpcomingSeasonsCard>
+        </UpcomingSeasonWrapper>
     )
 };
 

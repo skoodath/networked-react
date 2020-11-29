@@ -1,7 +1,6 @@
 import React from 'react';
 import Subtitle from './subtitle';
-import { FaTwitter, FaLinkedinIn, FaInstagram, FaVimeoV } from 'react-icons/fa';
-import { SocialLinks, SocialItems } from '../../styles/footerstyle';
+import { SocialLinks, SocialItems, TwitterIcon, LinkedIcon, InstaIcon, VimeoIcon } from '../../styles/footerstyle';
 
 
 const SocialMedia = () => {
@@ -11,22 +10,22 @@ const SocialMedia = () => {
         <SocialItems>
           <li>
             <a href="https://twitter.com/networkED_in">
-              <FaTwitter />
+              <TwitterIcon />
             </a>
           </li>
           <li>
             <a href="https://www.instagram.com/networkedkids/">
-              <FaInstagram />
+              <InstaIcon />
             </a>
           </li>
           <li>
             <a href="https://www.linkedin.com/company/networkedkids">
-              <FaLinkedinIn />
+              <LinkedIcon />
             </a>
           </li>
           <li>
             <a href="/credit">
-              <FaVimeoV />
+              <VimeoIcon />
             </a>
           </li>
         </SocialItems>

@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { device } from './device';
+import { FaTwitter, FaLinkedinIn, FaInstagram, FaVimeoV, FaEnvelope } from 'react-icons/fa';
 
 /* Footer main skills */
 
@@ -46,12 +47,13 @@ export const ContactLinks = styled.article`
 
 export const MyEmail = styled.span`
     color: #ffffffbd;
-    svg{
-        fill: #ffffffbd;
-        height: 1.5rem;
-        width: 1.5rem;
-        vertical-align: middle;
-    }
+`;
+
+export const MailIcon = styled(FaEnvelope)`
+    fill: #ffffffbd;
+    height: 1.5rem;
+    width: 1.5rem;
+    vertical-align: middle;
 `;
 
 /* Footer logo styling */
@@ -129,7 +131,11 @@ export const SocialItems = styled.ul`
     a {
       color: #ffffffbd;
       text-decoration: underline;
-      svg{
+    }
+  }
+`;
+
+export const TwitterIcon = styled(FaTwitter)`
         fill: #ffffffbd;
         height: 1.5rem;
         width: 1.5rem;
@@ -137,7 +143,8 @@ export const SocialItems = styled.ul`
         &:hover{
           fill: #dadada;
         }
-      }
-    }
-  }
 `;
+
+export const LinkedIcon = TwitterIcon.withComponent(FaLinkedinIn);
+export const InstaIcon = TwitterIcon.withComponent(FaInstagram);
+export const VimeoIcon = TwitterIcon.withComponent(FaVimeoV);

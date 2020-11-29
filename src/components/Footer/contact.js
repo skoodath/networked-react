@@ -1,7 +1,6 @@
 import React from 'react';
 import Subtitle from "./subtitle";
-import { FaEnvelope } from "react-icons/fa";
-import { ContactLinks, MyEmail } from '../../styles/footerstyle';
+import { ContactLinks, MailIcon, MyEmail } from '../../styles/footerstyle';
 
 
 const ContactUs = () => {
@@ -9,7 +8,7 @@ const ContactUs = () => {
             <ContactLinks>
                 <Subtitle title={`Contact Us`} />
                 <MyEmail>
-                    <FaEnvelope /> archana@networked.in
+                    <MailIcon /> archana@networked.in
                 </MyEmail>
             </ContactLinks>
         )

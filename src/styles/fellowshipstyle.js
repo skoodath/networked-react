@@ -1,16 +1,22 @@
 import styled from 'styled-components';
 import underline from '../illustrations/underline.png';
+import { device } from './device';
 
 export const StyledFellowship = styled.section`
     display: flex;
     flex-direction: column;
-    padding: 0;
+    padding: ${({topBottom, leftRight}) => `${topBottom} ${leftRight}`};
     height: 100vh;
     justify-content: center;
     margin: 3rem auto 0;
-    width: 80%;
+    width: 100%;
     max-width: 1280px;
     overflow-x: hidden;
+    position: relative;
+    @media ${device.laptop}{
+    padding: 0;
+    width: 80%;
+  }
 `;
 
 

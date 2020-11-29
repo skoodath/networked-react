@@ -21,13 +21,13 @@ const Benefits = () => {
               start: 'top 70%',
               end: 'top 30%',
               toggleActions: 'play pause reverse reverse',
-              scrub: 1
+              scrub: 3
           },
           opacity: 0,
           duration: 1,
-          x: 50,
-          scale: 1.05,
-          letterSpacing: '5px'
+          scale: 1.1,
+          letterSpacing: '5px',
+          ease: 'Expo.easeOut'
           }
       )
   }
@@ -39,12 +39,13 @@ const Benefits = () => {
             start: 'top 70%',
             end: 'top 30%',
             toggleActions: 'play pause pause pause',
-            scrub: 1
+            scrub: 3
         },
         opacity: 0,
         duration: 1,
         scale: 1.05,
-        letterSpacing: '5px'
+        letterSpacing: '5px',
+        ease: 'Expo.easeOut'
         }
     )
 }

@@ -2,9 +2,8 @@ import React, { useEffect, useRef } from 'react';
 import SectionHeader from '../../components/sectionheader';
 import Pathway from './Seasons/pathway';
 import pathway from './Seasons/pathwaycards';
-import socialsleuth from '../../illustrations/ss8.png';
 import { BsArrowDown } from 'react-icons/bs';
-import { AboutSeasons, AboutSeasonItems, StyledSluethPara, SeasonOneHeader } from '../../styles/seasonstyle';
+import { AboutSeasons, AboutSeasonItems } from '../../styles/seasonstyle';
 import { PathwayIntro, ArrowWrap, MySpan } from '../../styles/Reusable/Arrowstyle';
 
 import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
@@ -28,27 +27,23 @@ const Seasons = () => {
     const itemRef = useRef(null);
     const upcomingRef = useRef(null);
 
-    const animateTitle = (s, b) => {
+    const animateTitle = el => {
 
-        gsap.from([s, b], {
+        gsap.from(el, {
             scrollTrigger: {
-            trigger: s,
-            start: 'top 70%',
-            end: 'top 40%',
+            trigger: el,
+            start: 'top 80%',
+            end: 'top 50%',
             toggleActions: 'play pause reverse reverse',
-            scrub: 1
+            scrub: 3
         },
         autoAlpha: 0,
         duration: 1,
-        x: 50,
-        scale: 1.05,
+        scale: 1.1,
         transformOrigin: 'top left',
-        stagger: {
-            amount: 0.5
-        }
+        ease:'Expo.easeOut'
 
-        }
-    )
+        })
     }
     
     useEffect(()=>{
@@ -62,6 +57,7 @@ const Seasons = () => {
         });
 
         animateTitle(upcomingRef.current);
+
 
     },[]);
 
@@ -101,23 +97,10 @@ const Seasons = () => {
                     </Swiper>
                 </AboutSeasonItems>
             </AboutSeasons>
-            <AboutSeasons>
+            <AboutSeasons hgt="100vh">
                 <SeasonOne />
                 
-                <PathwayIntro>
-                    <span spansize="3rem">Know More</span>
-                    <ArrowWrap>
-                        <BsArrowDown />
-                    </ArrowWrap>
-                    
-                </PathwayIntro>
-            </AboutSeasons>
-            <AboutSeasons hgt="100vh">
-                <img src={socialsleuth} alt="Social Sleuths" style={{width: '100px'}} />
-                <SeasonOneHeader>Social Sleuths</SeasonOneHeader>
-                <StyledSluethPara>
-                    In Season #1, kids explore the world of communities, about how relationships between people, artifacts, and ideas can be analyzed and interpreted through social network mapping. Kids will investigate and generate data maps of these relationships to help understand how people communicate and exchange information in any given setting, and even track down some critical power hubs that can bring massive social change through real world digital networks. Stay tuned for updates on the Social Sleuths!
-                </StyledSluethPara>
+                
             </AboutSeasons>
             <AboutSeasons>
                 <SectionHeader

@@ -20,29 +20,29 @@ const Landing = () => {
 
       gsap.from(theRef.current,{
         opacity: 0,
-        y: 100,
+        y: 50,
         duration: 1,
-        delay: 1
+        delay: 0.5
 
       });
       gsap.from(ofRef.current,{
         opacity: 0,
-        y: -100,
+        y: -50,
         duration: 1,
-        delay: 1
+        delay: 0.5
 
       });
 
-      gsap.from(languageRef.current,{
-          opacity: 0,
+      gsap.to(languageRef.current,{
+          opacity: 1,
           duration: 1,
-          delay: 2
+          delay: 1.5
         
         });
-        gsap.from(thoughtRef.current,{
-          opacity: 0,
+        gsap.to(thoughtRef.current,{
+          opacity: 1,
           duration: 1,
-          delay: 2
+          delay: 1.5
         });
 
    });
@@ -84,7 +84,7 @@ const Landing = () => {
           params={{
             particles: {
               number: {
-                value: 30,
+                value: 10,
                 density: {
                   enable: true,
                   value_area: 1440,
@@ -94,7 +94,7 @@ const Landing = () => {
                 value: "#fff",
               },
               shape: {
-                type: "square",
+                type: ['square', 'circle', 'triangle'],
                 stroke: {
                   width: 0,
                   color: "#000000",

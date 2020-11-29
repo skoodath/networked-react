@@ -12,25 +12,29 @@ const Intro = () => {
   const introRef = useRef(null);
   const videoRef = useRef(null);
   const introtextRef = useRef(null);
+  const containerRef = useRef(null);
+
       
   const animateSections = el => {
 
       gsap.fromTo(el, {
             autoAlpha: 0,
-            y: 50
+            scale: 0.9,
+            y: 70
             },
             {
               scrollTrigger: {
               trigger: el,
-              start: 'top 60%',
+              start: 'top 70%',
               end: 'top 50%',
-              toggleActions: 'play none reverse reverse',
+              toggleActions: 'restart none reverse reverse',
+              scrub: 3
           },
           autoAlpha: 1,
           duration: 1,
-          delay: 0.8,
+          scale: 1,
           y: 0,
-          ease: 'Power4.easein'
+          ease: 'Expo.easeOut'
           }
       )
   }
@@ -39,11 +43,13 @@ const Intro = () => {
       animateSections(introRef.current);
       animateSections(videoRef.current);
       animateSections(introtextRef.current);
+
   });
 
     return (
       <>
         <Styledintro
+          ref={containerRef}
           topBottom='0'
           leftRight='10%'
         >
