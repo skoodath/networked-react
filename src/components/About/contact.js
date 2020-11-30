@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { 
     ContactForm, 
     InputFields, 
@@ -10,6 +10,7 @@ import { useForm } from 'react-hook-form';
 import emailjs from 'emailjs-com';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from 'yup';
+import { useState } from 'react';
 
 const schema = Yup.object().shape({
         fullname: Yup.string()
@@ -27,11 +28,11 @@ const Contact = () => {
 
     
 
-    const {register, handleSubmit, errors, formState, reset} = useForm({
+    const {register, handleSubmit, errors, reset} = useForm({
         resolver: yupResolver(schema)   
     });
 
-    const { isSubmitting, isSubmitSuccessful } = formState;
+    
 
     const SubmitForm = (data, e) => {
         emailjs.sendForm('gmail', 'gmail_template', e.target, 'user_VxY4OJHzwej0Cv5B4mDg9')
@@ -44,21 +45,21 @@ const Contact = () => {
         }, (error) => {
             console.log(error.text);
         });
+        reset({
+            fullname: "",
+            email: "",
+            message: ""
+        })
     };
+    const [mousedn, setMousedn] = useState(false);
 
-    useEffect(()=>{
-        if(isSubmitSuccessful){
-            setTimeout(()=>{
-                reset({
-                fullname: "",
-                email: "",
-                message: "",
-                isSubmitting: false
-            });
-            }, 500)
-            
-        }
-    })
+    const animateCaption = () =>{
+        setMousedn(!mousedn);
+        setTimeout(()=>{
+            setMousedn(mousedn)
+        }, 1500);
+
+    }
 
     return (
         <>
@@ -112,9 +113,9 @@ const Contact = () => {
                         type='submit'
                         name='submit'
                         id='submit'
-            
+                        onClick={animateCaption}
                     >
-                        {isSubmitting ? 'Sending' : 'Send'}
+                        {mousedn ? 'Sending...' : 'Send' }
                     </SendButton>
             </ContactForm>
         </>

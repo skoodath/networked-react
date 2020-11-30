@@ -115,7 +115,7 @@ const Landing = () => {
                   enable: true,
                   speed: 1,
                   opacity_min: 0.2,
-                  sync: true,
+                  sync: false,
                 },
               },
               size: {

@@ -58,7 +58,7 @@ margin: 0;
 padding: 0 0 2rem 0;
 letter-spacing: 2px;
 line-height: 2;
-font-size: 1.1em;
+font-size: 1em;
 justify-self: flex-start;
 align-self: flex-start;
 `;
@@ -119,7 +119,7 @@ export const CardItem = styled.li`
 
 export const CardHeader = styled.h3`
     font-weight: bold;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     @media ${device.laptop}{
       font-size: 1rem;
     }
@@ -157,9 +157,12 @@ export const Overlay = styled.div`
 export const ContactForm = styled.form`
   display: flex;
   flex-direction: column;
-  max-width: 700px;
   width: 100%;
   margin: 0 auto 0 0;
+  @media ${device.laptop}{
+    width: 50vw;
+    max-width: 600px;
+  }
 
 `;
 
@@ -227,12 +230,20 @@ export const MessageBox = InputFields.withComponent('textarea');
 
 export const SendButton = styled.button`
     border: none;
-    background: #ffd54d;
-    padding: 0.5rem;
-    font-size: 1.5rem;
+    background-color: #ffd54d;
+    padding: 0.2rem 0.5rem;
+    font-size: 1.3rem;
     text-transform: uppercase;
     cursor: pointer;
     margin: 1rem 0 0 0;
     border-radius: 5px;
+    transition: background-color 0.7s ease-in-out;
+    &:hover{
+      background-color: #ffd54dab;
+    }
+    &:active{
+      font-size: 1.2rem;
+      padding: 0.25rem 0.55rem;
+    }
 `;
 

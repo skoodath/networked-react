@@ -14,8 +14,11 @@ const GlobalStyle = createGlobalStyle`
   scroll-behavior: smooth;
   font-size: 12px;
   color: #272727;
+  @media ${device.tablet}{
+    font-size: 14px;
+  }
   @media ${device.laptop}{
-    font-size: 16px;
+    font-size: 14px;
   }
   @media ${device.laptopLG}{
     font-size: 20px;

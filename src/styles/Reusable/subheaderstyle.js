@@ -3,7 +3,7 @@ import underline from '../../illustrations/underline.png';
 
 export const HeaderBig = styled.h2`
   font-weight: 700;
-  text-transform: uppercase;
+  text-transform: ${({textcase}) => !textcase? 'none': textcase};
   font-size: 3rem;
   letter-spacing: 3px;
   padding: 0;

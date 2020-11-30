@@ -25,7 +25,7 @@ const Intro = () => {
             {
               scrollTrigger: {
               trigger: el,
-              start: 'top 70%',
+              start: 'top 80%',
               end: 'top 50%',
               toggleActions: 'restart none reverse reverse',
               scrub: 3

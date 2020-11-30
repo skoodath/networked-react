@@ -102,7 +102,7 @@ const About = () => {
           <HeaderBig 
             ref={subheadRef}
           >
-            networked
+            networkED
           </HeaderBig>
           <SubText
             text={`NetworkED is an initiative that introduces this new way of thinking to children, using real-world networks`}
@@ -117,7 +117,7 @@ const About = () => {
           <Styledabout>
             <Benefit />
           </Styledabout>
-        <Styledabout hgt="100vh">
+        <Styledabout hgt="120vh">
           <WhoCan />
         </Styledabout>
 

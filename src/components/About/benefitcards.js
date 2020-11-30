@@ -56,35 +56,35 @@ const Benefitcards = React.forwardRef(({ benefitinfo }, ref) => {
         transformOrigin: 'center left',
         ease: 'Expo.easeOut'
         })
-        tl.from(imageRef.current, {
+        .from(imageRef.current, {
             scrollTrigger: {
                 trigger: itemRef.current,
                 start: 'top 70%',
                 end: 'top 40%',
                 toggleActions: 'play pause reverse reverse',
-                scrub: 3
+                scrub: 1
             },
             autoAlpha: 0,
-            duration: 1,
-            x: -50,
+            duration: 0.5,
             scale: 0.05,
             transformOrigin: 'center center',
             ease: 'Expo.easeOut'
-        })
-        tl.from(headerRef.current, {
+        },"+=0.5")
+        .from(headerRef.current, {
             scrollTrigger: {
                 trigger: itemRef.current,
                 start: 'top 70%',
                 end: 'top 40%',
                 toggleActions: 'play pause reverse reverse',
-                scrub: 3
+                scrub: 2
             },
             autoAlpha: 0,
-            duration: 1,
-            scale: 1.5,
+            duration: 0.5,
+            y: 20,
+            scale: 1.1,
             transformOrigin: 'center center',
             ease: 'Expo.easeOut'
-        })
+        },"+=0.5")
     }
 
   
