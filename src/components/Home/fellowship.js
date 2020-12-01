@@ -8,8 +8,8 @@ import EasePack from 'gsap/EasePack';
 import { gsap } from 'gsap/gsap-core';
 import { CSSPlugin } from 'gsap/CSSPlugin';
 import { HeaderBig, HeaderSmall } from '../../styles/Reusable/subheaderstyle';
-import * as Scroll from 'react-scroll';
-import { Link, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll';
+//import * as Scroll from 'react-scroll';
+//import { Link, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll';
 
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerEffect(EasePack);
@@ -98,7 +98,7 @@ const Fellowship = () => {
 
     });
 
-    useEffect(()=>{
+    /* useEffect(()=>{
         Events.scrollEvent.register('begin', (to, element)=>{
             console.log('begin', to, element);
         });
@@ -106,7 +106,7 @@ const Fellowship = () => {
             console.log('end', to, element);
         })
     })
-
+ */
     return (
         <>
             
