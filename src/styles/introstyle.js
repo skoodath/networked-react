@@ -1,21 +1,15 @@
 import styled from 'styled-components';
-import { device } from './device';
 
-export const Styledintro = styled.section`
+export const InnerWrapper = styled.section`
   display: flex;
   flex-direction: column;
-  background-color: ${({bgColor}) => bgColor ? bgColor : '#fff'};
-  //padding: 0 10%;
-  padding: ${({topBottom, leftRight}) => `${topBottom} ${leftRight}`};
+  background-color: #fff;
+  padding: 3rem 0;
   justify-content: center;
-  height: ${({hgt}) => hgt? hgt : '100vh'};
-  width: 100%;
+  width: 80%;
   max-width: 1280px;
   margin: 0 auto;
-  @media ${device.laptop}{
-    padding: 0;
-    width: 80%;
-  }
+  height: 100vh;
 `;
 
 /* Intro Text Style */
@@ -23,10 +17,10 @@ export const Styledintro = styled.section`
 export const Styledintropara = styled.p`
     line-height: 2;
     letter-spacing: 2px;
-    border-bottom: 2px solid #ffd54d;
     margin: 0;
     padding: 0 0 2rem 0;
     font-size: 1.1rem;
+    max-width: 1280px;
 `;
 
 
@@ -34,12 +28,15 @@ export const Styledintropara = styled.p`
 
 export const Styledvideo = styled.div`
     background: #ffd54d;
-    padding: 0;
-    margin: 2rem 0;
     display: flex;
     justify-content: center;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    width: 100%;
     video{
         width: 100%;
-        max-width: 1440px;
+        height: 100%;
     }
 `;

@@ -27,4 +27,5 @@ export const HeaderSmall = styled.h2`
     font-weight: normal;
     display: block;
     visibility: hidden;
+    margin: 0 0 -1rem 0;
 `;

@@ -1,18 +1,14 @@
 import React, {useRef, useEffect} from 'react';
-import FellowshipDesc from './Fellowship/fellowshippara';
-import SectionHeader from '../../components/sectionheader';
-import SubText from '../../components/subtext';
-import { StyledFellowship } from '../../styles/fellowshipstyle';
+import { FellowshipText, StyledFellowship } from '../../styles/fellowshipstyle';
 import ScrollTrigger from 'gsap/ScrollTrigger';
-import EasePack from 'gsap/EasePack';
 import { gsap } from 'gsap/gsap-core';
 import { CSSPlugin } from 'gsap/CSSPlugin';
 import { HeaderBig, HeaderSmall } from '../../styles/Reusable/subheaderstyle';
+import { WrapperContainer } from '../../styles/Reusable/wrapperdivstyle';
 //import * as Scroll from 'react-scroll';
 //import { Link, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll';
 
 gsap.registerPlugin(ScrollTrigger);
-gsap.registerEffect(EasePack);
 gsap.registerPlugin(CSSPlugin);
 
 const Fellowship = () => {
@@ -30,14 +26,14 @@ const Fellowship = () => {
         gsap.from([s, b], {
             scrollTrigger: {
             trigger: s,
-            start: 'top 70%',
+            start: 'top 80%',
             end: 'top 40%',
-            toggleActions: 'play none reverse reverse',
+            toggleActions: 'restart none none none',
             scrub: 3
         },
         autoAlpha: 0,
-        duration: 1,
-        x: 50,
+        duration: 0.5,
+        x: 20,
         transformOrigin: 'top left',
         stagger: {
             amount: 0.5
@@ -54,8 +50,8 @@ const Fellowship = () => {
                 trigger: el,
                 start: 'top 80%',
                 end: 'top 40%',
-                toggleActions: 'play none none none',
-                scrub: 3
+                toggleActions: 'restart none none none',
+                scrub: 1
             },
             autoAlpha: 0,
             duration: 1,
@@ -73,8 +69,8 @@ const Fellowship = () => {
                 trigger: el,
                 start: 'top 80%',
                 end: 'top 40%',
-                toggleActions: 'play pause reverse reverse',
-                scrub: 3
+                toggleActions: 'restart none none none',
+                scrub: 1
 
             },
             autoAlpha: 0,
@@ -108,73 +104,21 @@ const Fellowship = () => {
     })
  */
     return (
-        <>
-            
-            <StyledFellowship
-
-            topBottom='0'
-            leftRight='10%'
-            >   
+        <WrapperContainer>
+            <StyledFellowship>   
                 <HeaderSmall
                     ref={smalltxt}
                 >the</HeaderSmall>
                 <HeaderBig
                     ref={subheadRef}
                 >Fellowship</HeaderBig>
-                <SubText
-                    text={`An immersive program for children to  investigate wicked problems in a highly interconnected world.`}
-                    ref={subtextRef}
-                />
-                 
+        
+                <FellowshipText>
+                    Every year networkED hosts a fellowship program bringing children from diverse backgrounds together to investigate real-world situations. It acts as a launchpad for children to explore real world complexity through various pathways. 
+                    Children investigate real world biological, physical and social connections through a range of experiences, virtual and real. It is designed with the help of domain experts, researchers and educators to craft a meaningful and explorative experience grounded in impact for children.
+                </FellowshipText>
             </StyledFellowship>
-            <StyledFellowship
-                topBottom='0'
-                leftRight='10%'
-            >
-                <SectionHeader 
-                    text=
-                    {
-                        `
-                        Real-world Complex problems
-                        `
-                    }
-                    ref={sectionhead1Ref}
-                />
-                <FellowshipDesc 
-                text={
-                    `
-                    NetworkED hosts a fellowship program bringing children from diverse backgrounds together to investigate real-world social problems. 
-This acts as a launchpad for children to explore real world complexity through different pathways. Through a range of challenging and immersive virtual and physical experiences, children investigate networks in the world around them, be it biological, physical or social. 
-
-                    `
-                }
-                ref={rwtextRef}
-                />
-            </StyledFellowship>
-            <StyledFellowship
-                topBottom='0'
-                leftRight='10%'
-            >
-                <SectionHeader 
-                    text=
-                    {
-                        `
-                        Design of the Fellowship
-                        `
-                    }
-                    ref={sectionhead2Ref}
-                />
-                <FellowshipDesc 
-                text={
-                    `
-                    The fellowship is designed in collaboration with domain experts, researchers and educators to craft a meaningful and explorative experience focused on impact. Data and observations from the program forms the basis for research and development of a pedagogy centered around understanding the science of network thinking in children.
-                    `
-                }
-                ref={designtextRef}
-                />
-            </StyledFellowship>
-            
-        </>
+        </WrapperContainer>
     )
 };
 

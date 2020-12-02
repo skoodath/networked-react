@@ -1,14 +1,10 @@
 import React, { useEffect, useRef } from 'react'
-import SubText from './subtext';
-import AboutPara from './About/aboutpara';
-import WhoCan from './About/whocan';
 import Benefit from './About/benefits';
-import { Styledabout } from '../styles/aboutstyle';
+import { Styledabout, Aboutus } from '../styles/aboutstyle';
 import { gsap } from 'gsap/gsap-core';
 import scrollTrigger from 'gsap/ScrollTrigger';
 import { HeaderBig, HeaderSmall } from '../styles/Reusable/subheaderstyle';
-import Header from './Home/header';
-import Scroll from './Home/Landing/scrolldown';
+import { WrapperContainer } from '../styles/Reusable/wrapperdivstyle';
 
 
 gsap.registerPlugin(scrollTrigger);
@@ -90,38 +86,26 @@ const About = () => {
     });
 
     return (
-      <>
-        <Header />
-        <Scroll />
-        <Styledabout hgt="100vh" >
-          <HeaderSmall
-            ref={smalltxt}
-          >
-            About
-          </HeaderSmall>
-          <HeaderBig 
-            ref={subheadRef}
-          >
-            networkED
-          </HeaderBig>
-          <SubText
-            text={`NetworkED is an initiative that introduces this new way of thinking to children, using real-world networks`}
-            ref={subtextRef}
-          />
-        </Styledabout>
-        <Styledabout hgt="100vh">
-          <AboutPara 
-            ref={sectionhead1Ref}
-          />
-        </Styledabout>
-          <Styledabout>
-            <Benefit />
+        <WrapperContainer>
+          <Styledabout hgt="100vh" >
+            <HeaderSmall
+              ref={smalltxt}
+            >
+              About
+            </HeaderSmall>
+            <HeaderBig 
+              ref={subheadRef}
+            >
+              networkED
+            </HeaderBig>
+            <Aboutus>
+              We are a community of researchers, educators and mentors passionate about introducing a new way of thinking to children. The goal is to create a thriving thought-pool of methods and tools to help children master the art of generating insights using networks in real world.
+            </Aboutus>
           </Styledabout>
-        <Styledabout hgt="120vh">
-          <WhoCan />
-        </Styledabout>
-
-      </>
+            <Styledabout>
+              <Benefit />
+            </Styledabout>
+        </WrapperContainer>
     );
 }
 

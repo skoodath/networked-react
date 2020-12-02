@@ -42,7 +42,8 @@ export const ContactLinks = styled.article`
     color: #ffffffbd;
     padding: 1em 0;
     margin: 0;
-    width: 80%;
+    width: 100%;
+    display: flex;
 `;
 
 export const MyEmail = styled.span`
@@ -62,7 +63,9 @@ export const FooterLogo = styled.article`
   color: #ffffffbd;
   padding: 1em 0;
   margin: 0;
-  width: 80%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
   a {
     color: #ffffffbd;
     font-size: 2rem;
@@ -76,9 +79,11 @@ export const FooterLogo = styled.article`
 
 export const Copy = styled.article`
   color: #ffffffbd;
-  padding: 1em 0;
+  padding: 1em 0 0 0;
   margin: 0;
-  width: 80%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 `;
 
 /* More link styles */
@@ -87,8 +92,11 @@ export const MoreLinks = styled.article`
   color: #ffffffbd;
   padding: 1em 0;
   margin: 0;
-  width: 80%;
+  width: 100%;
   border-top: 1px solid transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   @media ${device.laptop}{
     border-top: 1px solid transparent;
   }
@@ -108,10 +116,12 @@ export const MoreListItems = styled.ul`
 
 export const SocialLinks = styled.article`
   color: #ffffffbd;
-  padding: 1em 0;
+  padding: 0 0 1em 0;
   margin: 0;
-  width: 80%;
+  width: 100%;
   border-top: 1px solid transparent;
+  display: flex;
+  justify-content: center;
   @media ${device.laptop}{
     border-top: 1px solid transparent;
   }

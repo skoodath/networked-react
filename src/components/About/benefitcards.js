@@ -62,7 +62,7 @@ const Benefitcards = React.forwardRef(({ benefitinfo }, ref) => {
                 start: 'top 70%',
                 end: 'top 40%',
                 toggleActions: 'play pause reverse reverse',
-                scrub: 1
+                scrub: 1 
             },
             autoAlpha: 0,
             duration: 0.5,
@@ -124,7 +124,6 @@ const Benefitcards = React.forwardRef(({ benefitinfo }, ref) => {
         <>
             <CardItem
                 ref={itemRef}
-                //onClick={showOverlay}
                 onClick={showOverlay}
                 onMouseLeave={hideOverlay}
             >

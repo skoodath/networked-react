@@ -1,10 +1,10 @@
 import React from 'react';
 import { Title } from '../../../styles/headerstyle';
-import networked from '../../../illustrations/NetworkEd.png';
+import networkedtype from '../../../illustrations/netedtype.svg';
 
 const Logo = () => (
     <Title>
-        <img src={networked} alt="networkED logo" />
+        <img src={networkedtype} alt="networkED logo" />
     </Title>
 )
 

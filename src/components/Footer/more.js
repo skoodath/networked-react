@@ -1,25 +1,22 @@
 import React from 'react';
-import Subtitle from './subtitle';
-import { Link } from 'react-router-dom';
 import { MoreLinks, MoreListItems } from '../../styles/footerstyle';
 
 
 const MoreIcons = () => {
     return (
       <MoreLinks>
-        <Subtitle title={`More`} />
         <MoreListItems>
           <li>
-            <Link to="blog.networked.in">Blog</Link>
+            <a href="blog.networked.in">Blog</a>
           </li>
           <li>
-            <Link to="/resources">Resources</Link>
+            <a href="/resources">Resources</a>
           </li>
           <li>
-            <Link to="/people">People</Link>
+            <a href="/people">People</a>
           </li>
           <li>
-            <Link to="/credit">Credit</Link>
+            <a href="/credit">Credit</a>
           </li>
         </MoreListItems>
       </MoreLinks>

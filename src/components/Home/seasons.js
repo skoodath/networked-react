@@ -17,6 +17,7 @@ import SeasonOne from './Seasons/seasonone';
 import UpcomingSeasons from './Seasons/upcomingseasons';
 import gsap from 'gsap/gsap-core';
 import scrollTrigger from 'gsap/ScrollTrigger';
+import WhoCan from '../About/whocan';
 
 gsap.registerPlugin(scrollTrigger);
 
@@ -63,15 +64,6 @@ const Seasons = () => {
 
     return (
         <>
-            <AboutSeasons hgt="100vh" >
-                <PathwayIntro>
-                    <MySpan spansize={'3rem'}>Explore</MySpan>
-                    <ArrowWrap>
-                        <BsArrowDown />
-                    </ArrowWrap>
-                    
-                </PathwayIntro>
-            </AboutSeasons>
             <AboutSeasons>
                 <SectionHeader
                     text={`Fellowship Pathway`} 
@@ -97,6 +89,15 @@ const Seasons = () => {
                     </Swiper>
                 </AboutSeasonItems>
             </AboutSeasons>
+            <AboutSeasons hgt="100vh" >
+                <PathwayIntro>
+                    <MySpan spansize={'3rem'}>Explore</MySpan>
+                    <ArrowWrap>
+                        <BsArrowDown />
+                    </ArrowWrap>
+                    
+                </PathwayIntro>
+            </AboutSeasons>
             <AboutSeasons hgt="100vh">
                 <SeasonOne />
                 
@@ -105,9 +106,12 @@ const Seasons = () => {
             <AboutSeasons>
                 <SectionHeader
                         ref={upcomingRef}
-                        text={`Upcoming Seasons`} 
+                        text={`Future Seasons`} 
                     />
                 <UpcomingSeasons />
+            </AboutSeasons>
+            <AboutSeasons>
+                <WhoCan />
             </AboutSeasons>
         </>
     )

@@ -8,7 +8,7 @@ const IntroVideo = React.forwardRef((props, ref) => {
       <Styledvideo
         ref={ref}
       >
-        <video muted loop autoPlay>
+        <video muted loop controls>
           <source src={introvideo} type="video/mp4" />
         </video>
       </Styledvideo>

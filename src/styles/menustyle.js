@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'react-scroll';
 
 /* Menu Style */
 
@@ -14,41 +15,12 @@ export const Menu = styled.nav`
 
 /* Menu Item Style */
 
-/* export const MenuWrap = styled.ul`
-  padding: 0 1rem;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  
-`; */
 
-export const Menuitems = styled.span`
+export const MenuLinks = styled(Link)`
     position: relative;
     margin: 0 1rem 0 0;
     cursor: pointer;
-    color: #fff;
+    color: #272727;
     text-transform: uppercase;
-    a{
-      font-size: 1rem;
-      position: relative;
-      &::after {
-      content: "";
-      width: 0;
-      height: 3px;
-      display: block;
-      background: #ffd54d;
-      transition: width 0.5s;
-      transition-timing-function: cubic-bezier(0.1, 0.5, 0.0065, 0.71);
-      position: absolute;
-      left: 0;
-      }
-      &:hover {
-        &::after {
-            width: 100%;
-          }
-        }
-    }
 `;
 

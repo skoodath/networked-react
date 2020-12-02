@@ -19,11 +19,10 @@ const Footer = () => (
       <StyledFooterWrapper colStart="5" colEnd="9" rowStart="2" rowEnd="4">
           <MoreIcons />
       </StyledFooterWrapper>
-      <StyledFooterWrapper colStart="10" colEnd="-1" rowStart="2" rowEnd="4">
-          <SocialMedia />
-      </StyledFooterWrapper>
+      
       <StyledFooterWrapper colStart="1" colEnd="6" rowStart="4" rowEnd="6">
-      <Copywrite />
+        <Copywrite />
+        <SocialMedia />
       </StyledFooterWrapper>
     </StyledFooterInner>
   </Styledfooter>

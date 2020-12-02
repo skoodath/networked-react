@@ -1,79 +1,28 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import Particles from 'react-particles-js';
-import { Styledlanding, Styledheader } from '../../styles/landingstyle';
+import { Styledlanding, Styledheader, LandingOverlay } from '../../styles/landingstyle';
 import { CSSPlugin, gsap} from 'gsap';
 import {EasePack} from 'gsap/EasePack';
 import Scroll from './Landing/scrolldown';
+import networked from '../../illustrations/NetworkEd.png';
 
 gsap.registerPlugin(EasePack);
 gsap.registerPlugin(CSSPlugin);
 
 const Landing = () => {
 
-   let theRef = useRef(null);
-   let languageRef = useRef(null);
-   let ofRef = useRef(null);
-   let thoughtRef = useRef(null);
-   let particleRef = useRef(null);
-
-   useEffect(() => {
-
-      gsap.from(theRef.current,{
-        opacity: 0,
-        y: 50,
-        duration: 1,
-        delay: 0.5
-
-      });
-      gsap.from(ofRef.current,{
-        opacity: 0,
-        y: -50,
-        duration: 1,
-        delay: 0.5
-
-      });
-
-      gsap.to(languageRef.current,{
-          opacity: 1,
-          duration: 1,
-          delay: 1.5
-        
-        });
-        gsap.to(thoughtRef.current,{
-          opacity: 1,
-          duration: 1,
-          delay: 1.5
-        });
-
-   });
-
     return (
       <Styledlanding>
         <Scroll />
-        <Styledheader boldness="300" mysize="2rem" textt="lowercase"
-          ref={theRef}
+        <LandingOverlay>
+          <img src={networked} alt={'networkED Logo in the center'} />
+        </LandingOverlay>
+        <Styledheader
         >
-            The
-        </Styledheader>
-        <Styledheader boldness="300" mysize="4rem" textt="uppercase"
-          ref={languageRef}
-        >
-            Language
-        </Styledheader>
-        <Styledheader boldness="300" mysize="2rem" textt="lowercase"
-          ref={ofRef}
-        >
-            Of
-        </Styledheader>
-        <Styledheader boldness="300" mysize="5.5rem" textt="Proper"
-          ref={thoughtRef}
-    
-        >
-            Thought
+            The Language of Thought
         </Styledheader>
 
         <Particles
-          ref={particleRef}
           style={{
             position: "absolute",
             width: "100%",
@@ -84,7 +33,7 @@ const Landing = () => {
           params={{
             particles: {
               number: {
-                value: 10,
+                value: 30,
                 density: {
                   enable: true,
                   value_area: 1440,
@@ -94,7 +43,7 @@ const Landing = () => {
                 value: "#fff",
               },
               shape: {
-                type: ['square', 'circle', 'triangle'],
+                type: ['circle'],
                 stroke: {
                   width: 0,
                   color: "#000000",
@@ -119,11 +68,11 @@ const Landing = () => {
                 },
               },
               size: {
-                value: 40,
+                value: 20,
                 random: true,
                 anim: {
-                  enable: false,
-                  speed: 10,
+                  enable: true,
+                  speed: 5,
                   size_min: 0.3,
                   sync: true,
                 },
@@ -136,10 +85,10 @@ const Landing = () => {
                 width: 0.8,
               },
               move: {
-                enable: false,
-                speed: 1,
+                enable: true,
+                speed: 0.2,
                 direction: "random",
-                random: true,
+                random: false,
                 straight: false,
                 out_mode: "bounce",
                 bounce: false,

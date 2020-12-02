@@ -17,14 +17,28 @@ export const Styledlanding = styled.section`
   }
 `;
 
-export const Styledheader = styled.span`
-  text-align: center;
-  text-transform: uppercase;
-  font-weight: ${({ boldness }) => boldness};
-  font-size: ${({ mysize }) => mysize};
-  text-transform: ${({ textt }) => textt};
-  display: block;
+export const LandingOverlay = styled.div`
+  width: 13rem;
+  height: 13rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background: #fff;
+  border-radius: 50%;
+  z-index: 9999;
+  img{
+    width: 70%;
+  }
+`;
 
+
+export const Styledheader = styled.h2`
+  text-align: center;
+  display: block;
+  color: #272727;
+  font-size: 2rem;
+  font-weight: 300;
 `;
 
 const bounce = keyframes`
@@ -42,14 +56,14 @@ const bounce = keyframes`
 
 export const Scrolldown = styled.div`
   position: absolute;
-  bottom: 5%;
+  bottom: 5px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
   flex-direction: column;
   align-items: center;
   span{
-    font-size: 1.2rem;
+    font-size: 1rem;
     display: inline-block;
     margin: 0 0 1rem 0;
   }
@@ -57,6 +71,6 @@ export const Scrolldown = styled.div`
 
 export const ScrollArrow = styled(FaArrowDown)`
   display: inline-block;
-    font-size: 1.5rem;
+    font-size: 1rem;
     animation: 1.5s ${bounce} cubic-bezier(0.0075, 0.52, 0.0095, 0.6) infinite;
 `;

@@ -2,12 +2,11 @@ import styled from 'styled-components';
 
 export const SubTextPara = styled.p`
   line-height: 2;
-  letter-spacing: 2px;
-  margin: 2rem 0;
-  border-top: 1px solid #ffde70;
-  border-bottom: 1px solid #ffde70;
-  padding: 1rem 0;
-  font-size: 1.3rem;
+  letter-spacing: 1px;
+  margin: 0;
+  padding: 1rem 0 0.2rem 0;
+  font-size: 1rem;
   font-weight: 700;
-  visibility: hidden;
+  max-width: 1280px;
+  color: #ffd54d;
 `;

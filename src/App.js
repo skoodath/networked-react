@@ -2,23 +2,22 @@ import React from 'react';
 import Home from './components/home';
 import About from './components/about';
 import Footer from './components/footer';
-import {BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import GlobalStyle from './styles/globalstyles';
+import Fellowship from './components/Home/fellowship';
+import Seasons from './components/Home/seasons';
+
 
 
 const App = () => {
   
   return (
     <>
-    <Router>
-        <Switch>
-          <Route path="/" component={Home} exact />
-          <Route path="/about" component={About} exact />
-        </Switch>
-      
+      <Home />
+      <About />
+      <Fellowship />
+      <Seasons />
       <Footer />
-    </Router>
-    <GlobalStyle />
+      <GlobalStyle />
     </>
   );
 }
