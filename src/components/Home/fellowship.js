@@ -113,9 +113,17 @@ const Fellowship = () => {
                     ref={subheadRef}
                 >Fellowship</HeaderBig>
         
+                <FellowshipText fontsize fontwght bposition>
+                    Every year networkED hosts a fellowship program bringing children from diverse backgrounds together to investigate real-world situations.
+                </FellowshipText>
                 <FellowshipText>
-                    Every year networkED hosts a fellowship program bringing children from diverse backgrounds together to investigate real-world situations. It acts as a launchpad for children to explore real world complexity through various pathways. 
-                    Children investigate real world biological, physical and social connections through a range of experiences, virtual and real. It is designed with the help of domain experts, researchers and educators to craft a meaningful and explorative experience grounded in impact for children.
+                    It acts as a launchpad for children to explore real world complexity through various pathways. 
+                </FellowshipText>
+                <FellowshipText>
+                    Children investigate real world biological, physical and social connections through a range of experiences, virtual and real.
+                </FellowshipText>
+                <FellowshipText>
+                    It is designed with the help of domain experts, researchers and educators to craft a meaningful and explorative experience grounded in impact for children.
                 </FellowshipText>
             </StyledFellowship>
         </WrapperContainer>

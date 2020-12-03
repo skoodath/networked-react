@@ -12,7 +12,7 @@ const GlobalStyle = createGlobalStyle`
   text-decoration: none;
   line-height: 1.6;
   scroll-behavior: smooth;
-  font-size: 12px;
+  font-size: 14px;
   color: #272727;
   @media ${device.tablet}{
     font-size: 14px;

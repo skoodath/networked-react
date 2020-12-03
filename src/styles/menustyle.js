@@ -22,5 +22,6 @@ export const MenuLinks = styled(Link)`
     cursor: pointer;
     color: #272727;
     text-transform: uppercase;
+    font-size: 0.9rem;
 `;
 

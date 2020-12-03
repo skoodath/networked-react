@@ -3,7 +3,7 @@ import SubText from '../subtext';
 import { gsap } from 'gsap';
 import scrollTrigger from 'gsap/ScrollTrigger';
 import IntroText from './Intro/introtext';
-import { CTAButton } from '../../styles/Reusable/getinvolvedbtnstyle';
+//import { CTAButton } from '../../styles/Reusable/getinvolvedbtnstyle';
 import { WrapperContainer } from '../../styles/Reusable/wrapperdivstyle';
 import { InnerWrapper } from '../../styles/introstyle';
 
@@ -12,7 +12,7 @@ gsap.registerPlugin(scrollTrigger);
 const Intro = () => {
   const introRef = useRef(null);
   const videoRef = useRef(null);
-  const introtextRef = useRef(null);
+  //const introtextRef = useRef(null);
 
       
   const animateSections = (el, trigger) => {
@@ -41,7 +41,7 @@ const Intro = () => {
   useEffect(()=>{
       animateSections(introRef.current, introRef.current);
       animateSections(videoRef.current, videoRef.current);
-      animateSections(introtextRef.current, introtextRef.current);
+      //animateSections(introtextRef.current, introtextRef.current);
 
   });
 
@@ -51,13 +51,11 @@ const Intro = () => {
           <InnerWrapper>
             <SubText
               ref={introRef}
-              text={`A new way of thinking for children`}
+              text={`A new way of thinking`}
             />
             <IntroText
-            ref={introtextRef}
+            //ref={introtextRef}
             />
-            <CTAButton>Get Involved</CTAButton>
-            <CTAButton bgColor>Watch</CTAButton>
           </InnerWrapper>
         </WrapperContainer>
       </>

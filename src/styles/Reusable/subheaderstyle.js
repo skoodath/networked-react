@@ -9,6 +9,7 @@ export const HeaderBig = styled.h2`
   padding: 0;
   position: relative;
   visibility: hidden;
+  margin: 0 0 2rem 0;
   &::after {
     content: "";
     position: absolute;

@@ -13,14 +13,33 @@ export const InnerWrapper = styled.section`
 `;
 
 /* Intro Text Style */
-
-export const Styledintropara = styled.p`
-    line-height: 2;
-    letter-spacing: 2px;
+export const IntroParaWrapper = styled.article`
     margin: 0;
-    padding: 0 0 2rem 0;
-    font-size: 1.1rem;
     max-width: 1280px;
+    display: flex;
+    flex-direction: column;
+`;
+export const Styledintropara = styled.p`
+    line-height: 1.6;
+    letter-spacing: 2px;
+    margin: 0 0 2rem 0;
+    position: relative;
+    padding: 0;
+    text-align: ${({ textalign })=> textalign? 'right' : 'left'};
+    font-size: ${({ fontsize })=> fontsize? '1.2rem' : '1rem'};
+    font-weight: ${({ fontwght })=> fontwght? '700' : '400'};
+    border-radius: 5px;
+    align-self: ${({ alignitems })=> alignitems? 'flex-end' : 'flex-start'};
+    &::before{
+        position: ${({ bposition })=> bposition? 'absolute' : 'relative'};
+        content: '';
+        width: 20%;
+        height: 10px;
+        background-color: #ffd54d;
+        left: 0;
+        bottom: -10px;
+        z-index: 0;
+    }
 `;
 
 

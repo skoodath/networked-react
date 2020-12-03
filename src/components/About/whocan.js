@@ -1,9 +1,9 @@
 import React, { useEffect, useRef } from 'react';
 import { StyledGetInvolved, StyledGetInvolvedWrapper, StyledInnerWrapper } from '../../styles/aboutstyle';
-import SectionHeader from '../../components/sectionheader';
 import Contact from './contact';
 import gsap from 'gsap';
 import scrollTrigger from 'gsap/ScrollTrigger';
+import SubText from '../subtext';
 
 gsap.registerPlugin(scrollTrigger);
 
@@ -61,7 +61,9 @@ const WhoCan = () => {
         
         
         <StyledGetInvolvedWrapper>
-          <SectionHeader text="Get Involved" ref={getinvolvedRef} />
+          <SubText     
+              text={`Get Involved`}
+            />
           <StyledInnerWrapper>
             
             <StyledGetInvolved ref={whocanRef}>
@@ -71,7 +73,6 @@ const WhoCan = () => {
           </StyledInnerWrapper>
           <Contact />
         </StyledGetInvolvedWrapper>
-        
       </>
     );
 }

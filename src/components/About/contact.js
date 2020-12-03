@@ -70,7 +70,7 @@ const Contact = () => {
                     <InputLabels
                         htmlFor='fullname'
                     >
-                        Your Name
+                        Full Name
                     </InputLabels>
                     <InputFields
                         type='text'
@@ -85,7 +85,7 @@ const Contact = () => {
                     <InputLabels
                         htmlFor='email'
                     >
-                        Your Email
+                        Email Address
                     </InputLabels>
                     <InputFields
                         type='email'
@@ -99,7 +99,7 @@ const Contact = () => {
                     <InputLabels
                         htmlFor='message'
                     >
-                        Something About You
+                        Send a note
                     </InputLabels>
                     <MessageBox
                         type='text'

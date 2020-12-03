@@ -11,25 +11,33 @@ export const Styledabout = styled.section`
   margin: 0 auto;
   width: 80%;
   max-width: 1280px;
-`;
-
-Styledabout.defaultProps = {
-  theme: {
-    main: "#fff"
+  @media ${device.laptop}{
+    height: ${({hgt}) => hgt};
   }
-}
-
+`;
 
 
 /* About paragraph styling */
 
 export const Aboutus = styled.p`
-  margin: 2rem auto;
-  border-bottom: 2px solid #ffd54d;
-  padding: 0 0 2rem 0;
+  margin: 0 0 2rem auto;
+  padding: 0;
   letter-spacing: 2px;
-  line-height: 2;
-  font-size: 1.1rem;
+  position: relative;
+  line-height: 1.6;
+  text-align: ${({ textalign })=> textalign? 'right' : 'left'};
+  font-size: ${({ fontsize })=> fontsize? '1.2rem' : '1rem'};
+  font-weight: ${({ fontwght })=> fontwght? '700' : '400'};
+  &::before{
+        position: ${({ bposition })=> bposition? 'absolute' : 'relative'};
+        content: '';
+        width: 20%;
+        height: 10px;
+        background-color: #ffd54d;
+        left: 0;
+        bottom: -10px;
+        z-index: 0;
+    }
 `;
 
 /* Get involved */
@@ -197,6 +205,7 @@ export const InputFields = styled.input`
     transition-property: border-left;
     transition-duration: 0.5s;
     transform-origin: left center;
+    resize: none;
     &:focus{
         outline: none;
         background: #fff;
@@ -207,7 +216,6 @@ export const InputFields = styled.input`
 
 
 export const InputLabels = styled.label`
-  letter-spacing: 0;
   font-size: 0.9rem;
   z-index: 1;
   margin: 0 0 0 0.2rem;
@@ -215,13 +223,8 @@ export const InputLabels = styled.label`
   transition-property: color;
   transition-duration: 500ms;
   transition-timing-function: ease-in-out;
-  ${ContactWrapper}:hover & {
-    color: #ffd54d;
-    font-weight: 700;
-  }
-  ${InputFields}:valid & {
-    color: red;
-  }
+  color: #272727;
+
 `;
 
 
