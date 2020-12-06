@@ -1,15 +1,20 @@
 import styled from 'styled-components';
 import underline from '../illustrations/underline.png';
+import { device } from './device';
 
 export const StyledFellowship = styled.section`
     display: flex;
     flex-direction: column;
     padding: 0;
     justify-content: center;
-    margin: 3rem auto 0;
+    margin: 5rem auto;
+    height: ${({ hgt }) => hgt? hgt: '100vh'};
     max-width: 1280px;
     position: relative;
     width: 80%;
+    @media ${device.laptop}{
+      height: ${({ hgt }) => hgt? hgt: '100vh'};
+    }
 `;
 
 
@@ -62,4 +67,19 @@ export const FellowHeaderBig = styled.h2`
 export const FellowHeaderSmall = styled.h2`
     font-weight: normal;
     display: block;
+`;
+
+/* Fellowship Pathway Style */
+
+export const FellowShipPathWayWrap = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-self: center;
+    position: relative;
+    width: 100%;
+    max-width: 1280px;
+    height: 320px;
+    margin: 0 auto;
+    overflow: hidden;
+
 `;

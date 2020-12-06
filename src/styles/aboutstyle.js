@@ -1,18 +1,19 @@
 import styled from 'styled-components';
 import { device } from './device';
+import { FaEnvelope } from 'react-icons/fa';
 
 
 export const Styledabout = styled.section`
   display: flex;
   flex-direction: column;
-  height: ${({hgt}) => hgt};
+  height: ${({hgt}) => hgt? hgt : '100vh'};
   justify-content: center;
   background-color: #fff;
   margin: 0 auto;
   width: 80%;
   max-width: 1280px;
   @media ${device.laptop}{
-    height: ${({hgt}) => hgt};
+    height: 100vh;
   }
 `;
 
@@ -57,45 +58,79 @@ export const StyledInnerWrapper = styled.div`
     flex-direction: column;
     margin: 0 1rem 0 0;
     width: 100%;
+    @media ${device.laptop}{
+      flex-direction: row;
+    }
 `;
 
 export const StyledGetInvolved = styled.p`
 width: 100%;
-border-bottom: 3px solid #ffd54d;
 margin: 0;
 padding: 0 0 2rem 0;
-letter-spacing: 2px;
-line-height: 2;
-font-size: 1em;
+letter-spacing: normal;
+line-height: 1.6;
+font-size: 1rem;
 justify-self: flex-start;
 align-self: flex-start;
 `;
 
-/* Community Benefits Styling */
 
+/* Email contact styling */
 
-export const BenefitContainer = styled.section`
+export const EmailTitle = styled.h5`
+    color: #272727;
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin: 0 0 0.5rem 0;
+    border-bottom: 1px solid #272727;
+`;
+
+export const ContactLinks = styled.article`
+    color: #272727;
+    padding: 1em 0;
+    margin: 2rem 0 0 0;
     width: 100%;
-    margin: 0 auto;
-    padding: 4rem 1rem;
+    height: 100%;
     display: flex;
     flex-direction: column;
-    background-color: #ffd54d;
+    justify-content: center;
+    align-items: center;
+`;
+
+export const MyEmail = styled.span`
+    color: #272727;
+    display: flex;
+    justify-content: center;
+`;
+
+export const MailIcon = styled(FaEnvelope)`
+    fill: #ffd54d;
+    height: 1.5rem;
+    width: 1.5rem;
+    display: inline-block;
+    margin: 0 1rem 0 0;
+`;
+
+/* Community Benefits Styling */
+
+export const BenefitContainer = styled.section`
+    margin: 2rem auto;
+    display: flex;
+    flex-direction: column;
 `;
 
 export const CardWrapper = styled.ul`
-  display: flex;
-  flex-direction: column;
+  display: grid;
   width: 100%;
   margin: 0;
   padding: 0;
-  justify-content: space-around;
-  align-items: center;
+  justify-content: center;
+  align-items: flex-start;
   @media ${device.laptop}{
-    flex-direction: row;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat()(12, 1fr);
   }
 `;
-
 export const CardItem = styled.li`
   display: flex;
   flex-direction: column;
@@ -103,56 +138,62 @@ export const CardItem = styled.li`
   align-items: center;
   background-color: #fff;
   border-radius: 5px;
-  cursor: pointer;
   position: relative;
   overflow: hidden;
   margin: 0.2rem 0;
   padding: 1rem 0;
   width: 100%;
   max-width: 400px;
-  height: 200px;
+  grid-column: 1 / -1;
   @media ${device.laptop}{
     margin: 0.1rem;
-    width: 300px;
-    height: 300px;
+    width: 350px;
+    grid-column-start: ${({colstart}) => colstart};
+    grid-column-end: ${({colend}) => colend};
+    grid-row-start: ${({rowstart}) => rowstart};
+    grid-row-end: ${({rowend}) => rowend};
+    margin: 1rem;
+    justify-items: center;
+    align-items: center;
   }
-  &:hover div {
-    opacity: 1;
-  }
-  &:focus div {
-    opacity: 1;
-  }
+
+`;
+export const CardHeaderWrapper = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 `;
 
 
 export const CardHeader = styled.h3`
     font-weight: bold;
     font-size: 1.1rem;
+    align-self: flex-start;
     @media ${device.laptop}{
       font-size: 1rem;
     }
 `;
 
 export const CardImage = styled.img`
-    width: 120px;
-    height: 120px;
+    width: 100px;
+    height: 100px;
     display: block;
+    border-radius: 50%;
+    border: 2px solid #ffd54d;
 `;
 export const Overlay = styled.div`
   width: 100%;
   height: 100%;
-  position: absolute;
-  background: #00155A;
+  position: relative;
   z-index: 1;
-  visibility: hidden;
   display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding: 1rem;
+  padding: 0;
   
   p{
-    color: #fff;
-    font-size: 1.2rem;
+    color: #272727;
+    font-size: 1rem;
+    letter-spacing: normal;
     
     @media ${device.laptop} {
       font-size: 0.9rem;
@@ -166,6 +207,7 @@ export const ContactForm = styled.form`
   display: flex;
   flex-direction: column;
   width: 100%;
+  height: 100%;
   margin: 0 auto 0 0;
   @media ${device.laptop}{
     width: 50vw;

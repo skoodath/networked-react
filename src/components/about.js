@@ -87,7 +87,7 @@ const About = () => {
 
     return (
         <WrapperContainer>
-          <Styledabout hgt='100vh'>
+          <Styledabout>
             <HeaderSmall
               ref={smalltxt}
             >
@@ -105,7 +105,7 @@ const About = () => {
                Our goal is to create a thriving thought-pool of methods and tools to help children master the art of generating insights using networks in real world.
             </Aboutus>
           </Styledabout>
-            <Styledabout hgt='100vh'>
+            <Styledabout hgt="auto">
               <Benefit />
             </Styledabout>
         </WrapperContainer>

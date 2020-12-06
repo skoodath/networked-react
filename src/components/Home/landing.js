@@ -19,7 +19,7 @@ const Landing = () => {
         </LandingOverlay>
         <Styledheader
         >
-            The Language of Thought
+            The Language of thought
         </Styledheader>
 
         <Particles

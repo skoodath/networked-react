@@ -7,16 +7,13 @@ const MoreIcons = () => {
       <MoreLinks>
         <MoreListItems>
           <li>
-            <a href="blog.networked.in">Blog</a>
+            <a href="blog.networked.in">About</a>
           </li>
           <li>
-            <a href="/resources">Resources</a>
+            <a href="/resources">Fellowship</a>
           </li>
           <li>
-            <a href="/people">People</a>
-          </li>
-          <li>
-            <a href="/credit">Credit</a>
+            <a href="/people">Blog</a>
           </li>
         </MoreListItems>
       </MoreLinks>

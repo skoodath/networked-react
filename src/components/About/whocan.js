@@ -1,9 +1,10 @@
 import React, { useEffect, useRef } from 'react';
 import { StyledGetInvolved, StyledGetInvolvedWrapper, StyledInnerWrapper } from '../../styles/aboutstyle';
-import Contact from './contact';
+import Contact from './joinform';
 import gsap from 'gsap';
 import scrollTrigger from 'gsap/ScrollTrigger';
-import SubText from '../subtext';
+import ContactUs from './contact';
+import SectionHeader from '../sectionheader';
 
 gsap.registerPlugin(scrollTrigger);
 
@@ -61,17 +62,21 @@ const WhoCan = () => {
         
         
         <StyledGetInvolvedWrapper>
-          <SubText     
+          <SectionHeader     
               text={`Get Involved`}
             />
           <StyledInnerWrapper>
             
             <StyledGetInvolved ref={whocanRef}>
-            Anyone interested in how to enhance cognitive functions of children
-            using network representations from real world experiences.
+              Anyone interested in knowing how to enhance cognitive functions of children
+              using network representations from real world experiences.
             </StyledGetInvolved>
           </StyledInnerWrapper>
-          <Contact />
+          <StyledInnerWrapper>
+            <Contact />
+            <ContactUs />
+          </StyledInnerWrapper>
+          
         </StyledGetInvolvedWrapper>
       </>
     );

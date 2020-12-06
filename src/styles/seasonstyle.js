@@ -14,31 +14,8 @@ export const AboutSeasons = styled.section`
     margin: 0 auto;
     padding: 0;
     @media ${device.laptop}{
-      height: 100vh;
+      height: ${({ hgt }) => hgt? hgt: '100vh'};
     }
-`;
-
-export const AboutSeasonItems = styled.div`
-    display: flex;
-    flex-direction: row;
-    justify-self: center;
-    position: relative;
-    width: 100%;
-    max-width: 1280px;
-    height: 320px;
-    margin: 0 auto;
-    overflow: hidden;
-    .swiper-button-prev{
-        left: 0;
-        height: 2rem;
-        color: #03243C;
-    }
-    .swiper-button-next{
-        right: 0;
-        height: 2rem;
-        color: #03243C;
-    }
-
 `;
 
 /* Season One styled */
@@ -47,16 +24,105 @@ export const SeasonOneContainer = styled.div`
 display: flex;
 flex-direction: column;
 padding: 0;
+img{
+  width: 100px;
+}
 `;
 
-export const StyledSluethPara = styled.p`
-margin: 2rem auto;
-border-bottom: 2px solid #ffd54d;
-padding: 0 0 2rem 0;
-letter-spacing: 2px;
-line-height: 2;
-font-size: 1.1rem;
+export const SeasonOneWrapper = styled.div`
+  width: 100%;
+  margin: 0 auto;
+  @media ${device.laptop}{
+    max-width: 800px;
+  }
 `;
+
+export const StyledSluethPara1 = styled.p`
+  margin-top: ${({ margintop}) => margintop? '2rem': 0};
+  margin-bottom: 2rem;
+  margin-left: 0;
+  margin-right: auto;
+  padding: 1rem;
+  letter-spacing: normal;
+  line-height: 1.6;
+  border-radius: 150px;
+  background-color: #ffd54d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  @media ${device.laptop}{
+    font-size: 0.85rem;
+    max-width: 400px;
+  }
+  &::after{
+    position: absolute;
+    content: '';
+    width: 1px;
+    height: 1px;
+    border-top: 30px solid #ffd54d;
+    border-right: 30px solid transparent;
+    border-bottom: 12px solid transparent;
+    border-left: 12px solid transparent;
+    bottom: -25px;
+    left: 20%;
+    transform: skewX(-35deg);
+  }
+`;
+export const StyledSluethPara2 = styled.p`
+  margin-top:  0;
+  margin-bottom: 2rem;
+  margin-left: auto;
+  margin-right: 0;
+  padding: 1rem;
+  letter-spacing: normal;
+  line-height: 1.6;
+  border-radius: 150px;
+  background-color: #ffd54d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  @media ${device.laptop}{
+    font-size: 0.85rem;
+    max-width: 400px;
+  }
+  &::after{
+    position: absolute;
+    content: '';
+    width: 1px;
+    height: 1px;
+    border-top: 30px solid #ffd54d;
+    border-right: 30px solid transparent;
+    border-bottom: 12px solid transparent;
+    border-left: 12px solid transparent;
+    bottom: -25px;
+    right: 20%;
+    transform: skewX(-135deg);
+  }
+`;
+
+export const ClosingPara = styled.p`
+  margin: 0 auto;
+  padding: 1rem;
+  letter-spacing: normal;
+  line-height: 1.6;
+  border-radius: 50%;
+  border: 2px solid #ffd54d;
+  height: 200px;
+  width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  @media ${device.laptop}{
+    font-size: 0.9rem;
+  }
+
+  `;
 
 export const SeasonOneHeader = styled.h2`
 font-size: 1.6rem;

@@ -8,7 +8,6 @@ export const HeaderBig = styled.h2`
   letter-spacing: 3px;
   padding: 0;
   position: relative;
-  visibility: hidden;
   margin: 0 0 2rem 0;
   &::after {
     content: "";
@@ -27,6 +26,5 @@ export const HeaderBig = styled.h2`
 export const HeaderSmall = styled.h2`
     font-weight: normal;
     display: block;
-    visibility: hidden;
     margin: 0 0 -1rem 0;
 `;

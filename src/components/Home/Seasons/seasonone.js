@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from 'react';
-import { NameYearText, SeasonOneContainer, SeasonOneHeader, SeasonText, StyledSluethPara } from '../../../styles/seasonstyle';
+import { NameYearText, SeasonOneContainer, SeasonOneHeader, SeasonText, SeasonOneWrapper, StyledSluethPara1, StyledSluethPara2, ClosingPara } from '../../../styles/seasonstyle';
 import SectionHeader from '../../sectionheader';
 import socialsleuth from '../../../illustrations/ss8.png';
 import gsap from 'gsap';
@@ -23,7 +23,7 @@ const SeasonOne = () => {
             trigger: el,
             start: 'top 80%',
             end: 'top 50%',
-            toggleActions: 'play pause reverse reverse',
+            toggleActions: 'restart none none none',
             scrub: 3
         },
         autoAlpha: 0,
@@ -47,7 +47,7 @@ const SeasonOne = () => {
             trigger: imageRef.current,
             start: 'top 80%',
             end: 'top 50%',
-            toggleActions: 'play pause reverse reverse',
+            toggleActions: 'restart none none none',
             scrub: 3
         },
         autoAlpha: 0,
@@ -63,7 +63,7 @@ const SeasonOne = () => {
                 trigger: titleRef.current,
                 start: 'top 80%',
                 end: 'top 50%',
-                toggleActions: 'play pause reverse reverse',
+                toggleActions: 'restart none none none',
                 scrub: 3
             },
             autoAlpha: 0,
@@ -82,16 +82,30 @@ const SeasonOne = () => {
         <SeasonOneContainer>
             <SectionHeader
                         ref={seasononeRef}
-                        text={`Social Sleuths`} 
+                        text={`Season One`} 
                     />
-            <img src={socialsleuth} alt="Social Sleuths" style={{width: '100px'}} ref={imageRef} />
+            <img src={socialsleuth} alt="Social Sleuths" ref={imageRef} />
             <SeasonText>
-                <SeasonOneHeader ref={titleRef}>Season One</SeasonOneHeader>
-                <NameYearText ref={subtitleRef}>networkED 2021</NameYearText>
+                <SeasonOneHeader ref={titleRef}>networkED 2021</SeasonOneHeader>
+                <NameYearText ref={subtitleRef}>Social Sleuths</NameYearText>
             </SeasonText>
-            <StyledSluethPara ref={paraRef}>
-                    In Season #1, kids explore the world of communities, about how relationships between people, artifacts, and ideas can be analyzed and interpreted through social network mapping. Kids will investigate and generate data maps of these relationships to help understand how people communicate and exchange information in any given setting, and even track down some critical power hubs that can bring massive social change through real world digital networks. Stay tuned for updates on the Social Sleuths!
-                </StyledSluethPara>
+            <SeasonOneWrapper>
+                <StyledSluethPara1 ref={paraRef} margintop>
+                    Children explore the world of communities..
+                </StyledSluethPara1>
+                <StyledSluethPara2>
+                    ..how relationships between people, artifacts, and ideas can be analyzed and interpreted through social network mapping
+                </StyledSluethPara2>
+                <StyledSluethPara1>
+                They will investigate and generate data maps of these relationships to help understand how people communicate and exchange information...
+                </StyledSluethPara1>
+                <StyledSluethPara2>
+                ...and even track down some critical power hubs that can bring massive social change through real world digital networks
+                </StyledSluethPara2>
+                <ClosingPara>
+                    Stay tuned for updates!
+                </ClosingPara>
+            </SeasonOneWrapper>
         </SeasonOneContainer>
     )
 }

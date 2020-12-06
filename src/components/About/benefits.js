@@ -10,7 +10,6 @@ import gsap from 'gsap';
 
 const Benefits = () => {
 
-    const benefitRef = useRef(null);
     const titleRef = useRef(null);
 
     const animateSections = el => {
@@ -25,34 +24,15 @@ const Benefits = () => {
           },
           opacity: 0,
           duration: 1,
-          scale: 1.1,
-          letterSpacing: '5px',
+          y: 50,
           ease: 'Expo.easeOut'
           }
       )
   }
-  const benefitSections = el => {
 
-    gsap.from(el, {
-            scrollTrigger: {
-            trigger: el,
-            start: 'top 70%',
-            end: 'top 30%',
-            toggleActions: 'play pause pause pause',
-            scrub: 3
-        },
-        opacity: 0,
-        duration: 1,
-        scale: 1.05,
-        letterSpacing: '5px',
-        ease: 'Expo.easeOut'
-        }
-    )
-}
 
     useEffect(()=> {
       animateSections(titleRef.current);
-      benefitSections(benefitRef.current);
 
     })
 
@@ -62,7 +42,7 @@ const Benefits = () => {
       text="Community Benefits"
       ref={titleRef}
         />
-      <BenefitContainer ref={benefitRef}>
+      <BenefitContainer>
         <CardWrapper>
           {benefit.map(ben => 
               <Benefitcards

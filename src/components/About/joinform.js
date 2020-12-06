@@ -1,139 +1,125 @@
 import React from 'react';
-import { Formik, Form, useField } from 'formik';
-import * as Yup from 'yup';
-import {
-    JoinForm,
-    FormLabel,
-    FormInput,
-    FormMsgBox,
-    SubmitForm,
-    FormErrorMsg
-} from '../../styles/aboutstyle';
-//import axios from  'axios';
+import { 
+    ContactForm, 
+    InputFields, 
+    InputLabels, 
+    MessageBox, 
+    ContactWrapper, 
+    SendButton } from '../../styles/aboutstyle';
+import { useForm } from 'react-hook-form';
 import emailjs from 'emailjs-com';
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as Yup from 'yup';
+import { useState } from 'react';
 
+const schema = Yup.object().shape({
+        fullname: Yup.string()
+        .min(3, "Name must be atleast three characters")
+        .max(35, "Not more than 35 Characters")
+        .required("Name cannot be blank"),
+        email: Yup.string()
+        .email("Please enter a valid email address")
+        .required("Email address cannot be blank"),
+        message: Yup.string()
+        .max(200, "Should not be more than 200 Characters")
+})
 
-let userInfo;
-const MyInputField = ({ label, ...props }) => {
-    const [field, meta] = useField(props);
+const Contact = () => {
+
+    
+
+    const {register, handleSubmit, errors, reset} = useForm({
+        resolver: yupResolver(schema)   
+    });
+
+    
+
+    const SubmitForm = (data, e) => {
+        emailjs.sendForm('gmail', 'gmail_template', e.target, 'user_VxY4OJHzwej0Cv5B4mDg9')
+        .then((result) =>    {
+            console.log(result.text);
+            reset({
+
+            })
+            alert('Thank you! We will be in touch');
+        }, (error) => {
+            console.log(error.text);
+        });
+        reset({
+            fullname: "",
+            email: "",
+            message: ""
+        })
+    };
+    const [mousedn, setMousedn] = useState(false);
+
+    const animateCaption = () =>{
+        setMousedn(!mousedn);
+        setTimeout(()=>{
+            setMousedn(mousedn)
+        }, 1500);
+
+    }
+
     return (
         <>
-            <FormLabel htmlFor={props.id || props.name}>{label}</FormLabel>
-            <FormInput {...field} {...props} />
-                {meta.touched && meta.error ? (
-                        <FormErrorMsg>{meta.error}</FormErrorMsg>
-                ): null }
+            <ContactForm 
+                onSubmit={handleSubmit(SubmitForm)}
+                >
+                <ContactWrapper>
+                    <InputLabels
+                        htmlFor='fullname'
+                    >
+                        Full Name
+                    </InputLabels>
+                    <InputFields
+                        type='text'
+                        name='fullname'
+                        id='fullName'
+                        ref={register()}
+                        
+                    />
+                    <span>{errors.fullname?.message}</span>
+                </ContactWrapper>
+                <ContactWrapper>
+                    <InputLabels
+                        htmlFor='email'
+                    >
+                        Email Address
+                    </InputLabels>
+                    <InputFields
+                        type='email'
+                        name='email'
+                        id='email'
+                        ref={register()}
+                    />
+                    <span>{errors.email?.message}</span>
+                </ContactWrapper>
+                <ContactWrapper>
+                    <InputLabels
+                        htmlFor='message'
+                    >
+                        Send a note
+                    </InputLabels>
+                    <MessageBox
+                        type='text'
+                        name='message'
+                        id='message'
+                        ref={register()}
+                    />
+                    <span>{errors.message?.message}</span>
+                </ContactWrapper>
+                    <SendButton
+                        type='submit'
+                        name='submit'
+                        id='submit'
+                        onClick={animateCaption}
+                    >
+                        {mousedn ? 'Sending...' : 'Send' }
+                    </SendButton>
+            </ContactForm>
         </>
     )
 }
 
-
-
-const JoinUs = () => {
-
-    /* const [connect, setConnect] = useState({
-        firstName: '',
-        lastName: '',
-        email: '',
-        message: ''
-    })  */
-
-    const sendEmail = (e) => {
-        emailjs.sendForm('service_bvdhpqq', 'template_q2sehvf', e.target, 'user_VxY4OJHzwej0Cv5B4mDg9')
-        .then((result) =>    {
-            console.log(result.text);
-            alert('Thank you for your interest');
-        }, (error) => {
-            console.log(error.text);
-        });
-    }
-    
-    return(
-
-            <Formik
-                initialValues={{
-                    firstName: '',
-                    lastName: '',
-                    email: '',
-                    message: ''
-                }}
-                validationSchema={Yup.object({
-                    firstName: Yup.string()
-                    .min(1, "Atleast One Character")
-                    .max(25, "Should not be more than 25 Characters")
-                    .required("First Name cannot be blank"),
-                    lastName: Yup.string()
-                    .min(1, "Atleast One Character")
-                    .max(25, "Should not be more than 25 Characters")
-                    .required("First Name cannot be blank"),
-                    email: Yup.string()
-                    .email("Please enter a valid email address")
-                    .required("Email address cannot be blank"),
-                    message: Yup.string()
-                    .max(150, "Should not be more than 150 Characters")
-                })}
-
-                onSubmit={(values,{setSubmitting, resetForm}) => {
-                        
-
-                        /* axios.post("/send",userInfo)
-                        .then((response) => {
-                            console.log(response)
-                        }); */
-                        userInfo = {
-                            firstname: values.firstName,
-                            lastname: values.lastName,
-                            email: values.email,
-                            note: values.message
-                        }
-                        console.log(userInfo);
-                         
-                        setTimeout(() => {
-                            alert(`Thank you ${userInfo.firstname}! You email was sent`);
-                            resetForm();
-                            setSubmitting(false);
-                    }, 400);
-                 }}
-                
-                 
-                >
-                    {props => (
-                        <JoinForm>
-                            <Form onSubmit={sendEmail}>
-                            <MyInputField
-                                label="First Name"
-                                name="firstName"
-                                type="text"
-                            />
-                            <MyInputField
-                                label="Last Name"
-                                name="lastName"
-                                type="text"
-                            />
-                            <MyInputField
-                                label="Email"
-                                name="email"
-                                type="email"
-                            />
-                            <FormLabel htmlFor="email">Send us a note</FormLabel>
-                            <FormMsgBox
-                                id="message"
-                                name="message"
-                            />
-                            
-                            <SubmitForm
-                                type="submit"
-                            >
-                                {props.isSubmitting? 'Sending' : 'Send'}
-                            </SubmitForm>
-                            
-                            </Form>
-                        </JoinForm>
-                    )}
-                    
-                </Formik>
-    )
-
-}
-
-export default JoinUs;
+export default Contact;

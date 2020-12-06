@@ -1,11 +1,12 @@
 import styled from 'styled-components';
 import { device } from './device';
-import { FaTwitter, FaLinkedinIn, FaInstagram, FaVimeoV, FaEnvelope } from 'react-icons/fa';
+import { FaTwitter, FaLinkedinIn, FaInstagram, FaVimeoV } from 'react-icons/fa';
 
 /* Footer main skills */
 
 export const Styledfooter = styled.footer`
-    background: #00155A;
+    //background: #00155A;
+    background-color: #272727;
     padding: 2rem 0 0;
     display: flex;
     justify-content: center;
@@ -15,16 +16,9 @@ export const StyledFooterInner = styled.div`
     max-width: 1280px;
     display: flex;
     flex-direction: column;
-    @media ${device.laptop}{
-        display: grid;
-        grid-template-columns: repeat(12, 1fr);
-    }
 `;
 export const StyledFooterWrapper = styled.div`
-    grid-column-start: ${({ colStart }) => colStart };
-    grid-column-end: ${({ colEnd })  => colEnd };
-    grid-row-start: ${({ rowStart })  => rowStart };
-    grid-row-end: ${({ rowEnd })  => rowEnd };
+    
 `;
 
 /* Footer Title styling */
@@ -36,26 +30,7 @@ export const TitleName = styled.h5`
     margin: 0 0 0.5rem 0;
 `;
 
-/* Footer contact styling */
 
-export const ContactLinks = styled.article`
-    color: #ffffffbd;
-    padding: 1em 0;
-    margin: 0;
-    width: 100%;
-    display: flex;
-`;
-
-export const MyEmail = styled.span`
-    color: #ffffffbd;
-`;
-
-export const MailIcon = styled(FaEnvelope)`
-    fill: #ffffffbd;
-    height: 1.5rem;
-    width: 1.5rem;
-    vertical-align: middle;
-`;
 
 /* Footer logo styling */
 

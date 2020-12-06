@@ -33,12 +33,16 @@ export const LandingOverlay = styled.div`
 `;
 
 
-export const Styledheader = styled.h2`
+export const Styledheader = styled.h1`
   text-align: center;
   display: block;
   color: #272727;
-  font-size: 2rem;
+  font-size: 3rem;
   font-weight: 300;
+  padding: 0 1rem;
+  @media ${device.laptop}{
+    font-size: 5rem;
+  }
 `;
 
 const bounce = keyframes`
@@ -56,7 +60,7 @@ const bounce = keyframes`
 
 export const Scrolldown = styled.div`
   position: absolute;
-  bottom: 5px;
+  bottom: 10px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
