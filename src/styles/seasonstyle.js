@@ -52,6 +52,7 @@ export const StyledSluethPara1 = styled.p`
   justify-content: center;
   text-align: center;
   position: relative;
+  visibility: hidden;
   @media ${device.laptop}{
     font-size: 0.85rem;
     max-width: 400px;
@@ -85,6 +86,7 @@ export const StyledSluethPara2 = styled.p`
   justify-content: center;
   text-align: center;
   position: relative;
+  visibility: hidden;
   @media ${device.laptop}{
     font-size: 0.85rem;
     max-width: 400px;

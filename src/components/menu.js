@@ -10,10 +10,22 @@ const MenuPage = () => {
 
     return (
         <Menu>
-                <MenuLinks>
+                <MenuLinks
+                    to="about"
+                    spy={true} 
+                    smooth={true} 
+                    offset={-50} 
+                    duration={500}
+                >
                     About
                 </MenuLinks>
-                <MenuLinks>
+                <MenuLinks 
+                    to="fellowship"
+                    spy={true} 
+                    smooth={true} 
+                    offset={-100} 
+                    duration={500}
+                    >
                     Fellowship
                 </MenuLinks>
         </Menu>

@@ -12,31 +12,10 @@ gsap.registerPlugin(scrollTrigger);
 
 const Benefitcards = React.forwardRef(({ benefitinfo }, ref) => {
 
-    //const [showDesc, setShowDesc] = useState(false);
-
 
     const {src, alt, title, para, colstart, colend, rowstart, rowend }  = benefitinfo;
 
-    /* const showOverlay = () => {
-        if(!showDesc){
-            setShowDesc(true);
-        } else if ( showDesc){
-            setShowDesc(false);
-        }
-        
-    };
-    const hideOverlay = () => {
-        if(showDesc){
-            setShowDesc(false);
-        }
-        
-    } */
-
     const itemRef = useRef(null);
-    const imageRef = useRef(null);
-    const headerRef = useRef(null);
-    const overlayRef = useRef(null);
-
     const animateCard = () => {
 
 
@@ -71,10 +50,10 @@ const Benefitcards = React.forwardRef(({ benefitinfo }, ref) => {
                 rowend={rowend}
             >
                 <CardHeaderWrapper>
-                    <CardImage src={src} alt={alt} ref={imageRef} />
-                    <CardHeader ref={headerRef}>{title}</CardHeader>
+                    <CardImage src={src} alt={alt} />
+                    <CardHeader>{title}</CardHeader>
                 </CardHeaderWrapper>
-                    <Overlay ref={overlayRef}>
+                    <Overlay>
                         <p>
                             {para}
                         </p>

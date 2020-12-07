@@ -60,7 +60,7 @@ const bounce = keyframes`
 
 export const Scrolldown = styled.div`
   position: absolute;
-  bottom: 10px;
+  bottom: 30px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;

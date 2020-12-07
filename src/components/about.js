@@ -16,78 +16,72 @@ const About = () => {
 
     const subheadRef = useRef(null);
     const smalltxt = useRef(null);
-    const sectionhead1Ref = useRef(null);
-    const subtextRef = useRef(null);
+    const para1Ref = useRef(null);
+    const para2Ref = useRef(null);
 
-    const animateLanding = (s, b, el) => {
+  const animateTitle = (el) => {
 
-      const tl = gsap.timeline();
+    gsap.from(el, {
+        scrollTrigger: {
+        trigger: el,
+        start: 'top 80%',
+        end: 'top 40%',
+        toggleActions: 'restart none none none',
+        scrub: 3
+    },
+      autoAlpha: 0,
+      duration: 1,
+      y: 50,
+      ease: 'Expo.easeOut',
+    })
+}
 
-      tl.from(s, {
-        autoAlpha: 0,
-        duration: 0.8,
-        delay: 0.5,
-        y: -10,
-        scale: 1.01,
-        transformOrigin: 'top left',
-        ease: 'Power4.easeOut'
-      })
-      tl.from(b, {
-        autoAlpha: 0,
-        duration: 0.8,
-        x: -10,
-        scale: 1.02,
-        transformOrigin: 'top left',
-        ease: 'Power4.easeOut'
-      }, '-=0.3')
-      tl.from(el, {
-        autoAlpha: 0,
-        duration: 0.8,
-        y: 20,
-        transformOrigin: 'top left',
-        color: '#ffd54d',
-        ease: 'Power4.easeOut'
-        }, '-=0.5')
+const animatePara = () => {
 
-    };
+    const tl = gsap.timeline()
+    tl.from(para1Ref.current, {
+          scrollTrigger: {
+          trigger: para1Ref.current,
+          start: 'top 80%',
+          end: 'top 40%',
+          toggleActions: 'restart none none none',
+          scrub: 3
 
+        },
+          autoAlpha: 0,
+          duration: 0.5,
+          delay: 1,
+          y: 50,
+          ease: "Expo.easeOut"
+        }
+    )
+    tl.from(para2Ref.current, {
+          scrollTrigger: {
+          trigger: para2Ref.current,
+          start: 'top 80%',
+          end: 'top 40%',
+          toggleActions: 'restart none none none',
+          scrub: 3
 
-    const animateSections = el => {
-
-      gsap.fromTo(el, {
-            autoAlpha: 0,
-            y: 100
-            },
-            {
-              scrollTrigger: {
-              trigger: el,
-              start: '0% 65%',
-              end: '0% 30%',
-              toggleActions: 'play none none reverse',
-              },
-              autoAlpha: 1,
-              duration: 1,
-              delay: 0.3,
-              y: 0,
-              ease: 'Power4.easeOut'
-          }
-      )
-    }
-
-    useEffect(()=>{
-      window.scrollTo(0, 0);
-    },[]);
-    useEffect(()=>{
-
-        animateLanding(smalltxt.current, subheadRef.current, subtextRef.current);
-        animateSections(sectionhead1Ref.current);
+        },
+          autoAlpha: 0,
+          duration: 1,
+          y: 20,
+          ease: "Expo.easeOut"
+        }
+    )}
 
 
-    });
+useEffect(()=>{
+    
+    animateTitle(smalltxt.current);
+    animateTitle(subheadRef.current);
+    animatePara();
+});
 
     return (
         <WrapperContainer>
-          <Styledabout>
+          <Styledabout name="about">
             <HeaderSmall
               ref={smalltxt}
             >
@@ -98,10 +92,10 @@ const About = () => {
             >
               networkED
             </HeaderBig>
-            <Aboutus>
+            <Aboutus ref={para1Ref}>
                We are a community of researchers, educators and mentors passionate about introducing a new way of thinking to children.
             </Aboutus>
-            <Aboutus fontsize fontwght bposition>
+            <Aboutus fontsize fontwght bposition ref={para2Ref}>
                Our goal is to create a thriving thought-pool of methods and tools to help children master the art of generating insights using networks in real world.
             </Aboutus>
           </Styledabout>

@@ -14,11 +14,10 @@ const NewPathway = ({pathwaySteps}) => {
     return (
             <>
                 <PathwayListItem>
-                <PathwayCount>{id}</PathwayCount>
-                <PathwayImgWrap>
-                    <PathwayImg src={image} alt={alt} />
-                </PathwayImgWrap>
-                    
+                    <PathwayCount>{id}</PathwayCount>
+                    <PathwayImgWrap>
+                        <PathwayImg src={image} alt={alt} />
+                    </PathwayImgWrap>
                     <PathwayText >
                         {text}
                     </PathwayText>

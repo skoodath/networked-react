@@ -120,9 +120,13 @@ const Fellowship = () => {
         animatePara(para2Ref.current);
     });
 
+    useEffect(()=>{
+        
+    });
+
     return (
         <WrapperContainer>
-            <StyledFellowship>   
+            <StyledFellowship name="fellowship">   
                 <HeaderSmall
                     ref={smalltxt}
                 >the</HeaderSmall>

@@ -1,9 +1,10 @@
 import styled from 'styled-components';
 import { device } from './device';
 import { FaEnvelope } from 'react-icons/fa';
+import { Element } from 'react-scroll';
 
 
-export const Styledabout = styled.section`
+export const Styledabout = styled(Element)`
   display: flex;
   flex-direction: column;
   height: ${({hgt}) => hgt? hgt : '100vh'};
@@ -12,6 +13,7 @@ export const Styledabout = styled.section`
   margin: 0 auto;
   width: 80%;
   max-width: 1280px;
+  
   @media ${device.laptop}{
     height: 100vh;
   }
@@ -140,6 +142,7 @@ export const CardItem = styled.li`
   border-radius: 5px;
   position: relative;
   overflow: hidden;
+  visibility: hidden;
   margin: 0.2rem 0;
   padding: 1rem 0;
   width: 100%;

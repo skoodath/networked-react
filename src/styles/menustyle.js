@@ -23,5 +23,23 @@ export const MenuLinks = styled(Link)`
     color: #272727;
     text-transform: uppercase;
     font-size: 0.9rem;
+    border: 2px solid transparent;
+    &::after{
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 100%;
+      }
+    &.active{
+      &::after{
+        width: 100%;
+        left: 0;
+        bottom: 0;
+        border-bottom: 2px solid #ffd54d;
+        transform-origin: bottom center;
+        transition: width 0.5s ease-in-out;
+      }
+    
+  }
 `;
 

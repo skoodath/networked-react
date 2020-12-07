@@ -13,7 +13,11 @@ const SeasonOne = () => {
     const imageRef = useRef(null);
     const titleRef = useRef(null);
     const subtitleRef = useRef(null);
-    const paraRef = useRef(null);
+    const para1Ref = useRef(null);
+    const para2Ref = useRef(null);
+    const para3Ref = useRef(null);
+    const para4Ref = useRef(null);
+    const closingRef = useRef(null);
 
 
     const animateTitle = el => {
@@ -26,20 +30,17 @@ const SeasonOne = () => {
             toggleActions: 'restart none none none',
             scrub: 3
         },
-        autoAlpha: 0,
-        duration: 1,
-        scale: 1.1,
-        transformOrigin: 'top left',
-        ease:'Expo.easeOut'
-
+            autoAlpha: 0,
+            duration: 1,
+            scale: 1.1,
+            y: 0,
+            transformOrigin: 'top left',
+            ease:'Expo.easeOut'
         })
     }
-    
-    useEffect(()=>{
-        animateTitle(seasononeRef.current);
-    });
 
-    useEffect(()=> {
+    const animateSubtitle = () => {
+
         const tl = gsap.timeline();
 
         tl.from(imageRef.current, {
@@ -50,15 +51,15 @@ const SeasonOne = () => {
             toggleActions: 'restart none none none',
             scrub: 3
         },
-        autoAlpha: 0,
-        duration: 1,
-        delay: 0.5,
-        scale: 0.1,
-        transformOrigin: 'bottom center',
-        ease:'Expo.easeOut'
+            autoAlpha: 0,
+            duration: 1,
+            delay: 0.5,
+            scale: 0.1,
+            transformOrigin: 'bottom center',
+            ease:'Expo.easeOut'
 
         })
-        tl.from([titleRef.current,subtitleRef.current, paraRef.current], {
+        tl.from([titleRef.current,subtitleRef.current], {
             scrollTrigger: {
                 trigger: titleRef.current,
                 start: 'top 80%',
@@ -72,10 +73,59 @@ const SeasonOne = () => {
             transformOrigin: 'bottom left',
             ease: 'Expo.easeOut',
             stagger: {
-                amount: 0.5
+                amount: 0.1
             }
         })
+        
+    }
+    const animatePara = el => {
+        gsap.from(el,{
+            scrollTrigger: {
+                trigger: el,
+                start: 'top 80%',
+                end: 'top 50%',
+                toggleActions: 'restart none none none',
+                scrub: 3
+            },
+            autoAlpha: 0,
+            duration: 1,
+            y: 100,
+            transformOrigin: 'bottom left',
+            ease: 'Expo.easeOut',
+            stagger: {
+                amount: 0.01
+            }
+        })
+    }
+    const animateClosing = () => {
+        gsap.from(closingRef.current,{
+            scrollTrigger: {
+                trigger: closingRef.current,
+                start: 'top 80%',
+                end: 'top 70%',
+                toggleActions: 'restart none none none',
+                scrub: 1
+            },
+            autoAlpha: 0,
+            duration: 1,
+            scale: 0,
+            transformOrigin: 'center center',
+            ease: 'Bounce.easeOut',
 
+        })
+    }
+    
+    useEffect(()=>{
+        animateTitle(seasononeRef.current);
+    });
+
+    useEffect(()=> {
+        animateSubtitle();
+        animatePara(para1Ref.current);
+        animatePara(para2Ref.current);
+        animatePara(para3Ref.current);
+        animatePara(para4Ref.current);
+        animateClosing();
     })
 
     return (
@@ -90,19 +140,19 @@ const SeasonOne = () => {
                 <NameYearText ref={subtitleRef}>Social Sleuths</NameYearText>
             </SeasonText>
             <SeasonOneWrapper>
-                <StyledSluethPara1 ref={paraRef} margintop>
+                <StyledSluethPara1 ref={para1Ref} margintop>
                     Children explore the world of communities..
                 </StyledSluethPara1>
-                <StyledSluethPara2>
+                <StyledSluethPara2 ref={para2Ref}>
                     ..how relationships between people, artifacts, and ideas can be analyzed and interpreted through social network mapping
                 </StyledSluethPara2>
-                <StyledSluethPara1>
+                <StyledSluethPara1 ref={para3Ref}>
                 They will investigate and generate data maps of these relationships to help understand how people communicate and exchange information...
                 </StyledSluethPara1>
-                <StyledSluethPara2>
+                <StyledSluethPara2 ref={para4Ref}>
                 ...and even track down some critical power hubs that can bring massive social change through real world digital networks
                 </StyledSluethPara2>
-                <ClosingPara>
+                <ClosingPara ref={closingRef}>
                     Stay tuned for updates!
                 </ClosingPara>
             </SeasonOneWrapper>

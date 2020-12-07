@@ -40,18 +40,18 @@ export const PathwayListItem = styled.li`
     position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
     /* border: 3px solid #ffd54d;
     border-left: ${({borderleft}) => borderleft? 'none': '3px solid #ffd54d'};
     border-right: ${({borderright}) => borderright? 'none': '3px solid #ffd54d'};
     border-bottom: ${({borderbottom}) => borderbottom? 'none': '3px solid #ffd54d'}; */
     border-radius: 5px;
-    box-shadow: 0 0 3px 1px #ddd;
+   //box-shadow: 0 0 3px 1px #ddd;
     align-items: center;
     width: 100%;
     max-width: 350px;
     margin: 0 0 3rem 0;
     font-size: 0.8rem;
+    background-color: #ffffffab;
     span{
         width: 30px;
         height: 30px;
@@ -131,11 +131,26 @@ export const PathwayListItem = styled.li`
 
 export const PathwayImgWrap = styled.div`
     display: block;
+    width: 100px;
     height: 100px;
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 1.2rem 1rem;
+    padding: 0;
+    position: relative;
+    &::before{
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: #ffd54f;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        z-index: -1;
+    }
     @media ${device.laptop}{
         height: 130px;
     }
@@ -143,19 +158,18 @@ export const PathwayImgWrap = styled.div`
 `;
 export const PathwayImg = styled.img`
     display: block;
-    height: 95%;
+    height: 90%;
 `;
 
 export const PathwayText = styled.p`
     padding: 0.5rem;
     height: 100%;
     display: flex;
-    justify-content: center;
     text-align: center;
-    margin: 0 0 2rem 0;
+    margin: 0;
     letter-spacing: normal;
     font-weight: 700;
-
+    font-size: 0.85rem;
 `;
 
 export const PathwayCount = styled.span`
