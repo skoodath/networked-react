@@ -22,9 +22,9 @@ const Benefits = () => {
               toggleActions: 'play pause reverse reverse',
               scrub: 3
           },
-          opacity: 0,
+          autoAlpha: 0,
           duration: 1,
-          y: 50,
+          y: 100,
           ease: 'Expo.easeOut'
           }
       )

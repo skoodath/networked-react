@@ -12,7 +12,7 @@ gsap.registerPlugin(CSSPlugin);
 const Landing = () => {
 
     return (
-      <Styledlanding>
+      <Styledlanding name="landing">
         <Scroll />
         <LandingOverlay>
           <img src={networked} alt={'networkED Logo in the center'} />

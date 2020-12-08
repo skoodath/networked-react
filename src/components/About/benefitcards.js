@@ -29,10 +29,9 @@ const Benefitcards = React.forwardRef(({ benefitinfo }, ref) => {
         },
         autoAlpha: 0,
         duration: 1,
-        delay: 1,
-        y: 50,
+        y: 100,
         ease: 'Expo.easeOut'
-        })
+        }, "+=1")
     }
   
     useEffect(()=>{

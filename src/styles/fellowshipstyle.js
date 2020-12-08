@@ -1,9 +1,8 @@
 import styled from 'styled-components';
 import underline from '../illustrations/underline.png';
 import { device } from './device';
-import { Element } from 'react-scroll';
 
-export const StyledFellowship = styled(Element)`
+export const StyledFellowship = styled.section`
     display: flex;
     flex-direction: column;
     padding: 0;

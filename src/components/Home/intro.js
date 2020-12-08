@@ -1,14 +1,24 @@
-import React, {useRef, useEffect} from 'react';
+import React, {useRef, useEffect, useState} from 'react';
 import SubText from '../subtext';
 import { gsap } from 'gsap';
 import scrollTrigger from 'gsap/ScrollTrigger';
 //import { CTAButton } from '../../styles/Reusable/getinvolvedbtnstyle';
 import { WrapperContainer } from '../../styles/Reusable/wrapperdivstyle';
-import { InnerWrapper, IntroParaWrapper, Styledintropara } from '../../styles/introstyle';
+import { InnerWrapper, IntroParaWrapper, Styledintropara, StyledPlaybtn, StyledPlaytext, StyledPlayWrapper } from '../../styles/introstyle';
+import IntroVideo from './Intro/video';
+import { CTAButton } from '../../styles/Reusable/getinvolvedbtnstyle';
 
 gsap.registerPlugin(scrollTrigger);
 
 const Intro = () => {
+
+  const [modalOpen, setModalOpen] = useState(false);
+
+  const modalOpener = () => {
+    setModalOpen(true);
+  }
+
+  const innerRef = useRef(null);
   const introRef = useRef(null);
   const para1Ref = useRef(null);
   const para2Ref = useRef(null);
@@ -20,13 +30,13 @@ const Intro = () => {
       const tl = gsap.timeline();
       tl.fromTo(introRef.current, {
             autoAlpha: 0,
-            y: 50
+            y: 100
             },
             {
               scrollTrigger: {
-              trigger: introRef.current,
-              start: 'top 80%',
-              end: 'top 40%',
+              trigger: innerRef.current,
+              start: 'top 25%',
+              end: 'top 15%',
               toggleActions: 'restart none none none',
               scrub: 3
           },
@@ -34,58 +44,58 @@ const Intro = () => {
           duration: 1,
           y: 0,
           ease: 'Expo.easeOut'
-          })
+          },"+=2.5")
       tl.fromTo(para1Ref.current, {
         autoAlpha: 0,
-        y: 50
+        y: 100
         },
         {
           scrollTrigger: {
-          trigger: para1Ref.current,
-          start: 'top 80%',
-          end: 'top 40%',
+          trigger: innerRef.current,
+          start: 'top 25%',
+          end: 'top 15%',
           toggleActions: 'restart none none none',
-          scrub: 3
+          scrub: 4
       },
       autoAlpha: 1,
       duration: 1,
       y: 0,
       ease: 'Expo.easeOut'
-    },"+=1")
+    },"+=0.5")
       tl.fromTo(para2Ref.current, {
         autoAlpha: 0,
-        y: 50
+        y: 100
         },
         {
           scrollTrigger: {
-          trigger: para2Ref.current,
-          start: 'top 80%',
-          end: 'top 40%',
+          trigger: innerRef.current,
+          start: 'top 25%',
+          end: 'top 15%',
           toggleActions: 'restart none none none',
-          scrub: 3
+          scrub: 5
       },
       autoAlpha: 1,
       duration: 1,
       y: 0,
       ease: 'Expo.easeOut'
-    })
+    },"+=0.1")
     tl.fromTo(para3Ref.current, {
       autoAlpha: 0,
-      y: 50
+      y: 100
       },
       {
         scrollTrigger: {
-        trigger: para3Ref.current,
-        start: 'top 80%',
-        end: 'top 40%',
+        trigger: innerRef.current,
+        start: 'top 25%',
+        end: 'top 15%',
         toggleActions: 'restart none none none',
-        scrub: 3
+        scrub: 6
     },
     autoAlpha: 1,
     duration: 1,
     y: 0,
     ease: 'Expo.easeOut'
-    })
+    }, "+=1.5")
       
   }
 
@@ -97,7 +107,7 @@ const Intro = () => {
     return (
       <>
         <WrapperContainer>
-          <InnerWrapper>
+          <InnerWrapper ref={innerRef}>
             <SubText
               ref={introRef}
               text={`A new way of thinking`}
@@ -116,8 +126,21 @@ const Intro = () => {
                 networkED introduces this new way of thinking to
                 children, using networks interconnecting the real world.
             </Styledintropara>
-        </IntroParaWrapper>
+            </IntroParaWrapper>
+            <StyledPlayWrapper onClick={modalOpener}>
+              <StyledPlaybtn />
+              <StyledPlaytext>Watch Video</StyledPlaytext>
+            </StyledPlayWrapper>
+            <IntroVideo openModal={modalOpen} setOpenModel={setModalOpen} />
+            <CTAButton 
+              to="getinvolved"
+              smooth={true} 
+              offset={-50} 
+              duration={500}
+              >Get Involved
+              </CTAButton>
           </InnerWrapper>
+          
         </WrapperContainer>
       </>
     );

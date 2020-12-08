@@ -7,7 +7,6 @@ import gsap from 'gsap/gsap-core';
 import scrollTrigger from 'gsap/ScrollTrigger';
 import WhoCan from '../About/whocan';
 import { WrapperContainer } from '../../styles/Reusable/wrapperdivstyle';
-import SectionHeader from '../sectionheader';
 
 gsap.registerPlugin(scrollTrigger);
 
@@ -23,12 +22,9 @@ const Seasons = () => {
                 
             </AboutSeasons>
             <AboutSeasons hgt="100vh">
-            <SectionHeader
-                text={`Future Seasons`} 
-            />
                 <UpcomingSeasons />
             </AboutSeasons>
-            <AboutSeasons>
+            <AboutSeasons name="getinvolved">
                 <WhoCan />
             </AboutSeasons>
         </WrapperContainer>

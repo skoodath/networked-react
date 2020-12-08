@@ -32,8 +32,7 @@ const SeasonOne = () => {
         },
             autoAlpha: 0,
             duration: 1,
-            scale: 1.1,
-            y: 0,
+            y: 100,
             transformOrigin: 'top left',
             ease:'Expo.easeOut'
         })
@@ -69,7 +68,7 @@ const SeasonOne = () => {
             },
             autoAlpha: 0,
             duration: 1,
-            y: 50,
+            y: 100,
             transformOrigin: 'bottom left',
             ease: 'Expo.easeOut',
             stagger: {

@@ -6,10 +6,9 @@ import GlobalStyle from './styles/globalstyles';
 import Fellowship from './components/Home/fellowship';
 import Seasons from './components/Home/seasons';
 
-
-
 const App = () => {
-  
+
+
   return (
     <>
       <Home />

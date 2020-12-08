@@ -1,10 +1,9 @@
 import styled from 'styled-components';
 import { device } from './device';
 import { FaEnvelope } from 'react-icons/fa';
-import { Element } from 'react-scroll';
 
 
-export const Styledabout = styled(Element)`
+export const Styledabout = styled.section`
   display: flex;
   flex-direction: column;
   height: ${({hgt}) => hgt? hgt : '100vh'};

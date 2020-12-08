@@ -5,6 +5,7 @@ import BioInvest from '../../../illustrations/bioinvestigate.png';
 import fakenews from '../../../illustrations/fakenews.png';
 import gsap from 'gsap';
 import scrollTrigger from 'gsap/ScrollTrigger';
+import SectionHeader from '../../sectionheader';
 
 gsap.registerPlugin(scrollTrigger);
 
@@ -25,13 +26,12 @@ const UpcomingSeasons = () => {
                     trigger: upcomingRef.current,
                     start: '5% 80%',
                     end: '5% 50%',
-                    toggleActions: 'restart none reverse reverse',
-                    scrub: 1
+                    toggleActions: 'restart none none none',
+                    scrub: 3
                     },
                     autoAlpha: 0,
                     duration: 1,
-                    delay: 0.3,
-                    scale: 0.9,
+                    y: 50,
                     ease: 'Expo.easeOut',
                     transformOrigin: 'left top'
             })
@@ -45,17 +45,21 @@ const UpcomingSeasons = () => {
                     },
                     autoAlpha: 0,
                     duration: 0.7,
-                    delay: 1.5,
                     y: 50,
                     stagger: {
-                        amount: 0.5
+                        amount: 0.2
                     },
                     ease: 'Expo.easeOut'
                 })
     })
  
     return (
-        <UpcomingSeasonWrapper>
+        <>
+            <SectionHeader
+                text={`Future Seasons`}
+                ref={upcomingRef}
+            />
+            <UpcomingSeasonWrapper>
             <UpcomingSeasonsCard ref={epiRef}>
                 <UpcomingImageWrapper>
                     <img src={Epidemic} alt="" />
@@ -81,6 +85,7 @@ const UpcomingSeasons = () => {
                 </UpcomingSeasonHeader>
             </UpcomingSeasonsCard>
         </UpcomingSeasonWrapper>
+    </>
     )
 };
 

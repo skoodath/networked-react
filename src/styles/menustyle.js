@@ -1,16 +1,20 @@
 import styled from 'styled-components';
 import { Link } from 'react-scroll';
+import { device } from './device';
 
 /* Menu Style */
 
 export const Menu = styled.nav`
   color: #272727;
   align-items: center;
-  margin: 0 0 0 auto;
+  margin: 0 1rem 0 auto;
   z-index: 999;
   display: flex;
   flex-direction: row;
   justify-content: center;
+  @media ${device.laptop}{
+    margin: 0 7rem 0 auto;
+}
 `;
 
 /* Menu Item Style */
@@ -22,15 +26,16 @@ export const MenuLinks = styled(Link)`
     cursor: pointer;
     color: #272727;
     text-transform: uppercase;
-    font-size: 0.9rem;
+    font-size: 1;
     border: 2px solid transparent;
+    font-weight: bold;
     &::after{
         content: '';
         position: absolute;
         width: 0;
         height: 100%;
       }
-    &.active{
+    &.hover{
       &::after{
         width: 100%;
         left: 0;

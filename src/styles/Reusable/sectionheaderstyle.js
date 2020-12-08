@@ -8,4 +8,5 @@ export const Header = styled.h3`
   padding: 0;
   margin: 0 0 2rem 0;
   position: relative;
+  visibility: hidden;
 `;

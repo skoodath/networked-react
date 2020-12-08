@@ -13,25 +13,26 @@ const WhoCan = () => {
 
     const getinvolvedRef = useRef(null);
     const whocanRef = useRef(null);
+    const formRef = useRef(null);
+    const contactmeRef = useRef(null);
 
     const animateSections = el => {
 
       gsap.from(el, {
               scrollTrigger: {
               trigger: el,
-              start: 'top 70%',
-              end: 'top 30%',
-              toggleActions: 'play pause reverse reverse',
+              start: 'top 80%',
+              end: 'top 40%',
+              toggleActions: 'restart none none none',
               scrub: 3
           },
-          opacity: 0,
-          duration: 1,
-          scale: 1.1,
-          letterSpacing: '5px',
-          transformOrigin: 'top left'
+          autoAlpha: 0,
+          duration: 0.5,
+          y: 50,
           }
       )
   }
+  
 
   const animatePara = el => {
 
@@ -39,15 +40,14 @@ const WhoCan = () => {
             scrollTrigger: {
             trigger: el,
             start: 'top 80%',
-            end: 'top center+=70',
-            toggleActions: 'play pause reverse reverse',
-            scrub: 0.1,
+            end: 'top 40%',
+            toggleActions: 'restart none none none',
+            scrub: 3,
  
         },
         autoAlpha: 0,
         duration: 0.5,
-        delay: 1,
-        y: 50 
+        y: 50
         }
     )
 }
@@ -55,6 +55,22 @@ const WhoCan = () => {
     useEffect(() => {
       animateSections(getinvolvedRef.current);
       animatePara(whocanRef.current);
+      animatePara(formRef.current);
+    })
+    useEffect(() => {
+      gsap.from(contactmeRef.current, {
+        scrollTrigger: {
+        trigger: formRef.current,
+        start: 'top 80%',
+        end: 'top 60%',
+        toggleActions: 'restart none none none',
+        scrub: 5,
+
+      },
+        opacity: 0,
+        duration: 0.5,
+        y: 50
+      })
     })
 
     return (
@@ -64,6 +80,7 @@ const WhoCan = () => {
         <StyledGetInvolvedWrapper>
           <SectionHeader     
               text={`Get Involved`}
+              ref={getinvolvedRef}
             />
           <StyledInnerWrapper>
             
@@ -73,8 +90,12 @@ const WhoCan = () => {
             </StyledGetInvolved>
           </StyledInnerWrapper>
           <StyledInnerWrapper>
-            <Contact />
-            <ContactUs />
+            <Contact
+              ref={formRef}
+            />
+            <ContactUs
+              ref={contactmeRef}
+            />
           </StyledInnerWrapper>
           
         </StyledGetInvolvedWrapper>

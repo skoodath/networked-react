@@ -24,7 +24,7 @@ const schema = Yup.object().shape({
         .max(200, "Should not be more than 200 Characters")
 })
 
-const Contact = () => {
+const Contact = React.forwardRef((props, ref) => {
 
     
 
@@ -65,6 +65,7 @@ const Contact = () => {
         <>
             <ContactForm 
                 onSubmit={handleSubmit(SubmitForm)}
+                ref={ref}
                 >
                 <ContactWrapper>
                     <InputLabels
@@ -120,6 +121,6 @@ const Contact = () => {
             </ContactForm>
         </>
     )
-}
+});
 
 export default Contact;

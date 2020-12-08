@@ -11,13 +11,15 @@ import SectionHeader from '../sectionheader';
 import { PathwayList, PathwayWrap } from '../../styles/newpathwaystyle';
 
 //import * as Scroll from 'react-scroll';
-//import { Link, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll';
+//import { Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll';
 
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(CSSPlugin);
 
 const Fellowship = () => {
 
+    const fellowRef1 = useRef(null);
+    const pathwayTitleRef = useRef(null);
     const subheadRef = useRef(null);
     const smalltxt = useRef(null);
     const para1Ref = useRef(null);
@@ -29,86 +31,96 @@ const Fellowship = () => {
 
         gsap.from(el, {
             scrollTrigger: {
-            trigger: el,
-            start: 'top 80%',
-            end: 'top 40%',
+            trigger: fellowRef1.current,
+            start: 'top 25%',
+            end: 'top 15%',
             toggleActions: 'restart none none none',
             scrub: 3
         },
         autoAlpha: 0,
         duration: 1,
-        y: 50,
+        y: 100,
         ease: 'Expo.easeOut',
-        })
+        }, "+=1")
     }
 
     const animatePara = () => {
 
-        const tl = gsap.timeline()
+        const tl = gsap.timeline();
+
+        tl.from(pathwayTitleRef.current, {
+            scrollTrigger: {
+            trigger: pathwayTitleRef.current,
+            start: 'top 80%',
+            end: 'top 50%',
+            toggleActions: 'restart none none none',
+            scrub: 4
+
+        },
+        autoAlpha: 0,
+        duration: 1,
+        y: 100,
+        ease: "Expo.easeOut"
+        }, "+=1.5")
         tl.from(para1Ref.current, {
                 scrollTrigger: {
-                trigger: para1Ref.current,
-                start: 'top 80%',
-                end: 'top 40%',
+                trigger: fellowRef1.current,
+                start: 'top 25%',
+                end: 'top 15%',
                 toggleActions: 'restart none none none',
-                scrub: 3
+                scrub: 4
 
             },
             autoAlpha: 0,
             duration: 1,
-            delay: 1,
-            y: 50,
+            y: 100,
             ease: "Expo.easeOut"
-            }
-        )
+            }, "+=1.5")
         tl.from(para2Ref.current, {
             scrollTrigger: {
-            trigger: para2Ref.current,
-            start: 'top 80%',
-            end: 'top 40%',
+            trigger: fellowRef1.current,
+            start: 'top 25%',
+            end: 'top 15%',
             toggleActions: 'restart none none none',
-            scrub: 3
+            scrub: 5
 
             },
             autoAlpha: 0,
             duration: 1,
             delay: 1,
-            y: 20,
+            y: 100,
             ease: "Expo.easeOut"
-            }
-        )
+            }, "+=1")
         tl.from(para3Ref.current, {
             scrollTrigger: {
-            trigger: para3Ref.current,
-            start: 'top 80%',
-            end: 'top 40%',
+            trigger: fellowRef1.current,
+            start: 'top 25%',
+            end: 'top 15%',
             toggleActions: 'restart none none none',
-            scrub: 3
+            scrub: 6
 
             },
             autoAlpha: 0,
             duration: 1,
             delay: 1,
-            y: 20,
+            y: 100,
             ease: "Expo.easeOut"
-            }
-        )
+            }, "+=2")
         tl.from(para4Ref.current, {
             scrollTrigger: {
-            trigger: para4Ref.current,
-            start: 'top 80%',
-            end: 'top 40%',
+            trigger: fellowRef1.current,
+            start: 'top 25%',
+            end: 'top 15%',
             toggleActions: 'restart none none none',
-            scrub: 3
+            scrub: 7
 
             },
             autoAlpha: 0,
             duration: 1,
-            y: 20,
+            y: 100,
             delay: 1,
             ease: "Expo.easeOut"
-            }
-        )
+            }, "+=2.5")
     }
     
 
@@ -117,7 +129,7 @@ const Fellowship = () => {
         
         animateTitle(smalltxt.current);
         animateTitle(subheadRef.current);
-        animatePara(para2Ref.current);
+        animatePara();
     });
 
     useEffect(()=>{
@@ -126,7 +138,7 @@ const Fellowship = () => {
 
     return (
         <WrapperContainer>
-            <StyledFellowship name="fellowship">   
+            <StyledFellowship name="fellowship" ref={fellowRef1}>   
                 <HeaderSmall
                     ref={smalltxt}
                 >the</HeaderSmall>
@@ -149,7 +161,8 @@ const Fellowship = () => {
             </StyledFellowship>
             <StyledFellowship hgt="auto">
                 <SectionHeader
-                    text={`Fellowship Pathway`} 
+                    text={`Fellowship Pathway`}
+                    ref={pathwayTitleRef}
                 />
                 <PathwayWrap>
                     <PathwayList>

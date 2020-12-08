@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Logo from './Header/logo';
-import { Wrapper } from '../../styles/headerstyle';
+import { Headeroverlay, Wrapper } from '../../styles/headerstyle';
 import MenuPage from '../menu';
 
 
@@ -9,7 +9,7 @@ const Header = () => {
     const [headerColor, setHeaderColor] = useState(false);
 
 
-    const setBackground = () => {
+    const setMenu = () => {
         if(window.scrollY > 100){
             setHeaderColor(true);
         }
@@ -18,12 +18,14 @@ const Header = () => {
         }
     }
 
-    window.addEventListener('scroll', setBackground);
+    window.addEventListener('scroll', setMenu);
 
     return (
-        <Wrapper scroll={headerColor}>
+        <Wrapper>
+        <Headeroverlay scroll={headerColor}>
             <Logo />
-            <MenuPage />
+        </Headeroverlay>
+            <MenuPage scroll={headerColor} />
         </Wrapper>
     )
 }
