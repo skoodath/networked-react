@@ -3,12 +3,9 @@ import { AboutSeasons } from '../../styles/seasonstyle';
 
 import SeasonOne from './Seasons/seasonone';
 import UpcomingSeasons from './Seasons/upcomingseasons';
-import gsap from 'gsap/gsap-core';
-import scrollTrigger from 'gsap/ScrollTrigger';
 import WhoCan from '../About/whocan';
 import { WrapperContainer } from '../../styles/Reusable/wrapperdivstyle';
 
-gsap.registerPlugin(scrollTrigger);
 
 
 
@@ -21,7 +18,7 @@ const Seasons = () => {
                 
                 
             </AboutSeasons>
-            <AboutSeasons hgt="100vh">
+            <AboutSeasons hgt="50vh">
                 <UpcomingSeasons />
             </AboutSeasons>
             <AboutSeasons name="getinvolved">

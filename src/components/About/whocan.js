@@ -23,7 +23,7 @@ const WhoCan = () => {
               trigger: el,
               start: 'top 80%',
               end: 'top 40%',
-              toggleActions: 'restart none none none',
+              toggleActions: 'play none none none',
               scrub: 3
           },
           autoAlpha: 0,
@@ -41,7 +41,7 @@ const WhoCan = () => {
             trigger: el,
             start: 'top 80%',
             end: 'top 40%',
-            toggleActions: 'restart none none none',
+            toggleActions: 'play none none none',
             scrub: 3,
  
         },
@@ -63,7 +63,7 @@ const WhoCan = () => {
         trigger: formRef.current,
         start: 'top 80%',
         end: 'top 60%',
-        toggleActions: 'restart none none none',
+        toggleActions: 'play none none none',
         scrub: 5,
 
       },

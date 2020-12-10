@@ -1,5 +1,5 @@
 import React from 'react';
-import { MoreLinks, MoreListItems } from '../../styles/footerstyle';
+import { MoreLinks, MoreListItems, FooterLinks } from '../../styles/footerstyle';
 
 
 const MoreIcons = () => {
@@ -7,13 +7,13 @@ const MoreIcons = () => {
       <MoreLinks>
         <MoreListItems>
           <li>
-            <a href="blog.networked.in">About</a>
+            <FooterLinks to="about">About</FooterLinks>
           </li>
           <li>
-            <a href="/resources">Fellowship</a>
+            <FooterLinks to="fellowship">Fellowship</FooterLinks>
           </li>
           <li>
-            <a href="/people">Blog</a>
+            <a href="http://blog.networked.in/">Blog</a>
           </li>
         </MoreListItems>
       </MoreLinks>

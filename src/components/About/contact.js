@@ -1,6 +1,5 @@
 import React from 'react';
 import { ContactLinks, MailIcon, MyEmail } from '../../styles/aboutstyle';
-import { EmailTitle } from '../../styles/aboutstyle';
 
 
 const ContactUs = React.forwardRef((props, ref) => {
@@ -8,9 +7,8 @@ const ContactUs = React.forwardRef((props, ref) => {
             <ContactLinks
                 ref={ref}
             >
-                <EmailTitle>Email</EmailTitle>
                 <MyEmail>
-                    <MailIcon /> archana@networked.in
+                    <MailIcon /> <a href="mailto:archana@networked.in">archana@networked.in</a>
                 </MyEmail>
             </ContactLinks>
         )

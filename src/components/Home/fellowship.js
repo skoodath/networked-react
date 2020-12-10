@@ -34,7 +34,7 @@ const Fellowship = () => {
             trigger: fellowRef1.current,
             start: 'top 25%',
             end: 'top 15%',
-            toggleActions: 'restart none none none',
+            toggleActions: 'play none none none',
             scrub: 3
         },
         autoAlpha: 0,
@@ -53,7 +53,7 @@ const Fellowship = () => {
             trigger: pathwayTitleRef.current,
             start: 'top 80%',
             end: 'top 50%',
-            toggleActions: 'restart none none none',
+            toggleActions: 'play none none none',
             scrub: 4
 
         },
@@ -67,7 +67,7 @@ const Fellowship = () => {
                 trigger: fellowRef1.current,
                 start: 'top 25%',
                 end: 'top 15%',
-                toggleActions: 'restart none none none',
+                toggleActions: 'play none none none',
                 scrub: 4
 
             },
@@ -81,7 +81,7 @@ const Fellowship = () => {
             trigger: fellowRef1.current,
             start: 'top 25%',
             end: 'top 15%',
-            toggleActions: 'restart none none none',
+            toggleActions: 'play none none none',
             scrub: 5
 
             },
@@ -96,7 +96,7 @@ const Fellowship = () => {
             trigger: fellowRef1.current,
             start: 'top 25%',
             end: 'top 15%',
-            toggleActions: 'restart none none none',
+            toggleActions: 'play none none none',
             scrub: 6
 
             },
@@ -111,7 +111,7 @@ const Fellowship = () => {
             trigger: fellowRef1.current,
             start: 'top 25%',
             end: 'top 15%',
-            toggleActions: 'restart none none none',
+            toggleActions: 'play none none none',
             scrub: 7
 
             },

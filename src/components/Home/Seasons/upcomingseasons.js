@@ -26,14 +26,13 @@ const UpcomingSeasons = () => {
                     trigger: upcomingRef.current,
                     start: '5% 80%',
                     end: '5% 50%',
-                    toggleActions: 'restart none none none',
+                    toggleActions: 'play none none none',
                     scrub: 3
                     },
                     autoAlpha: 0,
                     duration: 1,
                     y: 50,
                     ease: 'Expo.easeOut',
-                    transformOrigin: 'left top'
             })
 
             gsap.from([epiRef.current, bioRef.current, opsRef.current],{
@@ -41,7 +40,7 @@ const UpcomingSeasons = () => {
                     trigger: epiRef.current,
                     start: '5% 80%',
                     end: '5% 50%',
-                    toggleActions: 'restart none reverse reverse',
+                    toggleActions: 'play none reverse reverse',
                     },
                     autoAlpha: 0,
                     duration: 0.7,

@@ -24,7 +24,7 @@ const Benefitcards = React.forwardRef(({ benefitinfo }, ref) => {
             trigger: itemRef.current,
             start: 'top 80%',
             end: 'top 50%',
-            toggleActions: 'restart none none none',
+            toggleActions: 'play none none none',
             scrub: 3
         },
         autoAlpha: 0,

@@ -6,7 +6,7 @@ import { device } from '../device';
 export const CTAButton = styled(Link)`
     outline: none;
     border: none;
-    background-color: ${({bgColor})=> bgColor? '#ffd54d' : '#fff' };
+    background-color: transparent;
     padding: 0.3rem 1rem;
     width: 150px;
     border-radius: 5px;
@@ -16,6 +16,8 @@ export const CTAButton = styled(Link)`
     cursor: pointer;
     display: flex;
     justify-content: center;
+    position: relative;
+    overflow: hidden;
     @media ${device.laptop}{
         width: 200px;
     }

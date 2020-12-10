@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { device } from './device';
 import { FaTwitter, FaLinkedinIn, FaInstagram, FaVimeoV } from 'react-icons/fa';
+import { Link } from 'react-scroll';
 
 /* Footer main skills */
 
@@ -85,6 +86,12 @@ export const MoreListItems = styled.ul`
             text-decoration: underline;
         }
     }
+`;
+
+export const FooterLinks = styled(Link)`
+    color: #ffffffbd;
+    text-decoration: underline;
+    cursor: pointer;
 `;
 
 /* Social media icon style */

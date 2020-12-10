@@ -27,13 +27,12 @@ const SeasonOne = () => {
             trigger: el,
             start: 'top 80%',
             end: 'top 50%',
-            toggleActions: 'restart none none none',
+            toggleActions: 'play none none none',
             scrub: 3
         },
             autoAlpha: 0,
             duration: 1,
             y: 100,
-            transformOrigin: 'top left',
             ease:'Expo.easeOut'
         })
     }
@@ -47,14 +46,13 @@ const SeasonOne = () => {
             trigger: imageRef.current,
             start: 'top 80%',
             end: 'top 50%',
-            toggleActions: 'restart none none none',
+            toggleActions: 'play none none none',
             scrub: 3
         },
             autoAlpha: 0,
             duration: 1,
             delay: 0.5,
             scale: 0.1,
-            transformOrigin: 'bottom center',
             ease:'Expo.easeOut'
 
         })
@@ -63,13 +61,12 @@ const SeasonOne = () => {
                 trigger: titleRef.current,
                 start: 'top 80%',
                 end: 'top 50%',
-                toggleActions: 'restart none none none',
+                toggleActions: 'play none none none',
                 scrub: 3
             },
             autoAlpha: 0,
             duration: 1,
             y: 100,
-            transformOrigin: 'bottom left',
             ease: 'Expo.easeOut',
             stagger: {
                 amount: 0.1
@@ -83,13 +80,12 @@ const SeasonOne = () => {
                 trigger: el,
                 start: 'top 80%',
                 end: 'top 50%',
-                toggleActions: 'restart none none none',
+                toggleActions: 'play none none none',
                 scrub: 3
             },
             autoAlpha: 0,
             duration: 1,
             y: 100,
-            transformOrigin: 'bottom left',
             ease: 'Expo.easeOut',
             stagger: {
                 amount: 0.01
@@ -102,13 +98,12 @@ const SeasonOne = () => {
                 trigger: closingRef.current,
                 start: 'top 80%',
                 end: 'top 70%',
-                toggleActions: 'restart none none none',
+                toggleActions: 'play none none none',
                 scrub: 1
             },
             autoAlpha: 0,
             duration: 1,
             scale: 0,
-            transformOrigin: 'center center',
             ease: 'Bounce.easeOut',
 
         })

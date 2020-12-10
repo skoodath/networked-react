@@ -26,7 +26,7 @@ export const LandingOverlay = styled.div`
   position: relative;
   background: #fff;
   border-radius: 50%;
-  z-index: 99;
+  z-index: 5;
   img{
     width: 70%;
   }

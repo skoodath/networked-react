@@ -2,17 +2,19 @@ import React, {useRef, useEffect, useState} from 'react';
 import SubText from '../subtext';
 import { gsap } from 'gsap';
 import scrollTrigger from 'gsap/ScrollTrigger';
-//import { CTAButton } from '../../styles/Reusable/getinvolvedbtnstyle';
+import { CSSPlugin } from 'gsap/CSSPlugin';
 import { WrapperContainer } from '../../styles/Reusable/wrapperdivstyle';
 import { InnerWrapper, IntroParaWrapper, Styledintropara, StyledPlaybtn, StyledPlaytext, StyledPlayWrapper } from '../../styles/introstyle';
 import IntroVideo from './Intro/video';
 import { CTAButton } from '../../styles/Reusable/getinvolvedbtnstyle';
 
 gsap.registerPlugin(scrollTrigger);
+gsap.registerPlugin(CSSPlugin);
 
 const Intro = () => {
 
   const [modalOpen, setModalOpen] = useState(false);
+  const [ctaHover, setctaHover] = useState(false);
 
   const modalOpener = () => {
     setModalOpen(true);
@@ -23,6 +25,7 @@ const Intro = () => {
   const para1Ref = useRef(null);
   const para2Ref = useRef(null);
   const para3Ref = useRef(null);
+  const ctaRef = useRef(null);
 
       
   const animateSections = (el, trigger) => {
@@ -37,7 +40,7 @@ const Intro = () => {
               trigger: innerRef.current,
               start: 'top 25%',
               end: 'top 15%',
-              toggleActions: 'restart none none none',
+              toggleActions: 'play none none none',
               scrub: 3
           },
           autoAlpha: 1,
@@ -54,7 +57,7 @@ const Intro = () => {
           trigger: innerRef.current,
           start: 'top 25%',
           end: 'top 15%',
-          toggleActions: 'restart none none none',
+          toggleActions: 'play none none none',
           scrub: 4
       },
       autoAlpha: 1,
@@ -71,7 +74,7 @@ const Intro = () => {
           trigger: innerRef.current,
           start: 'top 25%',
           end: 'top 15%',
-          toggleActions: 'restart none none none',
+          toggleActions: 'play none none none',
           scrub: 5
       },
       autoAlpha: 1,
@@ -88,7 +91,7 @@ const Intro = () => {
         trigger: innerRef.current,
         start: 'top 25%',
         end: 'top 15%',
-        toggleActions: 'restart none none none',
+        toggleActions: 'play none none none',
         scrub: 6
     },
     autoAlpha: 1,
@@ -102,7 +105,33 @@ const Intro = () => {
 
   useEffect(()=>{
       animateSections();
-  });
+      
+  },[]);
+  useEffect(()=> {
+
+      let catchHover = ctaHover;
+
+      if (catchHover) {
+        console.log(catchHover);
+        gsap.to(ctaRef.current, {
+          css: {
+            backgroundColor: '#ffd54d',
+            color: '#ffffff'
+          },
+          duration: 0.3
+        })
+      } else if (!catchHover) {
+        console.log(catchHover)
+        gsap.to(ctaRef.current, {
+          css: {
+            backgroundColor: '#ffffff',
+            color: '#ffd54d'
+          },
+          duration: 0.3
+        })
+      }
+      
+  })
 
     return (
       <>
@@ -137,7 +166,11 @@ const Intro = () => {
               smooth={true} 
               offset={-50} 
               duration={500}
-              >Get Involved
+              ref={ctaRef}
+              onMouseEnter={()=>setctaHover(true)}
+              onMouseLeave={()=>setctaHover(false)}
+              >
+                Get Involved
               </CTAButton>
           </InnerWrapper>
           

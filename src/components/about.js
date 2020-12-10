@@ -28,7 +28,7 @@ const About = () => {
         trigger: abtRef.current,
         start: 'top 25%',
         end: 'top 15%',
-        toggleActions: 'restart none none none',
+        toggleActions: 'play none none none',
         scrub: 3
     },
       autoAlpha: 0,
@@ -46,7 +46,7 @@ const animatePara = () => {
           trigger: abtRef.current,
           start: 'top 25%',
           end: 'top 15%',
-          toggleActions: 'restart none none none',
+          toggleActions: 'play none none none',
           scrub: 4
 
         },
@@ -61,7 +61,7 @@ const animatePara = () => {
           trigger: abtRef.current,
           start: 'top 25%',
           end: 'top 15%',
-          toggleActions: 'restart none none none',
+          toggleActions: 'play none none none',
           scrub: 5
 
         },

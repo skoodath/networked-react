@@ -154,7 +154,7 @@ export const UpcomingSeasonWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 0;
+  margin: 5rem 0;
   @media ${device.laptop}{
     flex-direction: row;
   }
@@ -200,7 +200,7 @@ export const UpcomingSeasonHeader = styled.h3`
   align-items: center;
   margin: 0;
   text-align: center;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   @media ${device.laptop} {
     font-size: 1rem;
   }
