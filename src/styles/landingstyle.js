@@ -12,6 +12,7 @@ export const Styledlanding = styled.section`
   margin: 0;
   padding: 2rem 0 0 0;
   position: relative;
+  overflow: hidden;
   @media ${device.laptop} {
     padding: 2rem 0 0 0;
   }
@@ -40,10 +41,12 @@ export const Styledheader = styled.h1`
   font-size: 3rem;
   font-weight: 300;
   padding: 0 1rem;
+  position: relative;
   @media ${device.laptop}{
     font-size: 5rem;
   }
 `;
+
 
 const bounce = keyframes`
       0%, 20%, 50%, 80%, 100% {

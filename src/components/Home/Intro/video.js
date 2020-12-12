@@ -13,10 +13,10 @@ const IntroVideo = ({openModal, setOpenModel}) => {
 
   return(
       <ReactModal 
-      isOpen={openModal}
-      onRequestClose={modalClose}
-      closeTimeoutMS={500}
-      style={{
+        isOpen={openModal}
+        onRequestClose={modalClose}
+        closeTimeoutMS={200}
+        style={{
         overlay: {
           backgroundColor: 'rgba(39, 39, 39, 0.98)',
           display: 'flex',
@@ -27,8 +27,7 @@ const IntroVideo = ({openModal, setOpenModel}) => {
           position: 'static',
           padding: 0,
           top: 0,
-          right: 0,
-          backgroundColor: '#ffd54dab'
+          right: 0
         }
       }}>
         <StyledCloseBtn onClick={modalClose}>Close</StyledCloseBtn>

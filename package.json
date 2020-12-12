@@ -13,6 +13,8 @@
     "node-sass": "^4.14.1",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
+    "react-ga": "^3.3.0",
+    "react-helmet": "^6.1.0",
     "react-hook-form": "^6.11.4",
     "react-icons": "^3.11.0",
     "react-modal": "^3.12.1",
@@ -20,10 +22,7 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "^3.4.4",
     "react-scroll": "^1.8.1",
-    "react-slick": "^0.27.13",
-    "react-transition-group": "^4.4.1",
     "react-use": "^15.3.4",
-    "slick-carousel": "^1.8.1",
     "styled-components": "^5.2.1",
     "yup": "^0.29.3"
   },
@@ -33,7 +32,6 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "proxy": "http://localhost:3001",
   "eslintConfig": {
     "extends": "react-app"
   },
@@ -48,8 +46,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.6"
   }
 }

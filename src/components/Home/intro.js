@@ -151,7 +151,13 @@ const Intro = () => {
                 interconnections when taught to be viewed holistically, can open up young minds to immense possibilities, fuel
                 curiosity and enhance their learning appetite.
             </Styledintropara>
-            <Styledintropara ref={para3Ref} fontsize fontwght bposition>
+            <Styledintropara 
+              ref={para3Ref} 
+              fontsize 
+              fontwght 
+              borderleft
+              paddingleft
+            >
                 networkED introduces this new way of thinking to
                 children, using networks interconnecting the real world.
             </Styledintropara>

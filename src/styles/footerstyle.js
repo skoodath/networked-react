@@ -17,6 +17,7 @@ export const StyledFooterInner = styled.div`
     max-width: 1280px;
     display: flex;
     flex-direction: column;
+    cursor: pointer;
 `;
 export const StyledFooterWrapper = styled.div`
     
@@ -42,13 +43,14 @@ export const FooterLogo = styled.article`
   width: 100%;
   display: flex;
   justify-content: center;
-  a {
-    color: #ffffffbd;
+`;
+
+export const FooterLogoLink = styled(Link)`
+  color: #ffffffbd;
     font-size: 2rem;
     &:visited {
       color: #ffffffbd;
     }
-  }
 `;
 
 /* Copywrite styling */
@@ -93,6 +95,8 @@ export const FooterLinks = styled(Link)`
     text-decoration: underline;
     cursor: pointer;
 `;
+
+
 
 /* Social media icon style */
 

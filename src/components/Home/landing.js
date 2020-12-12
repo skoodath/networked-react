@@ -1,25 +1,63 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import Particles from 'react-particles-js';
 import { Styledlanding, Styledheader, LandingOverlay } from '../../styles/landingstyle';
 import { CSSPlugin, gsap} from 'gsap';
-import {EasePack} from 'gsap/EasePack';
 import Scroll from './Landing/scrolldown';
 import networked from '../../illustrations/NetworkEd.png';
 
-gsap.registerPlugin(EasePack);
 gsap.registerPlugin(CSSPlugin);
 
 const Landing = () => {
 
+    const overlayRef = useRef(null);
+    const logoRef = useRef(null);
+    const headerRef = useRef(null);
+    const scrollRef = useRef(null);
+
+    const animateLanding = () => {
+      const tl = gsap.timeline();
+
+      tl.from(headerRef.current, {
+        opacity: 0,
+        x: 150,
+        duration: 3,
+        ease: 'Expo.easeOut'
+      })
+      tl.from(logoRef.current, {
+        autoAlpha: 0,
+        duration: 1,
+        scale: 0.8,
+        ease: 'Expo.easeOut'
+      })
+      tl.from(overlayRef.current, {
+        autoAlpha: 0,
+        duration: 1,
+        scale: 1.5,
+        ease: 'Expo.easeOut'
+      })
+      
+      tl.from(scrollRef.current, {
+        opacity: 0,
+        y: 100,
+        duration: 1,
+        ease: 'Power4.easeOut'
+      })
+    }
+
+    useEffect(()=> {
+      animateLanding();
+    }, [])
+
     return (
       <Styledlanding name="landing">
-        <Scroll />
-        <LandingOverlay>
-          <img src={networked} alt={'networkED Logo in the center'} />
+        <Scroll ref={scrollRef} />
+        <LandingOverlay ref={overlayRef}>
+          <img src={networked} alt={'networkED Logo in the center'} ref={logoRef} />
         </LandingOverlay>
         <Styledheader
+          ref={headerRef}
         >
-            The Language of thought
+            The Language Of Thought
         </Styledheader>
 
         <Particles

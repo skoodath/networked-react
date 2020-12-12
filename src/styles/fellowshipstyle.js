@@ -20,15 +20,15 @@ export const StyledFellowship = styled.section`
 
 export const FellowshipText = styled.p`
   margin: 0 0 2rem 0;
-  padding: 0;
-  letter-spacing: 2px;
+  padding-left: ${({ paddingleft })=> paddingleft? '1rem' : '0'};
+  letter-spacing: 1px;
   line-height: 1.6;
   position: relative;
   text-align: ${({ textalign })=> textalign? 'right' : 'left'};
   font-size: ${({ fontsize })=> fontsize? '1.2rem' : '1rem'};
   font-weight: ${({ fontwght })=> fontwght? '700' : '400'};
-  border-radius: 5px;
   align-self: ${({ alignitems })=> alignitems? 'flex-end' : 'flex-start'};
+  border-left: ${({ borderleft })=> borderleft? '10px solid #ffd54d' : '0'};
   &::before{
         position: ${({ bposition })=> bposition? 'absolute' : 'relative'};
         content: '';

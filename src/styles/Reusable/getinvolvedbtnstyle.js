@@ -10,8 +10,8 @@ export const CTAButton = styled(Link)`
     padding: 0.3rem 1rem;
     width: 150px;
     border-radius: 5px;
-    color: #ffd54d;
-    border: 2px solid #ffd54d;
+    color: #002cbc;
+    border: 2px solid #002cbc;
     margin: 1rem 0 0 0;
     cursor: pointer;
     display: flex;

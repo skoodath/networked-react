@@ -24,8 +24,8 @@ const UpcomingSeasons = () => {
             gsap.from(upcomingRef.current, {
                 scrollTrigger: {
                     trigger: upcomingRef.current,
-                    start: '5% 80%',
-                    end: '5% 50%',
+                    start: 'top 80%',
+                    end: 'top 50%',
                     toggleActions: 'play none none none',
                     scrub: 3
                     },
@@ -38,9 +38,9 @@ const UpcomingSeasons = () => {
             gsap.from([epiRef.current, bioRef.current, opsRef.current],{
                     scrollTrigger: {
                     trigger: epiRef.current,
-                    start: '5% 80%',
-                    end: '5% 50%',
-                    toggleActions: 'play none reverse reverse',
+                    start: 'top 80%',
+                    end: 'top 50%',
+                    toggleActions: 'play none none none',
                     },
                     autoAlpha: 0,
                     duration: 0.7,

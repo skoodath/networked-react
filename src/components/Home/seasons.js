@@ -18,7 +18,7 @@ const Seasons = () => {
                 
                 
             </AboutSeasons>
-            <AboutSeasons hgt="50vh">
+            <AboutSeasons hgt="auto">
                 <UpcomingSeasons />
             </AboutSeasons>
             <AboutSeasons name="getinvolved">

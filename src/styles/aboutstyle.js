@@ -23,13 +23,14 @@ export const Styledabout = styled.section`
 
 export const Aboutus = styled.p`
   margin: 0 0 2rem auto;
-  padding: 0;
-  letter-spacing: 2px;
+  padding-left: ${({ paddingleft })=> paddingleft? '1rem' : '0'};
+  letter-spacing: 1px;
   position: relative;
   line-height: 1.6;
   text-align: ${({ textalign })=> textalign? 'right' : 'left'};
   font-size: ${({ fontsize })=> fontsize? '1.2rem' : '1rem'};
   font-weight: ${({ fontwght })=> fontwght? '700' : '400'};
+  border-left: ${({ borderleft })=> borderleft? '10px solid #ffd54d' : '0'};
   &::before{
         position: ${({ bposition })=> bposition? 'absolute' : 'relative'};
         content: '';

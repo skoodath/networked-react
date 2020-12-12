@@ -23,25 +23,15 @@ export const IntroParaWrapper = styled.article`
 `;
 export const Styledintropara = styled.p`
     line-height: 1.6;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     margin: 0 0 2rem 0;
     position: relative;
-    padding: 0;
+    padding-left: ${({ paddingleft })=> paddingleft? '1rem' : '0'};
     text-align: ${({ textalign })=> textalign? 'right' : 'left'};
     font-size: ${({ fontsize })=> fontsize? '1.2rem' : '1rem'};
     font-weight: ${({ fontwght })=> fontwght? '700' : '400'};
-    border-radius: 5px;
     align-self: ${({ alignitems })=> alignitems? 'flex-end' : 'flex-start'};
-    &::before{
-        position: ${({ bposition })=> bposition? 'absolute' : 'relative'};
-        content: '';
-        width: 20%;
-        height: 10px;
-        background-color: #ffd54d;
-        left: 0;
-        bottom: -10px;
-        z-index: 0;
-    }
+    border-left:${({ borderleft })=> borderleft? '10px solid #ffd54d' : 'none'};
 `;
 
 
@@ -84,7 +74,7 @@ export const StyledPlayWrapper  = styled.div`
     justify-content: space-around;
     align-items: center;
     width: 150px;
-    background-color: #ffd54d;
+    background-color: #002cbc;
     padding: 0.5rem;
     margin: 1rem 0 0 0;
     border-radius: 5px;

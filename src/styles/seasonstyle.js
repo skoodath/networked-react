@@ -11,7 +11,7 @@ export const AboutSeasons = styled.section`
     height: ${({ hgt }) => hgt? hgt: '100vh'};
     width: 80%;
     max-width: 1280px;
-    margin: 0 auto;
+    margin: 2rem auto;
     padding: 0;
     @media ${device.laptop}{
       height: ${({ hgt }) => hgt? hgt: '100vh'};
@@ -53,6 +53,7 @@ export const StyledSluethPara1 = styled.p`
   text-align: center;
   position: relative;
   visibility: hidden;
+  max-width: 400px;
   @media ${device.laptop}{
     font-size: 0.85rem;
     max-width: 400px;
@@ -87,6 +88,7 @@ export const StyledSluethPara2 = styled.p`
   text-align: center;
   position: relative;
   visibility: hidden;
+  max-width: 400px;
   @media ${device.laptop}{
     font-size: 0.85rem;
     max-width: 400px;

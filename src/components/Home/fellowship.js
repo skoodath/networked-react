@@ -32,8 +32,8 @@ const Fellowship = () => {
         gsap.from(el, {
             scrollTrigger: {
             trigger: fellowRef1.current,
-            start: 'top 25%',
-            end: 'top 15%',
+            start: 'top 50%',
+            end: 'top 25%',
             toggleActions: 'play none none none',
             scrub: 3
         },
@@ -146,7 +146,12 @@ const Fellowship = () => {
                     ref={subheadRef}
                 >Fellowship</HeaderBig>
         
-                <FellowshipText fontsize fontwght bposition ref={para1Ref}>
+                <FellowshipText 
+                    fontsize 
+                    fontwght 
+                    borderleft
+                    paddingleft
+                    ref={para1Ref}>
                     Every year networkED hosts a fellowship program bringing children from diverse backgrounds together to investigate real-world situations.
                 </FellowshipText>
                 <FellowshipText ref={para2Ref}>

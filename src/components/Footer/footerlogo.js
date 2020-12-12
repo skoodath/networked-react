@@ -1,11 +1,11 @@
 import React from 'react';
-import { FooterLogo } from '../../styles/footerstyle';
+import { FooterLogo, FooterLogoLink } from '../../styles/footerstyle';
 
 
 const Footerlogo = () => {
     return (
             <FooterLogo>
-                <a href="/">networkED.in</a>
+                <FooterLogoLink to="landing">networkED.in</FooterLogoLink>
             </FooterLogo>
     )
 }

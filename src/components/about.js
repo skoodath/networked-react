@@ -26,8 +26,8 @@ const About = () => {
     gsap.from(el, {
         scrollTrigger: {
         trigger: abtRef.current,
-        start: 'top 25%',
-        end: 'top 15%',
+        start: 'top 50%',
+        end: 'top 25%',
         toggleActions: 'play none none none',
         scrub: 3
     },
@@ -96,7 +96,13 @@ useEffect(()=>{
             <Aboutus ref={para1Ref}>
                We are a community of researchers, educators and mentors passionate about introducing a new way of thinking to children.
             </Aboutus>
-            <Aboutus fontsize fontwght bposition ref={para2Ref}>
+            <Aboutus 
+              fontsize 
+              fontwght
+              paddingleft
+              borderleft
+              ref={para2Ref}
+            >
                Our goal is to create a thriving thought-pool of methods and tools to help children master the art of generating insights using networks in real world.
             </Aboutus>
           </Styledabout>

@@ -7,10 +7,24 @@ const MoreIcons = () => {
       <MoreLinks>
         <MoreListItems>
           <li>
-            <FooterLinks to="about">About</FooterLinks>
+            <FooterLinks 
+              to="about"
+              smooth={true} 
+              offset={-50} 
+              duration={500}
+              >
+                About
+              </FooterLinks>
           </li>
           <li>
-            <FooterLinks to="fellowship">Fellowship</FooterLinks>
+            <FooterLinks 
+              to="fellowship"
+              smooth={true} 
+              offset={-100} 
+              duration={500}
+              >
+                Fellowship
+              </FooterLinks>
           </li>
           <li>
             <a href="http://blog.networked.in/">Blog</a>

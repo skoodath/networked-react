@@ -9,8 +9,8 @@ const Scroll = React.forwardRef((props, ref) => {
         <Scrolldown
             ref={ref}
         >
-        <span>Scroll Down</span>
-        <ScrollArrow />
+            <span>Scroll Down</span>
+            <ScrollArrow />
         </Scrolldown>
     )
     
