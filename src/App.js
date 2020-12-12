@@ -7,6 +7,7 @@ import Fellowship from './components/Home/fellowship';
 import Seasons from './components/Home/seasons';
 import { Helmet } from 'react-helmet';
 import ReactGA from 'react-ga';
+import LandingBackground from './components/Home/Landing/threebg';
 
 ReactGA.initialize('UA-175890664-1');
 ReactGA.pageview("/");
@@ -26,6 +27,7 @@ const App = () => {
         <meta property="twitter:site" content="https://www.networked.in/" />
       </Helmet>
       <Home />
+      <LandingBackground />
       <About />
       <Fellowship />
       <Seasons />
