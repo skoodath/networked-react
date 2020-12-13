@@ -26,20 +26,24 @@ export const MenuLinks = styled(Link)`
     cursor: pointer;
     color: #272727;
     text-transform: uppercase;
-    font-size: 1;
     border: 2px solid transparent;
     font-weight: bold;
+    display: block;
+    z-index: 99;
     &::after{
         content: '';
         position: absolute;
         width: 0;
         height: 100%;
+        bottom: -10px;
+        z-index: 100;
       }
-    &.hover{
+    &:hover{
       &::after{
         width: 100%;
         left: 0;
-        bottom: 0;
+        bottom: -2px;
+        z-index: 100;
         border-bottom: 2px solid #ffd54d;
         transform-origin: bottom center;
         transition: width 0.5s ease-in-out;

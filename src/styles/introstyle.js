@@ -68,24 +68,41 @@ export const StyledCloseBtn = styled.span`
 
 `;
 
+export const StyledPlaytext = styled.span`
+    color: #fff;
+`;
+export const StyledPlaybtn = styled(FaPlay)`
+    fill: #fff;
+`;
+
 export const StyledPlayWrapper  = styled.div`
     display: flex;
     cursor: pointer;
     justify-content: space-around;
     align-items: center;
     width: 150px;
-    background-color: #002cbc;
-    padding: 0.5rem;
+    background-color: #FFC91A;
+    padding: 0.3rem;
     margin: 1rem 0 0 0;
     border-radius: 5px;
     box-shadow: 0 0 7px #ddd;
+    border: 2px solid #FFC91A;
+    transition: background-color 0.7s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+    &:hover{
+      background-color: #fff;
+      color: #FFC91A;
+    }
     @media ${device.laptop}{
         width: 200px;
+        &:hover{
+          background-color: #fff;
+          color: #FFC91A;
+          ${StyledPlaytext}{
+            color: #FFC91A;
+          }
+          ${StyledPlaybtn}{
+            fill: #FFC91A;
+          }
     }
-`;
-export const StyledPlaytext = styled.span`
-    color: #fff;
-`;
-export const StyledPlaybtn = styled(FaPlay)`
-    fill: #fff;
+    }
 `;

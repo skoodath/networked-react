@@ -4,6 +4,7 @@ import { Styledlanding, Styledheader, LandingOverlay } from '../../styles/landin
 import { CSSPlugin, gsap} from 'gsap';
 import Scroll from './Landing/scrolldown';
 import networked from '../../illustrations/NetworkEd.png';
+import hummingbirds from '../../illustrations/hummingbird.svg';
 
 gsap.registerPlugin(CSSPlugin);
 
@@ -15,31 +16,33 @@ const Landing = () => {
     const scrollRef = useRef(null);
 
     const animateLanding = () => {
-      const tl = gsap.timeline();
 
-      tl.from(headerRef.current, {
+      gsap.from(headerRef.current, {
         opacity: 0,
         x: 150,
-        duration: 3,
+        duration: 1,
+        delay: 1,
         ease: 'Expo.easeOut'
       })
-      tl.from(logoRef.current, {
+      gsap.from(logoRef.current, {
         autoAlpha: 0,
-        duration: 1,
+        duration: 1.5,
+        delay: 1,
         scale: 0.8,
         ease: 'Expo.easeOut'
       })
-      tl.from(overlayRef.current, {
+      gsap.from(overlayRef.current, {
         autoAlpha: 0,
-        duration: 1,
-        scale: 1.5,
+        duration: 2,
+        scale: 2,
         ease: 'Expo.easeOut'
       })
       
-      tl.from(scrollRef.current, {
+      gsap.from(scrollRef.current, {
         opacity: 0,
         y: 100,
         duration: 1,
+        delay: 2,
         ease: 'Power4.easeOut'
       })
     }
@@ -71,7 +74,7 @@ const Landing = () => {
           params={{
             particles: {
               number: {
-                value: 30,
+                value: 20,
                 density: {
                   enable: true,
                   value_area: 1440,
@@ -81,7 +84,7 @@ const Landing = () => {
                 value: "#fff",
               },
               shape: {
-                type: ['circle'],
+                type: "image",
                 stroke: {
                   width: 0,
                   color: "#000000",
@@ -90,9 +93,9 @@ const Landing = () => {
                   nb_sides: 6,
                 },
                 image: {
-                  src: "./src/illustrations/networkEd.svg",
-                  width: 100,
-                  height: 100,
+                  src: hummingbirds,
+                  width: 800,
+                  height: 800,
                 },
               },
               opacity: {
@@ -106,21 +109,21 @@ const Landing = () => {
                 },
               },
               size: {
-                value: 20,
+                value: 40,
                 random: true,
                 anim: {
                   enable: true,
                   speed: 5,
-                  size_min: 0.3,
+                  size_min: 1,
                   sync: true,
                 },
               },
               line_linked: {
                 enable: true,
                 distance: 300,
-                color: "#fff",
-                opacity: 0.6,
-                width: 0.8,
+                color: "#e6b000",
+                opacity: 0.7,
+                width: 1,
               },
               move: {
                 enable: true,
