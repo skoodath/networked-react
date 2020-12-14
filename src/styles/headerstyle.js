@@ -10,7 +10,7 @@ export const Wrapper = styled.header`
     left: 0;
     right: 0;
     z-index: 99;
-    background-color: transparent;
+    background-color: ${({scroll})=> scroll? '#fff': 'transparent'};
     transition-property: background-color, height;
     transition-timing-function: ease-in-out;
     transition-duration: 0.7s;

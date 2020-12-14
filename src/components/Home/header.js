@@ -10,7 +10,7 @@ const Header = () => {
 
 
     const setMenu = () => {
-        if(window.scrollY > 100){
+        if(window.scrollY > 150){
             setHeaderColor(true);
         }
         else {
@@ -21,7 +21,7 @@ const Header = () => {
     window.addEventListener('scroll', setMenu);
 
     return (
-        <Wrapper>
+        <Wrapper scroll={headerColor}>
         <Headeroverlay scroll={headerColor}>
             <Logo />
         </Headeroverlay>

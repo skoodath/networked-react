@@ -12,37 +12,46 @@ const Landing = () => {
 
     const overlayRef = useRef(null);
     const logoRef = useRef(null);
-    const headerRef = useRef(null);
+    const headerRef1 = useRef(null);
+    const headerRef2 = useRef(null);
     const scrollRef = useRef(null);
 
     const animateLanding = () => {
 
-      gsap.from(headerRef.current, {
+      gsap.from(headerRef1.current, {
         opacity: 0,
-        x: 150,
-        duration: 1,
-        delay: 1,
+        y: 90,
+        duration: 1.5,
+        delay: 2.3,
+        ease: 'Expo.easeOut'
+      })
+      gsap.from(headerRef2.current, {
+        autoAlpha: 0,
+        y: 90,
+        duration: 1.5,
+        delay: 2.4,
         ease: 'Expo.easeOut'
       })
       gsap.from(logoRef.current, {
         autoAlpha: 0,
-        duration: 1.5,
-        delay: 1,
+        duration: 1,
+        delay: 2.2,
         scale: 0.8,
         ease: 'Expo.easeOut'
       })
       gsap.from(overlayRef.current, {
-        autoAlpha: 0,
+        opacity: 0,
+        backgroundColor: '#ffd54e',
         duration: 2,
-        scale: 2,
+        delay: 2,
         ease: 'Expo.easeOut'
       })
       
       gsap.from(scrollRef.current, {
         opacity: 0,
-        y: 100,
+        scale: 0.8,
         duration: 1,
-        delay: 2,
+        delay: 2.6,
         ease: 'Power4.easeOut'
       })
     }
@@ -57,12 +66,12 @@ const Landing = () => {
         <LandingOverlay ref={overlayRef}>
           <img src={networked} alt={'networkED Logo in the center'} ref={logoRef} />
         </LandingOverlay>
-        <Styledheader
-          ref={headerRef}
-        >
-            The Language Of Thought
+        <Styledheader>
+            <div ref={headerRef1}>The Language</div>
         </Styledheader>
-
+        <Styledheader>
+            <div ref={headerRef2}>Of Thought</div>
+        </Styledheader>
         <Particles
           style={{
             position: "absolute",

@@ -6,7 +6,7 @@ import {CSSPlugin} from 'gsap/CSSPlugin';
 gsap.registerPlugin(CSSPlugin);
 
 
-const MenuPage = () => {
+const MenuPage = ({scroll}) => {
 
     return (
         <Menu>
@@ -16,6 +16,7 @@ const MenuPage = () => {
                     smooth={true} 
                     offset={-100} 
                     duration={500}
+                    scroll={scroll}
                 >
                     About
                 </MenuLinks>
@@ -25,6 +26,7 @@ const MenuPage = () => {
                     smooth={true} 
                     offset={-100} 
                     duration={500}
+                    scroll={scroll}
                     >
                     Fellowship
                 </MenuLinks>

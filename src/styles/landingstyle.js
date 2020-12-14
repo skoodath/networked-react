@@ -42,8 +42,16 @@ export const Styledheader = styled.h1`
   font-weight: 300;
   padding: 0 1rem;
   position: relative;
+  margin: 0;
+  overflow: hidden;
+  div{
+    font-size: 3rem;
+  }
   @media ${device.laptop}{
-    font-size: 5rem;
+    font-size: 4rem;
+    div{
+    font-size: 4rem;
+    }
   }
 `;
 

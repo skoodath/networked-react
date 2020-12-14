@@ -24,12 +24,13 @@ export const MenuLinks = styled(Link)`
     position: relative;
     margin: 0 1rem 0 0;
     cursor: pointer;
-    color: #272727;
+    color: ${({ scroll}) => scroll? '#272727' : '#fff'};
     text-transform: uppercase;
     border: 2px solid transparent;
     font-weight: bold;
     display: block;
-    z-index: 99;
+    z-index: 999;
+    text-shadow: ${({ scroll}) => scroll? 'none' : '0 0 4px #e6b000'};
     &::after{
         content: '';
         position: absolute;
