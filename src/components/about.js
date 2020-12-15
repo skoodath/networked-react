@@ -29,7 +29,7 @@ const About = () => {
         start: 'top 50%',
         end: 'top 25%',
         toggleActions: 'play none none none',
-        scrub: 3
+        scrub: 3,
     },
       autoAlpha: 0,
       duration: 1,
@@ -82,7 +82,7 @@ useEffect(()=>{
 
     return (
         <WrapperContainer>
-          <Styledabout name="about" ref={abtRef}>
+          <Styledabout name="about" ref={abtRef} className=".panel">
             <HeaderSmall
               ref={smalltxt}
             >
@@ -106,7 +106,7 @@ useEffect(()=>{
                Our goal is to create a thriving thought-pool of methods and tools to help children master the art of generating insights using networks in real world.
             </Aboutus>
           </Styledabout>
-            <Styledabout hgt="auto" ref={benefitRef}>
+            <Styledabout hgt="auto" ref={benefitRef} className=".panel">
               <Benefit />
             </Styledabout>
         </WrapperContainer>

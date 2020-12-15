@@ -18,9 +18,11 @@ export const PathwayList = styled.ul`
     max-width: 400px;
     @media ${device.laptop}{
         margin: 0 auto;
-        width: 100%;
+        max-width: 800px;
+    }
+    @media ${device.laptopLG}{
+        margin: 0 auto;
         max-width: 960px;
-        flex-direction: column;
     }
 `;
 
@@ -35,8 +37,8 @@ export const PathwayImgWrap = styled.div`
     align-items: center;
     padding: 0;
     position: relative;
-    background-color: #f9f1d8;
-    border: 2px solid #FFD039;
+    background-color: #03243C15;
+    border: 2px solid #03243C;
     @media ${device.laptop}{
         width: 70px;
         height: 70px;
@@ -95,8 +97,8 @@ export const PathwayListItem = styled.li`
     position: relative;
     &:nth-child(odd){
         border-top: 3px solid transparent;
-        border-left: 3px solid #FF7C4D;
-        border-bottom: 3px solid #FF7C4D;
+        border-left: 3px solid #03243C50;
+        border-bottom: 3px solid #03243C50;
         border-radius: 0 0 0 30px;
         &::after{
             content: '';
@@ -107,7 +109,7 @@ export const PathwayListItem = styled.li`
             bottom: 1px;
             right: 0;
             transform: translate(-10px, 11px);
-            border-left: 10px solid #FF7C4D;
+            border-left: 10px solid #03243C;
             border-right: 8px solid transparent;
             border-top: 8px solid transparent;
             border-bottom: 8px solid transparent;
@@ -121,8 +123,8 @@ export const PathwayListItem = styled.li`
     }
     &:nth-child(even){
         border-top: 3px solid transparent;
-        border-right: 3px solid #FF7C4D;
-        border-bottom: 3px solid #FF7C4D;
+        border-right: 3px solid #03243C50;
+        border-bottom: 3px solid #03243C50;
         border-radius: 0 0 30px 0;
         flex-direction: row-reverse;
         &::after{
@@ -134,7 +136,7 @@ export const PathwayListItem = styled.li`
             bottom: 1px;
             left: 0;
             transform: translate(10px, 11px);
-            border-right: 10px solid #FF7C4D;
+            border-right: 10px solid #03243C;
             border-left: 8px solid transparent;
             border-top: 8px solid transparent;
             border-bottom: 8px solid transparent;
@@ -152,10 +154,10 @@ export const PathwayListItem = styled.li`
         position: absolute;
         width: 1rem;
         height: 1rem;
-        box-shadow: 0 0 0 3px #FF7C4D,
+        box-shadow: 0 0 0 3px #03243C,
                     0 0 0 8px #fff,
                     0 0 0 8px #fff,
-                    0 0 0 5px #FF7C4D;
+                    0 0 0 5px #03243C;
         background-color: #fff;
         border: none;
         bottom: 0;
@@ -167,16 +169,19 @@ export const PathwayListItem = styled.li`
 
 
     @media ${device.laptop}{
-        max-width: 480px;
+        max-width: 400px;
         padding: 1.1rem 0.5rem;
         &:nth-child(odd){
-          border-top: 3px solid #FF7C4D;
-          border-left: 3px solid #FF7C4D;
+          border-top: 3px solid #03243C50;
+          border-left: 3px solid #03243C50;
           border-right: none;
-          border-bottom: 3px solid #FF7C4D;
+          border-bottom: 3px solid #03243C50;
           border-radius: 30px 0 0 30px;
           flex-direction: column-reverse;
           margin: 0 auto 0 0;
+          &::after{
+            transform: translate(-5px, 11px);
+          }
         ${PathwayCount}{
           left: 100%;
           top: 0;
@@ -184,13 +189,59 @@ export const PathwayListItem = styled.li`
         }
     }
         &:nth-child(even){
-            border-top: 3px solid #FF7C4D;
+            border-top: 3px solid #03243C50;
             border-left: 3px solid transparent;
-            border-right: 3px solid #FF7C4D;
-            border-bottom: 3px solid #FF7C4D;
+            border-right: 3px solid #03243C50;
+            border-bottom: 3px solid #03243C50;
             border-radius: 0 30px 30px 0;
             flex-direction: column-reverse;
             margin: 0 0 0 auto;
+            &::after{
+                transform: translate(5px, 11px);
+            }
+        ${PathwayCount}{
+            right: 100%;
+            top: 0;
+            transform: translate(50%, -50%);
+          }
+        }
+        &:last-child{
+        &::after{
+            transform: translate(-50%, 50%);
+        }
+    }
+    }
+    @media ${device.laptopLG}{
+        max-width: 480px;
+        padding: 1.1rem 0.5rem;
+        &:nth-child(odd){
+          border-top: 3px solid #03243C50;
+          border-left: 3px solid #03243C50;
+          border-right: none;
+          border-bottom: 3px solid #03243C50;
+          border-radius: 30px 0 0 30px;
+          flex-direction: column-reverse;
+          margin: 0 auto 0 0;
+          &::after{
+            transform: translate(-10px, 11px);
+          }
+        ${PathwayCount}{
+          left: 100%;
+          top: 0;
+          transform: translate(-50%, -50%);
+        }
+    }
+        &:nth-child(even){
+            border-top: 3px solid #03243C50;
+            border-left: 3px solid transparent;
+            border-right: 3px solid #03243C50;
+            border-bottom: 3px solid #03243C50;
+            border-radius: 0 30px 30px 0;
+            flex-direction: column-reverse;
+            margin: 0 0 0 auto;
+            &::after{
+                transform: translate(10px, 11px);
+            }
         ${PathwayCount}{
             right: 100%;
             top: 0;

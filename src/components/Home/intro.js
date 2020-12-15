@@ -1,11 +1,11 @@
 import React, {useRef, useEffect, useState} from 'react';
-import SubText from '../subtext';
 import { gsap } from 'gsap';
 import scrollTrigger from 'gsap/ScrollTrigger';
 import { WrapperContainer } from '../../styles/Reusable/wrapperdivstyle';
-import { InnerWrapper, IntroParaWrapper, Styledintropara, StyledPlaybtn, StyledPlaytext, StyledPlayWrapper } from '../../styles/introstyle';
+import { ButtonWrapper, InnerWrapper, IntroParaWrapper, Styledintropara, StyledPlaybtn, StyledPlaytext, StyledPlayWrapper } from '../../styles/introstyle';
 import IntroVideo from './Intro/video';
 import { CTAButton } from '../../styles/Reusable/getinvolvedbtnstyle';
+import SectionHeader from '../sectionheader';
 
 gsap.registerPlugin(scrollTrigger);
 
@@ -111,7 +111,7 @@ const Intro = () => {
       <>
         <WrapperContainer>
           <InnerWrapper ref={innerRef}>
-            <SubText
+            <SectionHeader
               ref={introRef}
               text={`A new way of thinking`}
             />
@@ -136,20 +136,24 @@ const Intro = () => {
                 children, using networks interconnecting the real world.
             </Styledintropara>
             </IntroParaWrapper>
-            <StyledPlayWrapper onClick={modalOpener} ref={playRef}>
-              <StyledPlaybtn />
-              <StyledPlaytext>Watch Video</StyledPlaytext>
-            </StyledPlayWrapper>
-            <IntroVideo openModal={modalOpen} setOpenModel={setModalOpen} />
-            <CTAButton 
-              to="getinvolved"
-              smooth={true} 
-              offset={-50} 
-              duration={500}
-              ref={ctaRef}
-              >
-                Get Involved
-              </CTAButton>
+            <ButtonWrapper>
+              <StyledPlayWrapper onClick={modalOpener} ref={playRef}>
+                <StyledPlaybtn />
+                <StyledPlaytext>Watch Video</StyledPlaytext>
+              </StyledPlayWrapper>
+              <IntroVideo openModal={modalOpen} setOpenModel={setModalOpen} />
+              <CTAButton 
+                to="getinvolved"
+                smooth={true} 
+                offset={-50} 
+                duration={500}
+                ref={ctaRef}
+                >
+                  Get Involved
+                </CTAButton>
+
+            </ButtonWrapper>
+            
           </InnerWrapper>
           
         </WrapperContainer>

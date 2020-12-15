@@ -18,42 +18,41 @@ const Landing = () => {
 
     const animateLanding = () => {
 
-      gsap.from(headerRef1.current, {
-        opacity: 0,
-        y: 90,
-        duration: 1.5,
-        delay: 2.3,
-        ease: 'Expo.easeOut'
-      })
-      gsap.from(headerRef2.current, {
-        autoAlpha: 0,
-        y: 90,
-        duration: 1.5,
-        delay: 2.4,
-        ease: 'Expo.easeOut'
-      })
-      gsap.from(logoRef.current, {
-        autoAlpha: 0,
-        duration: 1,
-        delay: 2.2,
-        scale: 0.8,
-        ease: 'Expo.easeOut'
-      })
-      gsap.from(overlayRef.current, {
+      const tl = gsap.timeline();
+
+      tl.from(overlayRef.current, {
         opacity: 0,
         backgroundColor: '#ffd54e',
-        duration: 2,
-        delay: 2,
-        ease: 'Expo.easeOut'
+        duration: 1,
+        ease: 'Expo.easeInOut'
       })
+      tl.from(logoRef.current, {
+        autoAlpha: 0,
+        duration: 1,
+        scale: 0.8,
+        ease: 'Expo.easeOut'
+      }, "-=0.5")
+
+      tl.from(headerRef1.current, {
+        opacity: 0,
+        y: 90,
+        duration: 1,
+        ease: 'Expo.easeOut'
+      }, "-=0.5")
+      tl.from(headerRef2.current, {
+        autoAlpha: 0,
+        y: 90,
+        duration: 1,
+        ease: 'Expo.easeOut'
+      },"-=0.9")
       
-      gsap.from(scrollRef.current, {
+      
+      tl.from(scrollRef.current, {
         opacity: 0,
         scale: 0.8,
         duration: 1,
-        delay: 2.6,
-        ease: 'Power4.easeOut'
-      })
+        ease: 'Expo.easeOut'
+      },"-=0.5")
     }
 
     useEffect(()=> {

@@ -34,6 +34,13 @@ export const Styledintropara = styled.p`
     border-left:${({ borderleft })=> borderleft? '10px solid #ffd54d' : 'none'};
 `;
 
+export const ButtonWrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    @media ${device.laptop}{
+      flex-direction: row;
+    }
+`;
 
 /* Video Styling */
 
@@ -83,7 +90,7 @@ export const StyledPlayWrapper  = styled.div`
     width: 150px;
     background-color: #FFC91A;
     padding: 0.3rem;
-    margin: 1rem 0 0 0;
+    margin: 1rem 1rem 0 0;
     border-radius: 5px;
     box-shadow: 0 0 7px #ddd;
     border: 2px solid #FFC91A;
